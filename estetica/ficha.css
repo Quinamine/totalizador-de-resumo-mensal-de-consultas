@@ -1,0 +1,300 @@
+﻿
+/* FORMATAÇÃO GERAL */
+input, textarea {
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
+    font-size: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=text], input[type=date],
+input[readonly] {
+    font-weight: bold;
+}
+
+input[readonly] {
+    cursor: context-menu;
+    transition: background-color 400ms ease-out;
+}
+
+input[readonly].gray {
+    background-color: var(--gray-c) !important;
+}
+
+div.container input:focus {
+    border-bottom: 2px solid var(--blue) !important;
+}
+
+/* CSS REUTILIZÁVEL */
+
+header.cabecalho-da-ficha span,
+div.coluna-de-consultas-e-diagnosticos,
+div.inputs-container input {
+    border-right: 1px solid var(--border-color);
+}
+
+div.coluna-de-titulos-das-secoes-das-linhas div,
+div.coluna-de-consultas-e-diagnosticos span,
+div.container input, div.container input[readonly]:focus {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+div.linha-de-faixas-etarias span:nth-child(1),
+div.linha-de-sexo span:nth-child(1),
+div.coluna-de-consultas-e-diagnosticos {
+    border-left: 1px solid var(--border-color);
+}
+
+div.container {
+    max-width: 1290px;
+    min-width: 1290px;
+    margin: 30px auto 10px auto;
+}
+
+
+/* FICHA */
+
+div.ficha {
+    display: grid;
+    grid-template-columns: 20px 90px 228px repeat(19, 50px);
+}
+
+header.cabecalho-da-ficha {
+    grid-column: 3/23;  
+    position: -webkit-sticky;
+	position: sticky;
+	top: -36px;
+	background-color: var(--yt)
+}
+
+header.cabecalho-da-ficha h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-left: 226px;
+}
+
+header.cabecalho-da-ficha h1 input {
+    width: 364px;
+    font-size: 16px;
+}
+
+header.cabecalho-da-ficha span {
+    border-top: 1px solid var(--border-color);
+}
+
+header.cabecalho-da-ficha div.linha-de-enumeracao-das-colunas,
+header.cabecalho-da-ficha div.linha-de-sexo {
+    display: grid;
+    grid-template-columns: 228px repeat(19, 50px);
+    grid-template-rows: 24px;
+    text-align: center;
+}
+
+header.cabecalho-da-ficha 
+div.linha-de-enumeracao-das-colunas {
+    grid-template-rows: 18px;
+}
+
+div.linha-de-enumeracao-das-colunas 
+div.contentor-de-mes {
+    text-align: left;
+}
+
+div.linha-de-enumeracao-das-colunas 
+div.contentor-de-mes input {
+    width: 84%;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+div.linha-de-enumeracao-das-colunas span {
+    background-color: var(--primary-color);
+    color: var(--gray-d);
+    border-color: var(--gray-a);
+}
+
+div.linha-de-enumeracao-das-colunas 
+span.marginleft--1 {
+    margin-left: -1px;
+}
+
+div.linha-de-enumeracao-das-colunas 
+span:last-child {
+    border-right: none;
+}
+
+/* LINHA DE FAIXAS ETÁRIAS */
+
+header.cabecalho-da-ficha 
+div.linha-de-faixas-etarias {
+    display: grid;
+    grid-template-columns: 228px repeat(9, 100px) 50px;
+    grid-template-rows: 24px;
+    text-align: center;
+}
+
+/* LINHA DE SEXO */
+div.linha-de-sexo 
+span.sem-borda-superior {
+    border-top: none;
+}
+
+/* BORDA ESCURA */
+div.borda-escura {
+    grid-row: 2;
+    grid-column: 1/23;
+    width: 100%;
+    height: 10px;
+    background-color: var(--primary-color);
+}
+
+/* FORMATAÇÃO COMUM */
+div.coluna-de-enumeracao-das-linhas,
+div.coluna-de-titulos-das-secoes-das-linhas,
+div.coluna-de-consultas-e-diagnosticos,
+div.inputs-container {
+    grid-row: 3;
+}
+
+div.coluna-de-enumeracao-das-linhas,
+div.coluna-de-consultas-e-diagnosticos,
+div.inputs-container {
+    display: grid;
+    grid-template-rows: repeat(53, 24px);
+}
+
+header.cabecalho-da-ficha span,
+div.coluna-de-enumeracao-das-linhas span,
+div.coluna-de-titulos-das-secoes-das-linhas div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.coluna-de-enumeracao-das-linhas span {
+    background-color: var(--primary-color);
+    color: var(--gray-d);
+    border: 1px solid var(--border-color);
+    border-bottom-color: var(--gray-a);
+    border-top: none;
+}
+
+/* SEGUNDA COLUNA DA FICHA - TÍTULOS DA SECÇÕES DAS LINHAS */
+
+div.coluna-de-titulos-das-secoes-das-linhas {
+    display: grid;
+    grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2, calc(24px*3));
+}
+
+div.coluna-de-titulos-das-secoes-das-linhas div span {
+    text-align: center;
+    font-weight: bold;
+    transform: rotate(270deg);
+}
+
+/* COLUNA DE CONSULTAS E DIAGNÓSTICOS */
+div.coluna-de-consultas-e-diagnosticos span {
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+    padding-right: 1px;
+}
+
+/* COLUNAS DE CÉLULAS DE INSERÇÃO DE DADOS */
+div.inputs-container {
+    grid-template-columns: 50px;
+}
+
+div.inputs-container input {
+    text-align: center;
+}
+
+/* LINHA DE ASSINATURA */
+footer.linha-de-assinatura {
+    grid-row: 4;
+    grid-column: 1/9;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 10px 0;
+}
+
+footer.linha-de-assinatura 
+div.contentor-do-nome-do-profissional {
+    min-height: 18px;
+    margin-bottom: 15px;
+}
+
+footer.linha-de-assinatura 
+div.contentor-do-nome-do-profissional input {
+    width: 312px;
+}
+
+@-moz-document url-prefix() {
+    footer.linha-de-assinatura 
+    div.contentor-do-nome-do-profissional input {
+        width: 305px;
+    }
+}
+
+footer.linha-de-assinatura 
+div.linha-de-categoria-e-data {
+    display: flex;
+    justify-content: space-between;
+    min-height: 22.38px;
+}
+
+div.linha-de-categoria-e-data input#categoria {
+    width: 276px;
+}
+
+
+/* SECCAO DE NOTA */
+div.nota {
+    margin-bottom: 20px;
+    min-height: 79px;
+}
+
+@media screen and (max-width: 1312px) {
+    div.linha.nota {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media print {
+    div.nota.no-print {
+        display: none;
+    }
+}
+
+div.nota textarea {
+    font: 14px san-serif, Arial, Helvetica;
+    min-width: 880px;
+    padding: 5px;
+    line-height: 1.5;
+    border: 1px solid var(--border-color);
+}
+
+div.nota textarea.bold {
+    font-weight: bold;
+    border-color: transparent;
+}
+
+div.nota textarea:focus {
+    border: 2px solid var(--blue);
+}
+
+
+
