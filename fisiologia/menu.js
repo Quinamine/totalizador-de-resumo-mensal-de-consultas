@@ -10,7 +10,7 @@ const menu = {
         }
     },
 
-    // IR PARA
+    // IR PARA LINHA
     mostrarCaixaDePesquisa() {
         srcContainer.classList.add("on");
         srcInput.focus();
@@ -29,7 +29,7 @@ const menu = {
             this.resetarFundoDoNumeroDaLinha();
             return false;
         }
-        else if((numLinha < 1) || (numLinha > 63)) {
+        else if((numLinha < 1) || (numLinha > 53)) {
             const alerta = document.querySelector("div.caixa-de-alerta.query-out-of-range");
             alerta.querySelector("b.entered-num").textContent = numLinha;
             alerta.classList.add("on");
@@ -61,7 +61,7 @@ const menu = {
         }
     },
 
-    // ESVAZIAMENTO
+    // ESVAZIAR A FICHA
     esvaziamento() {
         const confirmacao = document.querySelector("div.caixa-de-confirmacao");
         const celulas = document.querySelectorAll("div.inputs-container input");
@@ -111,7 +111,7 @@ const menu = {
         }
     },
 
-    // IMPRIMIR 
+    // IMPRIMIR
     imprimirFicha() {
         textArea.value === "" ?
             textArea.parentElement.classList.add("no-print") :
@@ -120,16 +120,42 @@ const menu = {
         window.print();
     },
 
+    // SOBRE
     abrirArtigoSobre() {
         document.querySelector("section#sobre").classList.add("on");
         desfoqueDoFundo.on();
     },
 
+    // COOKIES
     abrirArtigoCookies() {
         document.querySelector("section#cookies").classList.add("on");
         desfoqueDoFundo.on();
         if(window.innerWidth < 1024) {
             document.querySelector("body").classList.add("overflow-hidden");
+        }
+    },
+
+    // SALVAR COMO PDF
+    salvarComoPdf() {
+        if(window.innerWidth < 1024) {
+            this.imprimirFicha();
+        } else {
+            document.querySelector("section#conversao-pdf").classList.add("on");
+        }
+
+        desfoqueDoFundo.on();
+    },
+
+    abrirOuFecharHamburguer() {
+        const menu = document.querySelector("section.menu");
+        if(hamburguer.matches(".on")) {
+            hamburguer.classList.remove("on");
+            menu.classList.remove("on");
+            desfoqueDoFundo.off();
+        } else {
+            hamburguer.classList.add("on");
+            menu.classList.add("on");
+            desfoqueDoFundo.on();
         }
     }
 }
@@ -154,15 +180,17 @@ const desfoqueDoFundo = {
 // DECLARAÇÃO E INICIALIZAÇÃO DAS VARIÁVEIS
 let readonlyCelsDarker, readonlyCels,
 srcContainer, srcInput, rowNumbers, 
-textArea,
+textArea, 
+hamburguer,
 divDesfocante;
 function init() {
     readonlyCelsDarker = document.querySelector("#readonlyinputs-darker");
     readonlyCels = document.querySelectorAll("input[readonly]");
     srcContainer = document.querySelector("div.caixa-de-pesquisa");
     srcInput = document.querySelector("div.caixa-de-pesquisa input.pesquisar-linha");
-    rowNumbers = document.querySelectorAll("div.coluna-de-numeros-das-linhas span")
-    textArea = document.querySelector("textarea#campo-de-nota");
+    rowNumbers = document.querySelectorAll("div.coluna-de-enumeracao-das-linhas span")
+    textArea = document.querySelector("textarea#nota");
+    hamburguer = document.querySelector("div.hamburguer");
     divDesfocante = document.querySelector("div.desfoque");
 }
 
@@ -229,7 +257,7 @@ function eventListeners() {
 
     // ABRIR CONTEÚDO SOBRE NO LOAD DO WINDOWS
     if(location.hash === "#sobre") {
-    menu.abrirArtigoSobre();
+        menu.abrirArtigoSobre();
     }
 
     // ABRIR CONTEÚDO DE COOKIES
@@ -239,12 +267,15 @@ function eventListeners() {
     // FECHAR CONTEÚDO SOBRE E COOKIES
     const btnsFecharArtigo = document.querySelectorAll("button.fechar-artigo");
     btnsFecharArtigo.forEach ( btn => {
-    btn.addEventListener("click", () => {
-        btn.parentElement.classList.remove("on");
-        desfoqueDoFundo.off();
-        document.querySelector("body").classList.remove("overflow-hidden");
-    })
+        btn.addEventListener("click", () => {
+            btn.parentElement.classList.remove("on");
+            desfoqueDoFundo.off();
+            document.querySelector("body").classList.remove("overflow-hidden");
+        });
     });
+
+    // SALVAR COMO PDF
+    document.querySelector("button.salvar-como-pdf").addEventListener("click", () => menu.salvarComoPdf());
 
     // PARTILHAR
     let conteudo = {
@@ -267,6 +298,9 @@ function eventListeners() {
             console.log("O seu navegador não tem suporte ao método 'navigator.share()'.");
         }
     });
+
+    // HAMBURGUER
+    hamburguer.addEventListener("click", () => menu.abrirOuFecharHamburguer());
 }
 
 // FECHAR CAIXA DE ALERTA PELO ENTER

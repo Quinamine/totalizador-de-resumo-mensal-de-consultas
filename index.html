@@ -17,12 +17,11 @@
         <meta property="og:image" content="https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/totalizador-de-resumo-mensal-de-consultas.png" />
 
         <!-- DESIGN -->
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="estetica/reset.css" />
         <link rel="stylesheet" href="estetica/layout.css" />
         <link rel="stylesheet" href="estetica/ficha.css" />
         <link rel="stylesheet" href="estetica/aside.css" />
-        <script src="https://kit.fontawesome.com/bddeb642f0.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
 
         <!-- FUNCIONALIDADES -->
         <script src="fisiologia/menu.js"></script>
@@ -38,7 +37,8 @@
         <header>
             <div class="linha do-cabecalho">
                 <a href="index.html" class="logo">
-                    Totalizador de Resumo Mensal de Consultas
+                    <strong>Totalizador de Resumo Mensal de Consultas</strong>
+                    <strong><b>TOTAL</b>IZADOR DE RM-CONSULTAS</strong>
                 </a>
                                         
                 <section class="menu" role="navigation">
@@ -71,9 +71,9 @@
                 </section>
 
                 <div class="hamburguer">
-                    <div class="camada"></div>
-                    <div class="camada"></div>
-                    <div class="camada"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
         </header>
@@ -2134,7 +2134,7 @@
                     </div>
                     
                     <div class="caixa-de-alerta query-out-of-range">
-                        <p>O número <b class="entered-num"></b> está fora do intervalo das linhas, pois a ficha tem no máximo 63 linhas a partir de 1.</p>
+                        <p>O número <b class="entered-num"></b> está fora do intervalo das linhas. A ficha tem no máximo 53 linhas a partir de 1.</p>
                         
                         <button>OK</button>
                     </div>
@@ -2222,10 +2222,10 @@
                         Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.
                     </p>
                     <p>
-                        As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
+                        As células de entrada de dados do Totalizador têm uma largura cabível para 7 algarismos no máximo, portanto, só podem mostrar valores até <strong>9 999 999</strong>. A partir de 10&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 7 algarismos e do 8º em diante, ficam fora da viewport (área visível) da célula.
                     </p>
                     <p class="destaque suposicao">
-                         Presumo que actualmente (2022) não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas do SAAJ próximo, equivalente ou maior que 999 999.
+                        Presumo que actualmente (2022) não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas externas próximo, equivalente ou maior que 9 999 999.
                     </p>
                     <div class="seccao-de-interatividade">
                         <div>
@@ -2242,7 +2242,6 @@
                         Ao utilizar o Totalizador de Resumo Mensal de Consultas, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
                     </p>
         
-                   
                     <button class="aceitar-cookies">Prosseguir</button>
                 </div> 
             </aside>
@@ -2254,10 +2253,10 @@
                 <h1>Sobre o totalizador</h1>
                 
                 <figure>
-                    <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de SAAJ"/>
+                    <img src="imagens/totalizador-de-resumo-mensal-de-consultas.png" alt="Totalizador de Resumo Mensal de Consultas"/>
                 </figure>
 
-                <p> <b>O Totalizador de Resumo Mensal de Consultas</b> é um serviço online gratuito que, como o nome sugere,  <b>auxilia na elaboração do resumo mensal de consultas externas através do cálculo automático dos subtotais e totais a partir dos dados inseridos</b> pelo usuário (Profissional de Saúde). Tem a estrutura idêntica ao modelo da ficha de resumo mensal de consultas externas actualmente (2022) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</p>
+                <p> <b>O Totalizador de Resumo Mensal de Consultas</b> é um serviço online gratuito que, como o nome sugere,  <b>auxilia na elaboração do resumo mensal de consultas externas através do cálculo automático dos subtotais e totais a partir dos dados preenchidos</b> pelo usuário (Profissional de Saúde). Tem a estrutura idêntica ao modelo da ficha de resumo mensal de consultas externas actualmente (2022) vigente no Serviço Nacional de Saúde (SNS) em Moçambique.</p>
             
                 <h2>Qual é o propósito?</h2>
             
@@ -2265,7 +2264,7 @@
             
                 <h2>Como funciona?</h2>
             
-                <p>O serviço espera como parâmetros, os dados colhidos do(s)  Livro(s) de Registo de Consultas Externas da  respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real. Após obter os Totais, o usuário pode copiar os valores para a ficha original a partir da tela do seu dispositivo ou pode optar por imprimir a ficha do Totalizador para copiar a partir do papel.</p>
+                <p>O serviço espera como parâmetros os dados colhidos do(s)  Livro(s) de Registo de Consultas Externas da  respectiva Unidade Sanitária durante o mês em consideração e com base nesses dados, as células correspondentes aos subtotais e totais são calculadas automaticamente e em tempo real. Após obter os Totais, o usuário pode copiar os valores para a ficha original a partir da tela do seu dispositivo ou pode optar por imprimir a ficha do Totalizador para copiar a partir do papel.</p>
             
                 <h2>O que o usuário precisa dispor?</h2>
             
@@ -2300,15 +2299,14 @@
     
                     <li> <b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário exclua.</li>
                 </ul>
-                
-    
+                  
                 <p>
-                    O Totalizador de Resumo Mensal de SAAJ utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.
+                    O Totalizador de Resumo Mensal de Consultas utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.
                 </p>
 
                 <h2>Por que armazeno dados?</h2>
 
-                <p class="mb-10">Por 3 razões, enumeradamente:</p>
+                <p class="mb-10">Por 3 razões, descritivamente:</p>
 
                 <dl>
                     <dt id="um">Fazer um backup local</dt>
@@ -2323,14 +2321,12 @@
                         <li>
                             <b>Dados adicionais como:</b>
                             <ul>
-                                <li>Província;</li>
-                                <li>Distrito;</li>
                                 <li>Unidade Sanitária;</li>
                                 <li>Mês;</li>
-                                <li>Nome do Director da US;</li>
+                                <li>Nome do Responsável pelo preenchimento;</li>
+                                <li>Assinatura do Responsável pelo preenchimento;</li>
                                 <li>Data de elaboração;</li>
-                                <li>Nome do Responsável pelo compilamento;</li>
-                                <li>Assinatura do Responsável pelo compilamento.</li>
+                                <li>Nota ou Observação do resumo;</li>
                             </ul>  
                         </li>
                                                 
@@ -2358,10 +2354,29 @@
 
                 <div class="consentimento">
                     <p class="destaque">
-                        A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de SAAJ.
+                        A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de Consultas.
                     </p>
                 </div>
                                 
+                <button class="fechar-artigo" title="Fechar">
+                    &times;
+                </button>
+            </section>
+            <section id="conversao-pdf">
+                <h1>Como salvar a ficha em PDF?</h1>
+            
+                <ol>
+                    <li>Clique na opção "<b>Imprimir</b>".</li>
+            
+                    <li>Na janela que abrirá, no campo de <b>Impressora</b> ou <b>Destino</b> selecione a opção “<b>Salvar como PDF</b>”.</li>
+            
+                    <li>No campo de <b>Layout</b> ou <b>Orientação</b>, selecione "<b>Paisagem</b>". Isso é para que toda ficha caiba no papel A4 e não haja omissão das últimas colunas.</li>
+            
+                    <li>Por fim, clique em <b>salvar</b> e escolha o destino no seu computador.</li>
+                </ol>
+            
+                <p class="destaque">Se no navegador Firefox haver omissão das últimas colunas no modo paisagem, teste no modo retrato.</p>
+
                 <button class="fechar-artigo" title="Fechar">
                     &times;
                 </button>
@@ -2390,7 +2405,7 @@
                     </ul>   
                 </div>
 
-                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de Consultas Externas</p>
+                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de Consultas</p>
 
                 <a href="#ficha" class="voltar">Voltar ao topo</a>
             </div>

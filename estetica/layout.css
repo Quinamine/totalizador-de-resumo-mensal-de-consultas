@@ -25,6 +25,15 @@
     --orange: #faa032;
 }
 
+@media print {
+    :root {
+        --border-color: var(--fullblack);
+        --text-color: var(--fullblack);
+        --gray-a: var(--yt);
+        --gray-d: var(--yt);
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -36,6 +45,18 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/* PRINT CSS */
+@media print {
+    @page {
+        margin: 0.5cm;
+    }
+    
+    body {
+        -webkit-print-color-adjust: exact;
+        visibility: hidden;
+    }
 }
 
 body.overflow-hidden {
@@ -55,7 +76,7 @@ main {
 }
 
 *::selection {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--yt);
 }
 
@@ -146,6 +167,13 @@ body > footer {
     width: 100%;
 }
 
+@media print {
+    body > header,
+    body > footer {
+        display: none;
+    }
+}
+
 body > header {
     line-height: 2;
     box-shadow: 0 0 10px var(--gray-d);
@@ -168,11 +196,31 @@ div.linha.do-cabecalho {
     align-items: center;
 }
 
+@media screen and (max-width: 350px) {  
+    div.linha.do-cabecalho {
+        justify-content: flex-end !important;
+    }
+}
+
 div.linha.do-cabecalho a.logo {
     font-size: 16px;
     font-weight: bold;
     color: var(--fullblack);
     cursor: default;
+}
+
+div.linha.do-cabecalho a.logo strong:nth-child(2){ 
+    display: none;
+}
+
+@media screen and (max-width: 425px) {
+    div.linha.do-cabecalho a.logo strong:nth-child(1){ 
+        display: none;
+    }
+
+    div.linha.do-cabecalho a.logo strong:nth-child(2){ 
+        display: initial;
+    }
 }
 
 /* SECÇÃO DE NAVEGAÇÃO */
@@ -204,8 +252,9 @@ section.menu ul li.partilha {
     }
      /* MENU HAMBURGUER */
      div.linha.do-cabecalho {
-        padding: 15px;
         justify-content: center;
+        min-height: 47px;
+        padding: 0 15px;
     }
 
      div.linha.do-cabecalho div.hamburguer {
@@ -214,7 +263,7 @@ section.menu ul li.partilha {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 9.8px;
+        top: 7.8px;
         left: 7px;  
     }
 
@@ -252,9 +301,9 @@ section.menu ul li.partilha {
         position: fixed;
         top: 48px;
         left: 0;
-        z-index: 10;
+        z-index: 50000;
         background: var(--yt);
-        transition: all 100ms linear;
+        transition: all 100ms ease;
     }
 
     div.linha.do-cabecalho section.menu.on {
@@ -283,7 +332,13 @@ section.menu ul li.partilha {
     }
 
     section.menu li.destacar-as-celulas-automaticas input {
-        margin-left: 9px;
+        margin-left: 10px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    div.linha.do-cabecalho div.hamburguer {
+        width: 30px;
     }
 }
 
@@ -332,8 +387,8 @@ section.menu button.salvar-como-pdf span.question-mark {
         display: none;
     }
 }
-/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 
+/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 section.menu li:first-child:hover,
 section.menu li button:hover,
 section.menu li a:hover {
@@ -348,17 +403,12 @@ section.menu ul li:first-child:active {
 body > footer {
     background-color: var(--footer-bgc);
     padding: 40px 0;
-    color: var(--cinza5);
 }
 
 div.linha.do-rodape {
     display: flex;
     align-items: flex-start;
     line-height: 2;
-}
-
-div.linha.do-rodape a:active {
-    color: var(--red);
 }
 
 div.linha.do-rodape div.hiperligacoes {
@@ -383,34 +433,24 @@ div.linha.do-rodape a.voltar:visited {
     color: var(--border-color);
 }
 
-/* PRINT CSS */
-@media print {
-    @page {
-        margin: 0.5cm;
+@media screen and (max-width: 1023px) {
+    div.linha.do-rodape {
+        flex-direction: column;
     }
 
-    :root {
-        --border-color: var(--fullblack);
-        --text-color: var(--fullblack);
+    div.linha.do-rodape div.hiperligacoes {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted var(--gray-a);
     }
 
-    body {
-        -webkit-print-color-adjust: exact;
-        visibility: hidden;
+    div.linha.do-rodape > p {
+        margin-top: 20px;
     }
 
-    body > header,
-    body > footer,
-    div.aviso-de-uso-de-cookies {
-        display: none;
-    }
-
-    div.container {
-        margin-top: 0;
-        visibility: visible;
-    } 
-
-    div.ficha header {
-        position: initial !important;
+    a.voltar {
+        margin: 20px 0 0 -5px;
     }
 }
+
+

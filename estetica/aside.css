@@ -98,9 +98,13 @@ article li {
     padding-left: 3px;
 }
 
-article ul {
-    list-style-type: disc;
+article ul,
+article ol {
     margin-left: 30px;
+}
+
+article ul{
+    list-style-type: disc;
 }
 
 article li ul {
@@ -366,7 +370,7 @@ div.razao-pelas-celulas-com-fundo-vermelho {
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho.on {
-    top: calc(50vh - 320px / 2);
+    top: calc(50vh - 353px / 2);
     visibility: visible;
 }
 
@@ -466,8 +470,8 @@ div.linha-de-referencia {
         left: 0;
         bottom: 0;
         z-index: 10000 !important;
-        background-color: var(--primary-color);
-        box-shadow: 0 -1px 5px var(--cinza14);
+        background-color: var(--footer-bgc);
+        box-shadow: 0 -1px 5px var(--gray-a);
         z-index: 1;
     }
     
@@ -511,6 +515,16 @@ div.desfoque.on {
     top: 0;
     background-color: var(--black-alpha-5);
     z-index: 20000;
+}
+
+@media screen and (max-width: 1023px) {
+    div.desfoque {
+        transition: all 100ms ease;
+    }
+
+    div.desfoque.on {
+        top: 48px;
+    }
 }
 
 /* AVISO DE USO DE COOKIES  */
@@ -567,4 +581,11 @@ div.aviso-de-uso-de-cookies > button {
 div.aviso-de-uso-de-cookies > button:hover {
     border-color: var(--yt);
     color: var(--yt);
+}
+
+/* NO-PRINT para todos elementos com class on e que tenham visibility: visible.*/
+@media print {
+    .on {
+        visibility: hidden !important;
+    }
 }
