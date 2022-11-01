@@ -458,7 +458,7 @@ div.linha-de-referencia {
     display: none;
 }
 
-@media screen and (max-width: 1290px) {
+@media screen and (max-width: 1300px) {
     div.linha-de-referencia {
         display: block;
         width: 100%;
@@ -514,10 +514,9 @@ div.desfoque.on {
 }
 
 /* AVISO DE USO DE COOKIES  */
-
 div.aviso-de-uso-de-cookies {
     width: 100%;
-    max-width: 1290px;
+    max-width: 1300px;
     padding: 15px;
     position: fixed;
     right: calc(50vw - 1326px / 2);
@@ -537,7 +536,7 @@ div.aviso-de-uso-de-cookies.on {
     visibility: visible;
 }
 
-@media screen and (max-width: 1290px) {
+@media screen and (max-width: 1300px) {
     div.aviso-de-uso-de-cookies.on {
         right: 0;
         bottom: 0;
