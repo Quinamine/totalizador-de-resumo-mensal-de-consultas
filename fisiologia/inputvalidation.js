@@ -4,12 +4,10 @@ const validacao = {
 
     validarInput: () => {
         for (const cel of inputCels) {
-            let numAlgarismos = cel.value.length;
-            if(numAlgarismos > 6) {
-                numAlgarismos > 6 && cel.classList.add("fundo-vermelho");
-            } else {
-                cel.classList.remove("fundo-vermelho");
-            };
+            let numAlgarismos = cel.value.length;   
+            numAlgarismos > 7 ? 
+            cel.classList.add("fundo-vermelho") :
+            cel.classList.remove("fundo-vermelho");
         }
     },
 
@@ -45,27 +43,20 @@ function inicializacao() {
 function eventos() {
     // VALIDAR INPUT NO EVENTO DE ENTRADA DE DADOS
     inputCels.forEach ( cel => {
-        cel.addEventListener("input", function() {
+        cel.addEventListener("input", () => {
             validacao.validarInput();
 
-            const totalParcialAfim = document.querySelector(`.${cel.dataset.totalparcialoutput}`);
+            // Mostrar alerta se a 'cel' ficar vermelha ou a sua celula de saida de total parcial ou geral
+            let celTotalParcialOutput = document.querySelector(`.${cel.dataset.subtotaloutput}`);
+            let celTotalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
 
-            // Mostrar alerta se a 'cel' ficar vermelha
-            if(cel.matches(".fundo-vermelho")) {
-                setTimeout(validacao.mostrarAlertaVermelho, 2500);
-                return false;
-            }
-
-            // Mostrar alerta se as células dos totais ficarem vermelhas;
-            for (const c of inputCels) {
-                if( c.hasAttribute("readonly") && c.matches(".fundo-vermelho")) {
-                    setTimeout(validacao.mostrarAlertaVermelho, 2500);
+            if (cel.matches(".fundo-vermelho") || celTotalParcialOutput.matches(".fundo-vermelho") 
+            || celTotalGeralOutput.matches(".fundo-vermelho"))  {
+                    setTimeout(() => {
+                        validacao.mostrarAlertaVermelho();
+                    }, 2500);
                 }
-            }
-        });
-        
-        // VALIDAR INPUT - NO LOAD DO WINDOWS
-        validacao.validarInput();
+         });
     });
 
     // FECHAR ALERTA VERMELHO
@@ -79,4 +70,5 @@ function eventos() {
 window.addEventListener("load", () => {
     inicializacao();
     eventos();
+    validacao.validarInput();
 });

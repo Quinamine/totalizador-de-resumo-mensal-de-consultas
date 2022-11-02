@@ -27,16 +27,23 @@ const referencia = {
         }
         
         const sexos = ["M", "F"];
-        const faixasEtarias = ["&le;10 A.", "10-14 A.", "15-19 A.", "20-24 A.", "&ge;25 A.", "&le;10 A.", "10-14 A.", "15-19 A.", "20-24 A.", "&ge;25 A."];
+        const faixasEtarias = ["0 - 11 meses", "1 - 4 anos", "5 - 14 anos", "15 - 24 anos", "25 - 59 anos", "&ge; 60 anos"];
 
         const sexoOutput = document.querySelector("output.ref-de-sexo");
         const faixaEtariaOutput = document.querySelector("output.ref-de-faixa-etaria");
 
-        if(celulaFocadaParentIndex < 5) {
+        if((celulaFocadaParentIndex + 1) % 2 === 0) {
             sexoOutput.textContent = sexos[0];
         } else {
             sexoOutput.textContent = sexos[1];
         }
+
+        if(celulaFocadaParentIndex < 2) celulaFocadaParentIndex = 0;
+        else if(celulaFocadaParentIndex < 4) celulaFocadaParentIndex = 1;
+        else if(celulaFocadaParentIndex < 6) celulaFocadaParentIndex = 2;
+        else if(celulaFocadaParentIndex < 10) celulaFocadaParentIndex = 3;
+        else if(celulaFocadaParentIndex < 12) celulaFocadaParentIndex = 4;
+        else if(celulaFocadaParentIndex < 14) celulaFocadaParentIndex = 5;
         faixaEtariaOutput.innerHTML = faixasEtarias[celulaFocadaParentIndex];
     }, 
 

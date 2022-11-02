@@ -103,7 +103,7 @@ article ol {
     margin-left: 30px;
 }
 
-article ul{
+article ul {
     list-style-type: disc;
 }
 
@@ -166,17 +166,13 @@ div.caixa-de-pesquisa button {
 div.caixa-de-pesquisa button {
     background-color: inherit;
     color: var(--yt);
-    font-size: 1rem;
+    font-size: 16px;
     margin-left: 2px;
 }
 
 div.caixa-de-pesquisa button:hover {
     background-color: var(--danger-color);
     border-radius: 2px;
-}
-
-div.caixa-de-pesquisa button:active {
-    opacity: .8;
 }
 
 div.caixa-de-alerta {
@@ -187,7 +183,7 @@ div.caixa-de-alerta {
     font-size: 14px;
     background-color: var(--yt);
     position: fixed;
-    top: calc(50vh - 113px / 2);
+    top: calc(50vh - 115px / 2);
     left: calc(50vw - 450px / 2);
     z-index: 25000;
     display: none;
@@ -229,10 +225,9 @@ div.caixa-de-alerta button:hover {
 }
 
 /* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
-
 div.caixa-de-confirmacao {
     min-width: 375px;
-    max-height: 100vh;
+    max-height: 90vh;
     overflow: auto;
     font-size: 13px;
     padding: 20px;
@@ -250,6 +245,12 @@ div.caixa-de-confirmacao {
         width: 95%;
         min-width: initial;
         left: calc(50vw - 95% / 2);
+    }
+}
+
+@media screen and (max-height: 443px) {
+    div.caixa-de-confirmacao {
+        top: calc(50vh - 90vh / 2);
     }
 }
 
@@ -315,6 +316,7 @@ div.caixa-de-confirmacao li label {
     align-self: center;
     margin-left: 4px;
     cursor: pointer;
+    flex: 1;
 }
 
 div.caixa-de-confirmacao li input {
@@ -471,12 +473,10 @@ div.linha-de-referencia {
         bottom: 0;
         z-index: 10000 !important;
         background-color: var(--footer-bgc);
-        box-shadow: 0 -1px 5px var(--gray-a);
-        z-index: 1;
     }
     
     div.coluna-de-referencia  {
-        max-width: 1150px;
+        max-width: 1300px;
         margin: 0 auto;
         padding: 4px 8px;
         display: flex;
@@ -503,7 +503,7 @@ div.linha-de-referencia {
     }
     
     div.coluna-de-referencia output.ref-de-faixa-etaria {
-        min-width: 60px;
+        min-width: 86px;
     }
 }
 
@@ -517,25 +517,15 @@ div.desfoque.on {
     z-index: 20000;
 }
 
-@media screen and (max-width: 1023px) {
-    div.desfoque {
-        transition: all 100ms ease;
-    }
-
-    div.desfoque.on {
-        top: 48px;
-    }
-}
-
 /* AVISO DE USO DE COOKIES  */
 div.aviso-de-uso-de-cookies {
     width: 100%;
     max-width: 1300px;
     padding: 15px;
     position: fixed;
-    right: calc(50vw - 1326px / 2);
+    right: calc(50vw - 1300px / 2);
     bottom: -132px;
-    font-size: 0.8125rem;
+    font-size: 13px;
     line-height: 1.5;
     background: var(--black-alpha-8); 
     color: var(--gray-d);

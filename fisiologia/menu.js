@@ -6,7 +6,6 @@ const menu = {
             readonlyCelsDarker.checked ? 
                 cel.classList.add("bg-gray") : 
                 cel.classList.remove("bg-gray");
-
         }
     },
 
@@ -141,20 +140,6 @@ const menu = {
             this.imprimirFicha();
         } else {
             document.querySelector("section#conversao-pdf").classList.add("on");
-        }
-
-        desfoqueDoFundo.on();
-    },
-
-    abrirOuFecharHamburguer() {
-        const menu = document.querySelector("section.menu");
-        if(hamburguer.matches(".on")) {
-            hamburguer.classList.remove("on");
-            menu.classList.remove("on");
-            desfoqueDoFundo.off();
-        } else {
-            hamburguer.classList.add("on");
-            menu.classList.add("on");
             desfoqueDoFundo.on();
         }
     }
@@ -279,7 +264,7 @@ function eventListeners() {
 
     // PARTILHAR
     let conteudo = {
-        title: "Totalizador de Resumo Mensal de SAAJ",
+        title: "Totalizador de Resumo Mensal de Consultas",
         text: "Totaliza automaticamente o respectivo resumo com base nos dados preenchidos pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
     }
@@ -298,9 +283,6 @@ function eventListeners() {
             console.log("O seu navegador não tem suporte ao método 'navigator.share()'.");
         }
     });
-
-    // HAMBURGUER
-    hamburguer.addEventListener("click", () => menu.abrirOuFecharHamburguer());
 }
 
 // FECHAR CAIXA DE ALERTA PELO ENTER

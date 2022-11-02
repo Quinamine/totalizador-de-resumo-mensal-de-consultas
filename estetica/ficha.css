@@ -33,6 +33,11 @@ input[readonly].bg-gray {
     background-color: var(--gray-c) !important;
 }
 
+input[type=number].fundo-vermelho {
+    background-color: var(--danger-color) !important;
+    color: var(--yt);
+}
+
 div.container input:focus {
     border-bottom: 2px solid var(--blue) !important;
 }
@@ -176,6 +181,11 @@ header.cabecalho-da-ficha h1 {
 header.cabecalho-da-ficha h1 input {
     width: 364px;
     font-size: 16px;
+    font-weight: initial;
+}
+
+header.cabecalho-da-ficha h1 input.bold {
+    font-weight: bold;
 }
 
 header.cabecalho-da-ficha span {
@@ -384,16 +394,10 @@ div.nota {
     }
 }
 
-@media screen and (max-width: 1312px) {
+@media screen and (max-width: 1300px) {
     div.linha.nota {
         padding-left: 0px;
         padding-right: 0px;
-    }
-}
-
-@media print {
-    div.nota.no-print {
-        display: none;
     }
 }
 
@@ -403,6 +407,16 @@ div.nota textarea {
     padding: 5px;
     line-height: 1.5;
     border: 1px solid var(--border-color);
+}
+
+@media print {
+    div.nota.no-print {
+        display: none;
+    }
+
+    div.nota textarea {
+        padding: 0;
+    }
 }
 
 div.nota textarea.bold {

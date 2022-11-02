@@ -17,10 +17,18 @@ const storage  = {
             dado.addEventListener("input", () => localStorage.setItem(`trmc-${dado.id}`, `${dado.value}`));
             dado.value = localStorage.getItem(`trmc-${dado.id}`);
 
+            function denegrirTexto(txt) {
+                txt.value !== "" ? 
+                txt.classList.add("bold") : 
+                txt.classList.remove("bold");
+            }
+
             if(dado.matches("#nota")) {
-                let denegrirNota = () => dado.value !== "" ? dado.classList.add("bold") : dado.classList.remove("bold");
-                dado.addEventListener("focusout", () => denegrirNota());
-                denegrirNota(); // NO LOAD DO WINDOWS 
+                dado.addEventListener("input", () => denegrirTexto(dado));
+                denegrirTexto(dado); // NO LOAD DO WINDOWS 
+            } else if(dado.matches(".h1-de-trmc")) {
+                dado.addEventListener("input", () => denegrirTexto(dado));
+                denegrirTexto(dado); // NO LOAD DO WINDOWS 
             }
         });
     },
