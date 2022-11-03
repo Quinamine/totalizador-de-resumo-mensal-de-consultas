@@ -2,6 +2,7 @@
 /* FORMATAÇÃO GERAL */
 input, textarea {
     border: none;
+    border-radius: 0;
     outline: none;
     color: var(--text-color);
     font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */

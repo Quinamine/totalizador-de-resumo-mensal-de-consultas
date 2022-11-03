@@ -473,6 +473,11 @@ div.linha-de-referencia {
         bottom: 0;
         z-index: 10000 !important;
         background-color: var(--footer-bgc);
+        transition: bottom 250ms ease;
+    }
+
+    div.linha-de-referencia.off {
+        bottom: -30px;
     }
     
     div.coluna-de-referencia  {

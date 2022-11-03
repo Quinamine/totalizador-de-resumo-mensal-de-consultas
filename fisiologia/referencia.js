@@ -70,3 +70,14 @@ window.addEventListener("load", () => {
         }
     });
 });
+
+// MOSTRAR OU OMITIR LINHA DE REFERENCIA
+window.addEventListener("scroll", () => {
+    const referencia = document.querySelector("div.linha-de-referencia");
+    const boundingReference = document.querySelector(".bounding-reference");
+    let PosicaoDaFicha = boundingReference.getBoundingClientRect().bottom;
+
+    PosicaoDaFicha < 0 ?
+        referencia.classList.add("off") : 
+        referencia.classList.remove("off");
+});
