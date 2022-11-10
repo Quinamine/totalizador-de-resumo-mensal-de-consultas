@@ -86,12 +86,6 @@ div.coluna-de-consultas-e-diagnosticos {
     div.linha-de-assinatura {
         position: initial;
     }
-
-    div.coluna-de-enumeracao-das-linhas span:nth-child(32),
-    div.coluna-de-consultas-e-diagnosticos *:nth-child(32),
-    div.inputs-container input:nth-child(32) {
-        border-top: 1px solid var(--fullblack);
-    }
 }
 
 /* MAIN CONTENT */
