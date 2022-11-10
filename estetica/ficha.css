@@ -87,11 +87,6 @@ div.coluna-de-consultas-e-diagnosticos {
         position: initial;
     }
 
-    div.emblema-e-republica,
-    div.ficha, div.nota {
-        visibility: visible;
-    }
-
     div.coluna-de-enumeracao-das-linhas span:nth-child(32),
     div.coluna-de-consultas-e-diagnosticos *:nth-child(32),
     div.inputs-container input:nth-child(32) {
@@ -109,7 +104,8 @@ div.container {
 
 @media print {
     div.container {
-        margin-top: 50px;
+        margin-top: 43px;
+        visibility: visible;
     }
 }
 
@@ -180,8 +176,8 @@ header.cabecalho-da-ficha h1 {
 }
 
 header.cabecalho-da-ficha h1 input {
-    width: 364px;
-    font-size: 16px;
+    width: 367px;
+    font-size: 19.5px;
     font-weight: initial;
 }
 
@@ -343,6 +339,7 @@ div.inputs-container {
 
 div.inputs-container input {
     text-align: center;
+    padding: 1px;
 }
 
 /* LINHA DE ASSINATURA */

@@ -1,7 +1,6 @@
 /* FORMATAÇÕES GERAIS */
 :root {
     --primary-color: #444444;
-    --secondary-color: #6985a7;
     --border-color: #888888;
     --anchor-color: #1558bc;
     --text-color: #333333;
@@ -45,16 +44,23 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--gray-d);
 }
 
 @media print {
     @page {
-        margin: 0.5cm;
+        margin: 0.5cm 0.5cm 1cm 0.5cm;
+        size: landscape;
+    }
+
+    @page :first {
+        margin-bottom: 0.5cm;
     }
     
     body {
         -webkit-print-color-adjust: exact;
         visibility: hidden;
+        background-color: var(--yt);
     }
 }
 
@@ -64,6 +70,7 @@ body.overflow-hidden {
 
 main {
     flex: 1;
+    background-color: var(--yt);
 }
 
 @media screen and (max-width: 1300px) {
@@ -188,6 +195,8 @@ body > footer {
 body > header {
     line-height: 2;
     box-shadow: 0 0 10px var(--gray-d);
+    background-color: var(--yt);
+    z-index: 1;
 }
 
 div.linha {
@@ -238,21 +247,11 @@ div.linha.do-cabecalho a.logo {
     }
 }
 
-div.linha.do-cabecalho a.logo span:nth-child(2) {
-    display: none;
-}
-
-@media screen and (max-width: 370px) {
-    div.linha.do-cabecalho a.logo span:nth-child(2) {
-        display: initial;
-        font-weight: initial;
-    }
-
-    div.linha.do-cabecalho a.logo span:nth-child(1) {
+@media screen and (max-width: 358px) {
+    div.linha.do-cabecalho a.logo span {
         display: none;
     }
 }
-
 
 /* SECÇÃO DE NAVEGAÇÃO */
 section.menu, 
@@ -278,6 +277,10 @@ section.menu ul li.partilha {
 }
 
 @media screen and (max-width: 1023px) {
+    section.menu ul li.partilha {
+        display: initial;
+    }
+
     section.menu,
     section.menu ul {
         width: 100%;
@@ -292,6 +295,10 @@ section.menu ul li.partilha {
         justify-content: center;
     }
 
+    section.menu li.sobre {
+        display: none;
+    }
+
     section.menu li button {
         width: 100%;
     }
@@ -300,10 +307,6 @@ section.menu ul li.partilha {
 @media screen and (max-width: 700px) {
     section.menu {
         min-width: 506px;
-    }
-
-    section.menu li.sobre {
-        display: none;
     }
 }
 
