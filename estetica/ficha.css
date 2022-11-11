@@ -26,7 +26,7 @@ input[readonly] {
 }
 
 input[readonly] {
-    cursor: context-menu;
+    cursor: default;
     transition: background-color 400ms ease-out;
 }
 

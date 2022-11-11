@@ -26,7 +26,7 @@ const storage  = {
             if(dado.matches("#nota")) {
                 dado.addEventListener("input", () => denegrirTexto(dado));
                 denegrirTexto(dado); // NO LOAD DO WINDOWS 
-            } else if(dado.matches(".h1-de-trmc")) {
+            } else if(dado.matches("#nome-da-us")) {
                 dado.addEventListener("input", () => denegrirTexto(dado));
                 denegrirTexto(dado); // NO LOAD DO WINDOWS 
             }
@@ -132,8 +132,10 @@ function escutarEventos() {
 }
 
 window.addEventListener("load", () => {
-    storage.salvarFicha();
-    storage.salvarDadosAdicionais();
-    storage.salvarDestaqueDeTotais();
+    if(typeof(Storage) !== "undefined") {
+        storage.salvarFicha();
+        storage.salvarDadosAdicionais();
+        storage.salvarDestaqueDeTotais();
+    }
     escutarEventos();
 });

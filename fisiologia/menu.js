@@ -33,7 +33,7 @@ const menu = {
             alerta.querySelector("b.entered-num").textContent = numLinha;
             alerta.classList.add("on");
             srcInput.setAttribute("readonly", "");
-            desfoqueDoFundo.on()
+            desfoqueDoFundo.on();
             this.resetarFundoDoNumeroDaLinha();
         }
 
@@ -73,26 +73,26 @@ const menu = {
 
                 if(celulasPreenchidas > 0) {
                     confirmacao.classList.add("on");
-                    desfoqueDoFundo.on()
+                    desfoqueDoFundo.on();
                 }
                 else {
                     const alerta = document.querySelector("div.caixa-de-alerta.ficha-vazia");
                     alerta.classList.add("on");
-                    desfoqueDoFundo.on()
+                    desfoqueDoFundo.on();
                 }
             },
 
             omitirCaixaDeConfirmacao: () => {
                 confirmacao.classList.remove("on");
-                desfoqueDoFundo.off()
+                desfoqueDoFundo.off();
             },
 
             limparDados: () => {   
 
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
-                    localStorage.removeItem(`trmc-cel${i}`);
-                    celulas[i].classList.remove("fundo-vermelho");
+                    typeof(Storage) !== "undefined" && localStorage.removeItem(`trmc-cel${i}`);
+                    inputValidation.adicionarOuRemoverFundoVermelho(celulas[i], "-");
                 };
 
                 const limpadoresDeDadosAdicionais = document.querySelectorAll("ul.limpadores-de-dados-adicionais input");
@@ -102,10 +102,16 @@ const menu = {
                         const IdDoDadoAdicional = limpador.dataset.for; 
                         const dadoAdicional = document.querySelector(`#${IdDoDadoAdicional}`);
                         dadoAdicional.value = "";
-                        localStorage.removeItem(`trmc-${IdDoDadoAdicional}`);
+                        typeof(Storage) !== "undefined" && localStorage.removeItem(`trmc-${IdDoDadoAdicional}`);
+
+                        // Eliminar o negrito destes elementos para o placeholder não ficar muito nítido
+                        if(IdDoDadoAdicional === "nome-da-us"
+                        || IdDoDadoAdicional === "nota") {
+                            dadoAdicional.classList.remove("bold");
+                        }
                     }
                 }); 
-                desfoqueDoFundo.off()  
+                desfoqueDoFundo.off();
             }
         }
     },
@@ -197,7 +203,7 @@ function eventListeners() {
         btn.addEventListener("click", () => {
             btn.parentElement.classList.remove("on");
             srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-            desfoqueDoFundo.off()
+            desfoqueDoFundo.off();
         })
     }
 
@@ -215,7 +221,7 @@ function eventListeners() {
             } else {
             document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
             }           
-            desfoqueDoFundo.on()
+            desfoqueDoFundo.on();
         })
     });
 
@@ -308,9 +314,13 @@ window.addEventListener("keyup", event => {
     
     if(key.toLowerCase() === "enter") {
         const caixasDeAlerta = document.querySelectorAll("div.caixa-de-alerta");
-        caixasDeAlerta.forEach ( caixa => caixa.classList.remove("on"));
-        srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-        desfoqueDoFundo.off()
+        caixasDeAlerta.forEach ( caixa => {
+            if(caixa.matches(".on")) {
+                caixa.classList.remove("on");
+                srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
+                desfoqueDoFundo.off();
+            }
+        });
     }
 });
 
