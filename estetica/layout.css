@@ -157,7 +157,7 @@ h6 {
     font-size: 14px;
 }
 
-b, strong,.destaque {
+b, strong, .destaque {
     font-weight: bold;
 }
 
@@ -365,6 +365,12 @@ section.menu ul li:first-child:active {
 body > footer {
     background-color: var(--footer-bgc);
     padding: 40px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    body > footer {
+        padding: 20px 0;
+    }
 }
 
 div.linha.do-rodape {

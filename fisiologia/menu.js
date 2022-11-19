@@ -203,6 +203,7 @@ function eventListeners() {
         btn.addEventListener("click", () => {
             btn.parentElement.classList.remove("on");
             srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
+			srcInput.select(); 
             desfoqueDoFundo.off();
         })
     }
@@ -288,7 +289,7 @@ function eventListeners() {
     // PARTILHAR
     let conteudo = {
         title: "Totalizador de Resumo Mensal de Consultas",
-        text: "Totaliza automaticamente o respectivo resumo com base nos dados preenchidos pelo usuário (Profissional de Saúde).",
+        text: "É um serviço online gratuito queauxilia na elaboração do resumo mensal de consultas externas através do cálculo automático dos subtotais e totais a partir dos dados preenchidos pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
     }
 
@@ -318,6 +319,7 @@ window.addEventListener("keyup", event => {
             if(caixa.matches(".on")) {
                 caixa.classList.remove("on");
                 srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
+				srcInput.select(); 
                 desfoqueDoFundo.off();
             }
         });
