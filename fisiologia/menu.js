@@ -289,7 +289,7 @@ function eventListeners() {
     // PARTILHAR
     let conteudo = {
         title: "Totalizador de Resumo Mensal de Consultas",
-        text: "É um serviço online gratuito queauxilia na elaboração do resumo mensal de consultas externas através do cálculo automático dos subtotais e totais a partir dos dados preenchidos pelo usuário (Profissional de Saúde).",
+        text: "O Totalizador de Resumo Mensal de Consultas é um serviço online gratuito que auxilia na elaboração do resumo mensal de consultas externas, através do cálculo automático dos subtotais e totais a partir dos dados preenchidos pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
     }
 
