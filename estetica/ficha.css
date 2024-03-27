@@ -1,237 +1,222 @@
 ﻿
 
-header.cabecalho-da-ficha h1 input.bold,input[readonly],input[type=date],input[type=text] {
-    font-weight: 700
-}
 
-
-
-input[readonly].bg-gray {
-    background-color: var(--gray--c)!important
-}
-
-input[type=number].fundo-vermelho {
-    background-color: var(--danger-color)!important;
-    color: var(--yt)
-}
-
-div.container input:focus {
-    border-bottom: 2px solid var(--blue)!important
-}
-
-div.coluna-de-consultas-e-diagnosticos,div.coluna-de-consultas-e-diagnosticos div.grade div.titulo,div.coluna-de-enumeracao-das-linhas span,div.inputs-container input,header.cabecalho-da-ficha span {
-    border-right: 1px solid var(--border-color)
-}
-
-div.coluna-de-consultas-e-diagnosticos div.grade div.titulo,div.coluna-de-consultas-e-diagnosticos span,div.coluna-de-enumeracao-das-linhas span,div.coluna-de-titulos-das-secoes-das-linhas div,div.container input,div.container input[readonly]:focus {
-    border-bottom: 1px solid var(--border-color)!important
-}
-
-div.coluna-de-consultas-e-diagnosticos,div.coluna-de-enumeracao-das-linhas span,div.linha-de-faixas-etarias span:first-child,div.linha-de-sexo span:first-child {
-    border-left: 1px solid var(--border-color)
-}
-
-div.container {
-    max-width: 1300px;
-    min-width: 1300px;
+.main {
+    max-width: var(--layout-width);
+    min-width: var(--layout-width);
     margin: 30px auto 10px;
-    position: relative
+    position: relative;
 }
 
-div.emblema-e-republica,div.republica {
+@media print {
+    div.main {
+        margin-top: 43px;
+        visibility: visible
+    }
+}
+ 
+
+.main__linha-de-emblema {
     display: flex;
     align-items: center
 }
 
-div.emblema-e-republica {
+.main__linha-de-emblema {
     position: absolute;
     top: -30px;
     z-index: 4000;
 }
 
-div.emblema-e-republica figure {
+.main__moldura-de-emblema {
     margin: 0;
     width: 65px;
     height: 65px
 }
 
-div.emblema-e-republica figure img {
+.main__emblema {
     height: 100%
 }
 
-div.republica {
+.linha-de-emblema__col-de-republica {
+    display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.5
+    line-height: 1.5;
+    padding-left: 6px;
 }
 
-div.republica span {
+.main__emblema-info {
     text-transform: uppercase
 }
 
-div.ficha {
+.ficha {
     display: grid;
-    grid-template-columns: 20px 90px 238px repeat(19,50px)
+    grid-template-columns: 24px 90px 238px repeat(19,50px)
 }
 
-header.cabecalho-da-ficha {
+.ficha__header {
     grid-column: 3/23;
-    position: -webkit-sticky;
     position: sticky;
     top: -36px;
-    background-color: var(--yt)
+    background-color: var(--yt);
 }
 
-header.cabecalho-da-ficha h1 {
+@media print {
+    .ficha__header {
+        position: initial;
+        top: 0;
+    }
+}
+
+.ficha__titulo {
     margin: 0 0 0 236px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.5
 }
 
-header.cabecalho-da-ficha h1 input {
+.ficha__titulo__label {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.ficha__titulo__sup {
+    font-size: 15px;
+}
+
+.ficha__titulo__input-us {
     width: 367px;
-    font-size: 19.5px;
-    font-weight: initial
+    font-size: 18px;
+    font-weight: initial;
+    margin-bottom: 4px;
 }
 
-header.cabecalho-da-ficha span {
-    border-top: 1px solid var(--border-color)
-}
-
-header.cabecalho-da-ficha div.linha-de-enumeracao-das-colunas,header.cabecalho-da-ficha div.linha-de-sexo {
+.ficha__linha-de-enumeracao-das-colunas,
+.ficha__linha-de-sexo {
     display: grid;
     grid-template-columns: 238px repeat(19,50px);
     grid-template-rows: 24px;
-    text-align: center
+    text-align: center;
 }
 
-header.cabecalho-da-ficha div.linha-de-enumeracao-das-colunas {
+.ficha__linha-de-enumeracao-das-colunas {
     grid-template-rows: 18px
 }
 
-div.linha-de-enumeracao-das-colunas div.contentor-de-mes {
-    text-align: left
+.ficha__col-de-mes {
+    text-align: left;
 }
 
-div.linha-de-enumeracao-das-colunas div.contentor-de-mes input {
+.ficha__campo-para-mes {
     width: 84%;
     font-weight: 700;
-    border-bottom: none
 }
 
-div.linha-de-enumeracao-das-colunas span {
+.ficha__num-de-col {
     background-color: var(--primary-color);
     color: var(--gray--d);
-    border-color: var(--gray--a)
+    border-color: var(--gray--a);
+    font-weight: bold;
 }
 
-div.linha-de-enumeracao-das-colunas span.marginleft--1 {
-    margin-left: -1px
-}
-
-div.linha-de-enumeracao-das-colunas span:last-child {
-    border-right: none
-}
-
-header.cabecalho-da-ficha div.linha-de-faixas-etarias {
+.ficha__linha-de-faixas-etarias {
     display: grid;
     grid-template-columns: 238px repeat(9,100px) 50px;
     grid-template-rows: 24px;
     text-align: center
 }
 
-div.linha-de-sexo span.sem-borda-superior {
-    border-top: none
+.ficha__header__var-sexo-ou-idade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-div.borda-escura {
+.ficha__borda-limite-header-body {
     grid-row: 2;
     grid-column: 1/23;
     width: 100%;
-    height: 10px;
+    height: 12px;
     background-color: var(--primary-color)
 }
 
-div.coluna-de-consultas-e-diagnosticos,div.coluna-de-enumeracao-das-linhas,div.coluna-de-titulos-das-secoes-das-linhas,div.inputs-container {
-    grid-row: 3
-}
-
-div.coluna-de-enumeracao-das-linhas,div.inputs-container {
+.ficha__col-de-enumeracao-das-linhas {
+    grid-row: 3;
     display: grid;
     grid-template-rows: repeat(53,24px)
 }
 
-div.coluna-de-enumeracao-das-linhas span,div.coluna-de-titulos-das-secoes-das-linhas div,header.cabecalho-da-ficha span {
+.ficha__num-de-linha {
     display: flex;
     justify-content: center;
-    align-items: center
-}
-
-div.coluna-de-enumeracao-das-linhas span {
+    align-items: center;
     background-color: var(--primary-color);
     color: var(--gray--d);
-    border-bottom-color: var(--gray--a)!important;
+    border-color: var(--gray--a);
     font-weight: 700;
+    font-size: 16px;
 }
 
-div.coluna-de-enumeracao-das-linhas span.fundo-laranja {
+.ficha__num-de-linha--highlight {
     background-color: var(--orange);
     color: var(--yt)
 }
 
-div.coluna-de-titulos-das-secoes-das-linhas {
+.ficha__container-row-groups {
+    grid-row: 3;
     display: grid;
     grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2,calc(24px*3))
 }
 
-div.coluna-de-titulos-das-secoes-das-linhas div span {
+.ficha__row-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ficha__row-group-title {
     text-align: center;
     font-weight: 700;
+    letter-spacing: .5px;
     transform: rotate(270deg)
 }
 
-div.coluna-de-consultas-e-diagnosticos {
+.ficha__col-de-indicadores {
+    grid-row: 3;
     display: grid;
-    grid-template-rows: repeat(38,24px) 48px 24px repeat(3,48px) repeat(6,24px)
+    grid-template-rows: repeat(38,24px) 48px 24px repeat(3,48px) repeat(6,24px);
 }
 
-div.coluna-de-consultas-e-diagnosticos span {
+.ficha__indicador {
     display: flex;
     align-items: center;
     padding: 0 4px
 }
 
-div.coluna-de-consultas-e-diagnosticos div.grade {
+.ficha__grid-de-indicador {
     display: grid;
     grid-template-columns: 80px 1fr
 }
 
-div.coluna-de-consultas-e-diagnosticos div.grade div.titulo {
+.ficha__container-de-indicador {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700
 }
 
-div.coluna-de-consultas-e-diagnosticos div.titulo span {
-    border-bottom: none!important
-}
-
-div.coluna-de-consultas-e-diagnosticos div.grade div.indicadores {
+.ficha__container-de-subindicadores {
     display: grid;
-    grid-template-rows: repeat(2,24px)
+    grid-template-rows: repeat(2,24px);
 }
 
-div.inputs-container {
-    grid-template-columns: 50px
+/* Celulas de entrada */
+.ficha__col-de-inputs {
+    display: grid;
+    grid-row: 3;
+    grid-template-columns: 50px;
 }
 
-div.inputs-container input {
-    text-align: center;
-    padding: 1px
-}
-
-footer.linha-de-assinatura {
+.ficha__footer {
     grid-row: 4;
     grid-column: 1/9;
     display: flex;
@@ -239,89 +224,38 @@ footer.linha-de-assinatura {
     margin: 15px 0 10px
 }
 
-footer.linha-de-assinatura input {
-    font-weight: bold;
-}
 
-footer.linha-de-assinatura div.contentor-do-nome-do-profissional {
+.ficha__linha-de-assinatura {
     min-height: 18px;
     margin-bottom: 15px
 }
 
-footer.linha-de-assinatura div.contentor-do-nome-do-profissional input {
+.ficha__campo-de-assinatura {
     width: 323px
 }
 
-footer.linha-de-assinatura div.linha-de-categoria-e-data {
+@-moz-document url-prefix() {
+    .ficha__campo-de-assinatura {
+        width: 315px
+    }
+}
+
+.ficha__linha-de-categoria-e-data {
     display: flex;
     justify-content: space-between;
     min-height: 22.38px
 }
 
-div.linha-de-categoria-e-data input#categoria {
+.ficha__campo-de-categoria {
     width: 276px
 }
 
-div.nota {
-    margin-bottom: 20px;
-    min-height: 79px
-}
 
-@-moz-document url-prefix() {
-    footer.linha-de-assinatura div.contentor-do-nome-do-profissional input {
-        width: 315px
-    }
-
-    div.nota {
-        min-height: 96px
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    div.coluna-de-consultas-e-diagnosticos,div.linha-de-assinatura,div.linha-de-faixas-etarias span:first-child,div.linha-de-sexo span:first-child {
+@media screen and (max-width: var(--layout-width)) {
+    .--position-sticky-on-screen-s {
         position:-webkit-sticky;
         position: sticky;
         left: -15px;
         background-color: var(--yt)
     }
-
-    div.linha.nota {
-        padding-left: 0;
-        padding-right: 0
-    }
-}
-
-div.nota textarea {
-    font: 14px/1.5 san-serif,Arial,Helvetica;
-    min-width: 880px;
-    padding: 5px;
-    border: 1px solid var(--border-color)
-}
-
-@media print {
-    div.coluna-de-consultas-e-diagnosticos,div.linha-de-assinatura,div.linha-de-faixas-etarias span:first-child,div.linha-de-sexo span:first-child,header.cabecalho-da-ficha {
-        position: initial
-    }
-
-    div.container {
-        margin-top: 43px;
-        visibility: visible
-    }
-
-    div.nota.no-print {
-        display: none
-    }
-
-    div.nota textarea {
-        padding: 0
-    }
-}
-
-div.nota textarea.bold {
-    font-weight: 700;
-    border-color: transparent
-}
-
-div.nota textarea:focus {
-    border: 2px solid var(--blue)
 }
