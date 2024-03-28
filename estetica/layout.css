@@ -23,6 +23,7 @@
     --blue: #0060EE;
     --purple: rgb(116, 116, 235);
     --orange: #faa032;
+    --brown: brown;
 
     /* Tamanhos */
     --layout-width: 1304px;
@@ -40,6 +41,7 @@
 }
 
 .body {
+    color: var(--text-color);
     font-size: 12px;
     min-height: 100vh;
     display: flex;
@@ -109,7 +111,7 @@
     cursor: pointer;
 }
 
-.header__item--flexible {
+.header__child--flex {
     display: flex;
     align-items: center;
 }
@@ -227,7 +229,8 @@
 }
 
 .ficha__campo-de-nota {
-    font: 14px/1.5 san-serif,Arial,Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
     min-width: 880px;
     padding: 5px;
     border: var(--border-style)
@@ -342,6 +345,17 @@
 }
 
 /* Classes Reutilizaveis */
+.body__child--flex-xy-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__child--flex-y-center {
+    display: flex;
+    align-items: center;
+}
+
 .--border {
     border: var(--border-style);
 }
@@ -372,7 +386,7 @@
 
 
 /* Manipulacao com JS */
-.main__cell--highlighted {
+.main__cell--highlight {
     background-color: gray;
 }
 
