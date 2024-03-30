@@ -1,7 +1,8 @@
+
+
+
 article section,article section button.fechar-artigo {
-    top: calc(50vh - 90vh / 2);
-    right: calc(50vw - 700px / 2);
-    background-color: var(--yt)
+
 }
 
 article section,div.caixa-de-confirmacao {
@@ -10,14 +11,6 @@ article section,div.caixa-de-confirmacao {
     position: fixed
 }
 
-article section {
-    font-size: 14px;
-    min-height: 90vh;
-    max-width: 700px;
-    z-index: 50000;
-    padding: 20px;
-    display: none
-}
 
 article section.on,div.caixa-de-alerta.on,div.caixa-de-confirmacao.on {
     display: block
@@ -40,7 +33,7 @@ article section button.fechar-artigo:hover,div.botoes-de-confirmacao button.conf
     color: var(--yt)
 }
 
-div.linha-de-referencia,section#cookies button.fechar-artigo svg {
+section#cookies button.fechar-artigo svg {
     display: none
 }
 
@@ -112,30 +105,6 @@ div.linha-de-referencia,section#cookies button.fechar-artigo svg {
     section#cookies button.fechar-artigo svg {
         display: initial
     }
-}
-
-article dl dt:before {
-    margin-right: 6px
-}
-
-article dl dt#um:before {
-    content: "1."
-}
-
-article dl dt#dois:before {
-    content: "2."
-}
-
-article dl dt#tres:before {
-    content: "3."
-}
-
-article li {
-    padding-left: 3px
-}
-
-article ol,article ul {
-    margin-left: 30px
 }
 
 article ul {

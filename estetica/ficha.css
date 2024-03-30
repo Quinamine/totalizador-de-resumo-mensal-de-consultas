@@ -4,13 +4,12 @@
 .main {
     max-width: var(--layout-width);
     min-width: var(--layout-width);
-    margin: 30px auto 10px;
+    margin: 43px auto 10px;
     position: relative;
 }
 
 @media print {
     div.main {
-        margin-top: 43px;
         visibility: visible
     }
 }
@@ -56,7 +55,7 @@
 }
 
 .ficha__titulo {
-    margin-left: 239px;
+    margin-left: 238px;
     font-size: 24px;
     line-height: 1.5
 }
@@ -80,7 +79,7 @@
 .ficha__container-de-modelo-e-codigo {
     position: absolute;
     right: 0;
-    top: -21px;
+    top: -20px;
     min-height: 54px;
     display: flex;
     flex-direction: column;
