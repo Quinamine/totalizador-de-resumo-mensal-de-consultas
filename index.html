@@ -5,12 +5,12 @@
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <title>Totalizador de Resumo Mensal de Consultas</title>
     <meta content="index, follow" name=robots>
-    <meta content="Serviço online gratuito que auxilia na elaboração do resumo mensal de consultas externas, totalizando-o automaticamente, a partir dos dados inseridos pelo usuário (Profissional de Saúde). A sua estrutura é idêntica ao modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique." name=description>
+    <meta content="serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas actualmente vigente no Serviço Nacional de Saúde em Moçambique." name=description>
     <meta content="Totalizador de Resumo Mensal de Consultas, Totalizador de Relatório Mensal de Consultas, Ficha de Resumo Mensal de Consultas Externas." name=keywords>
     <meta content="Adérito Félix Quinamine" name=author>
     <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html property=og:url>
     <meta content="Totalizador de Resumo Mensal de Consultas" property=og:title>
-    <meta content="SServiço online gratuito que auxilia na elaboração do resumo mensal de consultas externas, totalizando-o automaticamente, a partir dos dados inseridos pelo usuário (Profissional de Saúde). A sua estrutura é idêntica ao modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde (SNS) em Moçambique." property=og:description>
+    <meta content="serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas actualmente vigente no Serviço Nacional de Saúde em Moçambique." property=og:description>
     <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/totalizador-de-resumo-mensal-de-consultas.png property=og:image>
     <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
     <link href=estetica/reset.css rel=stylesheet>
@@ -34,8 +34,8 @@
     <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Totalizador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
 
     <body id="html__body" class="body" ontouchstart="">
-        <header class="header body__block-primary">
-            <div class="body__layout-row header__row body__child--flex-y-center">
+        <header class="header">
+            <div class="layout-row header__row body__child--flex-y-center">
                 <a href=index.html class=header__logo>
                     Totalizador de Resumo <span class="header__logo-word--hide-on-screen-s">Mensal</span>
                     de Consultas
@@ -65,7 +65,7 @@
                 </nav>
             </div>
         </header>
-        <main class="body__block-primary main">
+        <main class="main">
             <div class="main__linha-de-emblema body__child--flex-y-center">
                 <figure class="main__moldura-de-emblema">
                     <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
@@ -116,7 +116,7 @@
                                 <option value="Dezembro"></option>
                             </datalist>
                         </div>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r --margin-left-negative">1</span>
+                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r --margin-l-negative">1</span>
                         <span class="ficha__num-de-col body__child--flex-xy-center --border-r">2</span>
                         <span class="ficha__num-de-col body__child--flex-xy-center --border-r">3</span>
                         <span class="ficha__num-de-col body__child--flex-xy-center --border-r">4</span>
@@ -138,7 +138,7 @@
                     </div>
                     <div class=ficha__linha-de-faixas-etarias>
                         <span class="body__child--flex-xy-center --border-t --border-r --border-l --position-sticky-on-screen-s">Faixas Etárias</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-left-negative">0 - 11 meses</span>
+                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">0 - 11 meses</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">1 - 4 anos</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">5 - 14 anos</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">SUBTOTAL</span>
@@ -151,7 +151,7 @@
                     </div>
                     <div class=ficha__linha-de-sexo>
                         <span class="body__child--flex-xy-center --border-t --border-r --border-l --position-sticky-on-screen-s">Sexo</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-left-negative">F</span>
+                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">F</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
@@ -1420,101 +1420,207 @@
             </div>
 
             <div class="reference-container">
-                <div class="body__layout-row reference-row">
+                <div class="layout-row reference-row">
                     <span>Indicador:</span> <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center --fw-700"></output>
                     <span>Faixa etária:</span> <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700"></output>
                     <span>Sexo:</span> <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
-        <section class="section-artigos">
+        
+        <section class="dialog-boxes">
+            <div class="dialog-box dialog-box-alerta-de-aqd --border">
+                <p>
+                    A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.
+                </p>
+                <div class="dialog-box__btn-container">
+                    <button class=dialog-box__btn>Entendi</button>
+                </div>
+            </div>
+
+            <div class="dialog-box-ir-para body__child--flex-y-center">
+                <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Número da linha">
+                <button class=dialog-box-ir-para__btn title=Fechar>×</button>
+            </div>
+            <div class="dialog-box-esvaziar-ficha  --open">
+                <h3 class="dialog-box-esvaziar-ficha__title --fw-700">Esvaziar ficha</h3>
+                <p>Tem certeza de que pretende esvaziar a ficha?
+                <div class=dialog-box-esvaziar-ficha__svg-container>
+                    <svg style=width:40px;height:40px>
+                        <linearGradient id=meuGradiente x1=0% x2=0% y1=0% y2=100%>
+                            <stop offset=0% style=stop-color:gray></stop>
+                            <stop offset=100% style=stop-color:#ff0></stop>
+                        </linearGradient>
+                        <polygon fill=url(#meuGradiente) points="20,0 40,40, 0,40" stroke=#333 stroke-width=1></polygon>
+                        <text style=font-weight:700;font-size:28px x=15.335 y=35.5>!</text>
+                    </svg>
+                    <p class="dialog-box-esvaziar-ficha__last-p">Esta acção não pode ser desfeita.
+                </div>
+                <h4 class="dialog-box-esvaziar-ficha__title --fw-700">Dados adicionais</h4>
+                <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
+                    <li>
+                        <input type=checkbox id=nome-da-us checked data-for=us>
+                        <label for=nome-da-us>Nome da US</label>
+                    <li>
+                        <input type=checkbox id=month checked data-for=mes>
+                        <label for=month>Mês</label>
+                    <li>
+                        <input type=checkbox id=nome-do-compilador checked data-for=compilador>
+                        <label for=nome-do-compilador>
+                            Nome do Responsável pelo preenchimento
+                        </label>
+                    <li>
+                        <input type=checkbox id=data-de-elaboracao checked data-for=data>
+                        <label for=data-de-elaboracao>Data de elaboração</label>
+                    <li>
+                        <input type=checkbox id=nota-do-resumo checked data-for=nota>
+                        <label for=nota-do-resumo>Comentários</label>
+                </ul>
+                <div class=dialog-box-esvaziar-ficha__btns-container>
+                    <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn-cancelar">Cancelar</button>
+                    <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn-confirmar">Confirmar</button>
+                </div>
+            </div>
+            
+            <div class="dialog-box dialog-box-response-to-user-action --border">
+                <p class="response-to-user-action">
+                    Os totais estão interditos para assegurar que não sejam modificados.
+                </p>
+                <div class="dialog-box__btn-container">
+                    <button class=dialog-box__btn>Fechar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sessao-de-artigos">
             <article class="artigo artigo__sobre">
-                <h2 class="artigo__titulo artigo__titulo-main">Visão geral sobre o totalizador</h2>
+                <h2 class="artigo__titulo artigo__titulo-nivel-1">Visão geral sobre o totalizador</h2>
                 <figure>
-                    <img alt="Totalizador de Resumo Mensal de Consultas" src=imagens/totalizador-de-resumo-mensal-de-consultas.png class="artigo__previa">
+                    <img alt="Totalizador de Resumo Mensal de Consultas" src=imagens/totalizador-de-resumo-mensal-de-consultas.png class="artigo-sobre__img">
                 </figure>
                 
                 <p>
                     O <b>Totalizador de Resumo Mensal de Consultas</b> é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas actualmente vigente no Serviço Nacional de Saúde em Moçambique.
                 </p>
 
-                <h3 class="artigo__titulo artigo__subtitulo-n3">Objectivos</h3>
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Objectivos</h3>
 
-                <ul class="artigo__lista-nao-ordenada">
-                    <li>Calcular, correcta e automaticamente, os totais;</li>
-                    <li>Preencher, automaticamente, os totais nas células correspondentes;</li>
+                <ul class="artigo__lista artigo__ul">
+                    <li>Calcular correcta e automaticamente os totais;</li>
+                    <li>Preencher automaticamente os totais nas células correspondentes;</li>
                     <li>Minimizar possíveis erros de totalização, sobretudo por confusão (por exemplo, somar inadvertidamente células não correspondentes ou registar o total da linha A, na linha B);</li>
-                    <li>Minimizar a cobrança de fichas de resumos mensais ao Responsável de <abbr title="Núcleo de Estatística Distrital">NED</abbr>, nas vésperas do dia 21 de cada mês, pois os <a href="https://quinamine.github.io/aderito-felix-quiinamine/paginas/portfolio.html" target="_blank">totalizadores</a> também constituem uma fonte universal de algumas fichas de resumos mensais para todos com acesso à internet.</li>
+                    <li >Minimizar a cobrança de fichas de resumos mensais ao Responsável de <abbr title="Núcleo de Estatística Distrital">NED</abbr>, nas vésperas do dia 21 de cada mês, pois os <a href="https://quinamine.github.io/aderito-felix-quiinamine/paginas/portfolio.html" target="_blank">totalizadores</a> também constituem uma fonte universal de algumas fichas de resumos mensais para todos com acesso à internet.</li>
                 </ul>
 
-                <h3 class="artigo__titulo artigo__subtitulo-n3">O que eu preciso dispor para, e como utilizar o totalizador?</h3>
+                <h3 class="artigo__titulo artigo__titulo-nivel-2 ">O que eu preciso dispor para, e como utilizar o totalizador?</h3>
 
-                <ul class="artigo__lista-nao-ordenada">
+                <ul class="artigo__lista artigo__ul">
                     <li>Um telemóvel ou computador com acesso à internet.</li>
                     <li>Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de consultas externas) da sua Unidade Sanitária.</li>
-                    <li>E por fim, preencher os dados nas celulas correspondentes quanto ao indicador e variáveis (sexo e faixa etária), e consequentemente os respectivos totais são correcta e automaticamente calculados em tempo real.</li>
+                    <li>E por fim, preencher os dados nas células correspondentes quanto ao indicador e variáveis (sexo e faixa etária), e consequentemente os respectivos totais são, correcta e automaticamente, calculados em tempo real.</li>
                 </ul>
 
-                <p class="artigo__txt--destaque">A utilização do totalizador é sinónima de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do relatório, você é o único responsável pela veracidade e qualidade dos dados preenchidos e, portanto, pela lógica do relatório. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.</p>
+                <p class="artigo__p--destaque">A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.</p>
 
-                <h3 class="artigo__titulo artigo__subtitulo-n3">Qual é o destino dos dados que eu insiro?</h3>
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Qual é o destino dos dados que eu insiro?</h3>
 
-                <p>São guardados localmente (no navegador que estiver a usar), por meio de um recurso chamado webstorage e você tem total controle sobre esses, podendo mantê-los ou apagá-los por meio da opção "Esvaziar ficha" ou esvaziando o histórico (inclusíve os cookies) do seu navegador.</p>
+                <p>São guardados localmente (no navegador que estiver a usar), por meio de um recurso chamado <a href="http://" target="_blank">Webstorage</a> e você tem total controle sobre esses, podendo mantê-los ou apagá-los por meio da opção "<b>Esvaziar ficha</b>" no menu do totalizador ou esvaziando o histórico (inclusíve os cookies) do seu navegador.</p>
 
-                <h3 class="artigo__titulo artigo__subtitulo-n3">Vantagens do totalizador</h3>
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Vantagens do totalizador</h3>
 
-                <ul class="artigo__lista-nao-ordenada">
-                    <li>Calcula, automaticamente, os totais;</li>
-                    <li>Preenche, automaticamente, as células correspondentes aos totais;</li>
+                <ul class="artigo__lista artigo__ul">
+                    <li>Calcula automaticamente os totais;</li>
+                    <li>Preenche automaticamente as células correspondentes aos totais;</li>
                     <li>Fornece resultados (totais) exactos;</li>
                     <li>Flexibiliza a elaboração do resumo;</li>
-                    <li>Pode ser impresso, inclusíve como simples ficha de resumo mensal;</li>
-                    <li>Pode ser guardado como PDF.</li>
+                    <li>Pode ser impresso, inclusíve como uma simples ficha de resumo mensal;</li>
+                    <li >Pode ser guardado como PDF.</li>
                 </ul>
 
-                <h3 class="artigo__titulo artigo__subtitulo-n3">Limitações do totalizador</h3>
+                <h3 class="artigo__titulo artigo__titulo-nivel-2">Limitações do totalizador</h3>
                     
-                <ul class="artigo__lista-nao-ordenada">
+                <ul class="artigo__lista artigo__ul">
                     <li>Não alerta sobre discrepância de dados, portanto, a análise da qualidade e lógica do resumo é inteiramente dependente do usuário;</li>
                     <li>Disponibilidade remota (é necessário um telemóvel ou computador com acesso à internet para ser acessado);</li>
                     <li>Pode necessitar de custos monetários (mínimos) para sua impressão.</li>
                 </ul>
-                <button class="artigo__btn-fechar">&times;</button>
+                <button class="artigo__btn-fechar" title="Fechar">&times;</button>
             </article>
 
-            <article class="artigo artigo__ajuda">
-                <h2 class="artigo__titulo artigo__titulo-main"><span class="artigo__titulo__trecho">Totalizador de Resumo Mensal de Consultas &raquo;</span> Ajuda e Procedimentos</h2>
+            <article class="artigo artigo-ajuda">
+                <h2 class="artigo__titulo artigo__titulo-nivel-1 artigo__titulo-nivel-1--borda-grossa">Ajuda e Procedimentos</h2>
 
-                <button class="artigo__btn-fechar">&times;</button>
-
-                <details open>
+                <details>
                     <summary>Realçar totais</summary>
-                    <p>Adiciona um fundo cinza a todas as celulas dos totais.</p>
-                </details>
-                <details open>
-                    <summary>Ir para a linha...</summary>
-                    <p>Abre um campo no qual pode digitar um número de linha, entre 1 e 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
-                </details>
-                <details open>
-                    <summary>Esvaziar ficha</summary>
-                    <p>Comando para limpar as celulas da ficha após a confirmação da acção na caixa de diálogo que abre.</p>
-                    
-                    <p>Também permite esvaziar campos adicionais (Província, Distrito, US, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "certo", indicando deste modo que o conteúdo contido nos respectivos campos, será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
-
+                    <p>Adiciona um fundo cinza a todas as células dos totais. Estas têm o acesso interdito e a funcionalidade de realçá-las, permite facilmente distinguir estas de outras células. Muito útil em dispositivos móveis.</p>
                 </details>
                 <details>
-                    <summary>Salvar ficha como PDF</summary>
+                    <summary >Ir para a linha...</summary>
+                    <p>Abre um campo, no qual pode digitar um número de linha entre 1 à 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
                 </details>
-                <details open>
-                    <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
-                    <p>As celulas do totalizador têm um diâmetro para conter, visivelmente, 6 algarismos no máximo, isto é, apenas mostram valores de até no máximo 999999. Quando a celula recebe um número com mais de 6 algarismos, dá um alerta ao usuário ficando vermelha e, eventualmente, mostrando uma mensagem de texto com informação sobre a omissão dos algarismos e o real motivo.</p>
+                <details>
+                    <summary>Esvaziar ficha</summary>
+                    <p>Comando para limpar as células da ficha após a confirmação da acção na caixa de diálogo que abre.</p>
+                    
+                    <p>Também permite esvaziar campos adicionais (Província, Distrito, US, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando, deste modo, que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
 
-                    <p class="artigo__txt--destaque">Para um meio como Moçambique, em que o número de habitantes é de cerca de 33 milhoes (de acordo com dados demograficos de 2019), com certeza, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados acima de 999999 (de qualquer que seja a natureza do indicador).</p>
+                    <figure>
+                        <img src="imagens/esvaziamento-da-ficha.png" alt="Caixa de diálogo de esvaziamento da ficha"/>
+                    </figure>
+
                 </details>
+                <details class="details-salvar-ficha-como-pdf">
+                    <summary>Salvar ficha como PDF</summary>
+                    <h3 class="artigo__titulo artigo__titulo-nivel-2 details__titulo-nivel-2">No computador:</h3>
+                    <ol class="artigo__lista artigo__ol">
+                        <li>
+                            Clique na opção <mark>Imprimir</mark> no menu do totalizador.
+                        <li>
+                            Na janela que abrirá, no campo de <mark>Impressora</mark> ou <mark>Destino</mark>
+                            selecione a opção <mark>Salvar&nbsp;como&nbsp;PDF</mark>.
+                        <li >
+                            Por fim, clique em <mark>Salvar</mark> e escolha o destino no seu computador.
+                    </ol>
+
+                    <h3 class="artigo__titulo artigo__titulo-nivel-2 details__titulo-nivel-2">No celular / tablet:</h3>
+                    <ol class="artigo__lista artigo__ol">
+                        <li>
+                            Toque na opção <mark>Salvar como PDF</mark> no cabeçalho do totalizador.
+                        </li>
+                        <li>
+                            Na janela seguinte, logo abaixo da opção <mark>Tamanho de papel</mark> ou <mark>Paper size</mark>, toque na seta em forma de <mark>V</mark> para abrir mais configurações.
+                        </li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-1.png" alt="Como salvar a ficha em PDF no celular" />
+                        </figure>
+                           
+                        <li>
+                            No campo de <mark>Tamanho de papel</mark> ou <mark>Paper size</mark>, selecione <mark>ISO A4</mark> e no de <mark>Orientação</mark> ou <mark>Orientation</mark>, selecione <mark>Paisagem</mark> ou <mark>Landscape</mark>.
+                        </li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" />
+                        </figure>
+
+                        <li>Por fim, clique no simbolo de disquete e escolha um destino no seu telemóvel para salvar o resumo.</li>
+
+                        <figure class="details__moldura">
+                            <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" />
+                        </figure>
+                    </ol>
+                </details>
+                <details>
+                    <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
+                    <p>As células do totalizador têm um diâmetro para conter, visivelmente, 7 algarismos no máximo, isto é, apenas mostram valores até, no máximo, <span class="number-format">9999999</span>. Quando a célula recebe um número com mais de 7 algarismos, dá um alerta ao usuário ficando vermelha e, eventualmente, mostrando uma mensagem de texto com informação sobre a omissão dos algarismos e o real motivo.</p>
+
+                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados, de algum indicador, acima de <span class="number-format">9999999</span> (de qualquer que seja a natureza do indicador).</p>
+                </details>
+                <button class="artigo__btn-fechar" title="Fechar">&times;</button>
             </article>
         </section>
         <footer class="footer">
-            <div class="body__layout-row footer__row">
+            <div class="layout-row footer__row">
                 <nav class=footer__nav>
                     <h4 class="footer__nav-title">Hiperligações para outros serviços afins</h4>
                     <ul>
@@ -1552,6 +1658,6 @@
             </div>
             <p class="footer__info footer__info-available-since"></p>
         </footer>
-        <div class="desfoque"></div>
+        <div class="desfoque on"></div>
     </body>
 </html>

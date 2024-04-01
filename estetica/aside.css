@@ -1,26 +1,11 @@
 
 
-
-article section,article section button.fechar-artigo {
-
-}
-
 article section,div.caixa-de-confirmacao {
-    max-height: 90vh;
-    overflow: auto;
-    position: fixed
+    
 }
 
 
-article section.on,div.caixa-de-alerta.on,div.caixa-de-confirmacao.on {
-    display: block
-}
-
-article dl dt,article dl dt:before,article section#sobre ul {
-    font-weight: 700
-}
-
-article section button.fechar-artigo {
+article section button.fechar-article {
     font-size: 26px;
     position: fixed;
     width: 40px;
@@ -28,12 +13,12 @@ article section button.fechar-artigo {
     transition-duration: 250ms
 }
 
-article section button.fechar-artigo:hover,div.botoes-de-confirmacao button.confirmar {
-    background-color: var(--danger-color);
+article section button.fechar-article:hover,div.botoes-de-confirmacao button.confirmar {
+    background-color: var(--cor-de-risco);
     color: var(--yt)
 }
 
-section#cookies button.fechar-artigo svg {
+section#cookies button.fechar-article svg {
     display: none
 }
 
@@ -88,141 +73,25 @@ section#cookies button.fechar-artigo svg {
         margin-left: 15px
     }
 
-    article section#sobre button.fechar-artigo,section#cookies button.fechar-artigo>span {
+    article section#sobre button.fechar-article,section#cookies button.fechar-article>span {
         display: none
     }
 
-    article section#cookies button.fechar-artigo {
+    article section#cookies button.fechar-article {
         top: 25px;
         right: initial;
         left: 0
     }
 
-    article section#cookies button.fechar-artigo.with-h1-sticky {
+    article section#cookies button.fechar-article.with-h1-sticky {
         top: 6px
     }
 
-    section#cookies button.fechar-artigo svg {
+    section#cookies button.fechar-article svg {
         display: initial
     }
 }
 
-article ul {
-    list-style-type: disc
-}
-
-article li ul {
-    list-style-type: circle;
-    margin: 10px 0 0 30px
-}
-
-article ol {
-    list-style-type: decimal
-}
-
-article div.consentimento {
-    border-top: thin solid var(--gray--d);
-    padding-top: 10px
-}
-
-article div.consentimento p {
-    background-color: var(--important-text-bgc);
-    padding: 5px 5px 5px 10px
-}
-
-div.caixa-de-pesquisa {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px;
-    background-color: var(--primary-color);
-    position: fixed;
-    top: -35px;
-    right: calc(50vw - 257px / 2);
-    visibility: hidden;
-    transition: top .2s linear;
-    z-index: 15000
-}
-
-div.caixa-de-pesquisa.on {
-    top: 0;
-    visibility: initial
-}
-
-div.caixa-de-pesquisa input.pesquisar-linha {
-    min-width: 188px;
-    padding: 2px 0 2px 5px;
-    border: 2px solid var(--primary-color)!important;
-    background-color: var(--gray--d)
-}
-
-div.caixa-de-pesquisa input.pesquisar-linha:focus {
-    border-color: var(--purple)!important
-}
-
-div.caixa-de-pesquisa button {
-    width: 24px;
-    height: 20px;
-    font-weight: 700;
-    background-color: inherit;
-    color: var(--yt);
-    font-size: 16px;
-    margin-left: 2px
-}
-
-div.caixa-de-pesquisa button:hover {
-    background-color: var(--danger-color);
-    border-radius: 2px
-}
-
-div.caixa-de-alerta {
-    width: 100%;
-    max-width: 450px;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    background-color: var(--yt);
-    position: fixed;
-    top: calc(50vh - 115px / 2);
-    left: calc(50vw - 450px / 2);
-    z-index: 25000;
-    display: none
-}
-
-div.caixa-de-alerta.ficha-vazia {
-    top: calc(50vh - 94px / 2)
-}
-
-div.caixa-de-alerta p {
-    line-height: 1.5
-}
-
-div.caixa-de-alerta button {
-    width: 50px;
-    padding: 6px 4px;
-    margin-left: auto;
-    display: block;
-    color: var(--yt);
-    background-color: var(--btn-bgc);
-    border-radius: 4px;
-    font-size: 14px
-}
-
-div.caixa-de-alerta button:hover {
-    background-color: var(--btn-bgc--hover)
-}
-
-div.caixa-de-confirmacao {
-    min-width: 375px;
-    font-size: 13px;
-    padding: 20px;
-    border-radius: 10px;
-    background: var(--yt);
-    top: calc(50vh - 443px / 2);
-    right: calc(50vw - 375px / 2);
-    z-index: 30000;
-    display: none
-}
 
 @media screen and (max-width: 450px) {
     div.caixa-de-alerta {
@@ -244,50 +113,12 @@ div.caixa-de-confirmacao {
     }
 }
 
-div.caixa-de-confirmacao p {
-    margin-bottom: 10px
-}
-
-div.caixa-de-confirmacao div.alerta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid var(--gray--a);
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 10px
-}
-
-div.caixa-de-confirmacao div.alerta p {
-    margin: 10px 0 0
-}
-
-div.caixa-de-confirmacao h3,div.caixa-de-confirmacao h4 {
-    font-size: 14px;
-    font-weight: 700
-}
 
 div.caixa-de-confirmacao ul {
-    max-height: 164px;
-    overflow-y: auto
+    
 }
 
-div.caixa-de-confirmacao ul::-webkit-scrollbar {
-    width: 8px
-}
 
-div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb {
-    background-color: var(--gray);
-    border-radius: 40px
-}
-
-div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb:hover {
-    background-color: var(--gray--a)
-}
-
-div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb:active {
-    background-color: var(--gray)
-}
 
 div.caixa-de-confirmacao ul li {
     display: flex
@@ -327,7 +158,7 @@ div.botoes-de-confirmacao button.cancelar:hover {
 }
 
 div.botoes-de-confirmacao button.confirmar:hover {
-    background-color: var(--danger-color--alpha-8)
+    background-color: var(--cor-de-risco-alfa-8)
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho {
@@ -337,7 +168,7 @@ div.razao-pelas-celulas-com-fundo-vermelho {
     position: fixed;
     right: calc(50vw - 530px / 2);
     top: -105vh;
-    box-shadow: 0 0 10px var(--border-color);
+    box-shadow: 0 0 10px var(--cor-de-borda);
     font-size: 14px;
     line-height: 1.5;
     background-color: var(--yt);
@@ -366,7 +197,7 @@ div.razao-pelas-celulas-com-fundo-vermelho p.destaque {
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho p.obs {
-    border-color: var(--danger-color)
+    border-color: var(--cor-de-risco)
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho div.seccao-de-interatividade {
@@ -428,36 +259,7 @@ div.seccao-de-interatividade>button:hover {
     background-color: var(--gray--light)
 }
 
-div.desfoque.on {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    background-color: var(--black--alpha-5);
-    z-index: 20000
-}
 
-div.aviso-de-uso-de-cookies {
-    width: 100%;
-    max-width: 1300px;
-    padding: 15px;
-    position: fixed;
-    right: calc(50vw - 1318px / 2);
-    bottom: -132px;
-    font-size: 13px;
-    line-height: 1.5;
-    background: var(--black--alpha-8);
-    color: var(--gray--d);
-    box-shadow: 0 0 8px var(--gray);
-    visibility: hidden;
-    z-index: 49000;
-    transition: bottom 150ms
-}
-
-div.aviso-de-uso-de-cookies.on {
-    bottom: 20px;
-    visibility: visible
-}
 
 @media screen and (max-width: 1300px) {
     div.linha-de-referencia {
@@ -467,7 +269,7 @@ div.aviso-de-uso-de-cookies.on {
         left: 0;
         bottom: 0;
         z-index: 10000!important;
-        background-color: var(--footer-bgc);
+        background-color: var(--cor-do-rodape);
         transition: bottom 250ms
     }
 
@@ -491,7 +293,7 @@ div.aviso-de-uso-de-cookies.on {
 
     div.coluna-de-referencia output {
         min-height: 18px;
-        border: thin solid var(--border-color);
+        border: thin solid var(--cor-de-borda);
         margin: 0 5px;
         display: flex;
         justify-content: center;

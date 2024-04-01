@@ -47,7 +47,7 @@ input,textarea {
     border: none;
     border-radius: 0;
     outline: 0;
-    color: var(--text-color);
+    color: var(--cor-de-texto);
     font-family: sans-serif,Arial,Helvetica;
     font-size: var(--input-font-size);
     cursor: text;
@@ -80,7 +80,7 @@ button {
 
 a {
     text-decoration: none;
-    color: var(--anchor-color)
+    color: var(--cor-de-link)
 }
 
 a:hover {
@@ -88,7 +88,7 @@ a:hover {
 }
 
 ::selection {
-    background-color: var(--primary-color);
+    background-color: var(--cor-primaria);
     color: var(--yt)
 }
 

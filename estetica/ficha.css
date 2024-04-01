@@ -62,7 +62,7 @@
 
 .ficha__titulo__label {
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--cor-de-texto);
 }
 
 .ficha__titulo__sup {
@@ -98,7 +98,7 @@
     display: block;
     width: 170px;
     margin: 0 auto;
-    color: var(--danger-color);
+    color: var(--cor-de-risco);
     font-size: 22px;
     border: thin dotted var(--gray--d);
 }
@@ -125,7 +125,7 @@
 }
 
 .ficha__num-de-col {
-    background-color: var(--primary-color);
+    background-color: var(--cor-primaria);
     color: var(--gray--d);
     border-color: var(--gray--a);
     font-weight: 700;
@@ -142,7 +142,7 @@
 .ficha__body {
     display: grid;
     grid-template-columns: 24px 90px 240px repeat(19,50px);
-    border-top: 12px solid var(--primary-color);
+    border-top: 12px solid var(--cor-primaria);
 }
 
 .ficha__col-com-numeros-das-linhas {
@@ -151,7 +151,7 @@
 }
 
 .ficha__num-de-linha {
-    background-color: var(--primary-color);
+    background-color: var(--cor-primaria);
     color: var(--gray--d);
     border-color: var(--gray--a);
     font-weight: 700;

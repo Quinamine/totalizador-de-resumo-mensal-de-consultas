@@ -168,12 +168,12 @@ function eventListeners() {
     );
     let n = document.querySelector("button.imprimir");
     n.addEventListener("click", ()=>menu.imprimirFicha());
-    let l = document.querySelector("button.abrir-artigo-sobre");
+    let l = document.querySelector("button.abrir-article-sobre");
     l.addEventListener("click", ()=>menu.abrirArtigoSobre()),
     "#sobre" === location.hash && menu.abrirArtigoSobre();
-    let d = document.querySelector("button.abrir-artigo-cookies");
+    let d = document.querySelector("button.abrir-article-cookies");
     d.addEventListener("click", ()=>menu.abrirArtigoCookies());
-    let c = document.querySelectorAll("button.fechar-artigo");
+    let c = document.querySelectorAll("button.fechar-article");
     c.forEach(e=>{
         e.addEventListener("click", ()=>{
             e.parentElement.classList.remove("on"),
@@ -185,7 +185,7 @@ function eventListeners() {
     );
     let u = document.querySelector("section#cookies")
       , m = u.querySelector("h1")
-      , f = u.querySelector("button.fechar-artigo");
+      , f = u.querySelector("button.fechar-article");
     u.addEventListener("scroll", ()=>{
         m.getBoundingClientRect().top <= 0 ? (m.classList.add("sticky"),
         f.classList.add("with-h1-sticky")) : (m.classList.remove("sticky"),
