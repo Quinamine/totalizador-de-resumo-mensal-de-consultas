@@ -40,43 +40,46 @@
                     Totalizador de Resumo <span class="header__logo-word--hide-on-screen-s">Mensal</span>
                     de Consultas
                 </a>
-                <nav class="header__menu body__child--flex-y-center">
-                    <ul class="body__child--flex-y-center">
-                        <li class="header__menu-item header__menu-item-realcartotais">
+                <nav class="header__nav body__child--flex-y-center">
+                    <ul class="header__nav__ul body__child--flex-y-center">
+                        <li class="header__nav__li header__nav__li-realcartotais">
                             <input type=checkbox id="checkbox" class="header__child-checkbox header__item--cursor-type">
                             <label for="checkbox" class="header__child-label body__child--flex-y-center header__item--cursor-type">
-                                Realçar totais
+                                Realçar&nbsp;totais
                             </label>
-                        <li class="header__menu-item">
-                            <button class="header__btn header__btn-ir-para">Ir para a linha...</button>
-                        <li class="header__menu-item">
-                            <button class="header__btn header__btn-esvaziar-ficha">Esvaziar ficha</button>
-                        <li class="header__menu-item">
-                            <button class="header__btn header__btn-imprimir">Imprimir</button>
-                        <li class="header__menu-item header__item--hidden-on-mobile">
-                            <button class="header__btn header__btn-sobre">Sobre</button>
-                        <li class="header__menu-item">
-                            <button class="header__btn header__btn-ajuda">
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-ir-para">Ir para a linha...</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-esvaziar-ficha">Esvaziar ficha</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-imprimir">
+                                <span class="--hide-on-mobile">Imprimir</span>
+                                <span class="--hide-on-desktop">Salvar&nbsp;como&nbsp;PDF</span>
+                            </button>
+                        <li class="header__nav__li header__li--hide-on-mobile">
+                            <button class="header__nav__btn header__nav__btn-sobre">Sobre</button>
+                        <li class="header__nav__li">
+                            <button class="header__nav__btn header__nav__btn-ajuda">
                                 Ajuda
                             </button>
-                        <li class="header__menu-item header__item--hidden-on-pc">
-                            <button class="header__btn header__btn-partilhar">Partilhar...</button>
+                        <li class="header__nav__li header__li--hide-on-desktop">
+                            <button class="header__nav__btn header__nav__btn-partilhar">Partilhar...</button>
                     </ul>
                 </nav>
             </div>
         </header>
         <main class="main">
-            <div class="main__linha-de-emblema body__child--flex-y-center">
-                <figure class="main__moldura-de-emblema">
-                    <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
-                </figure>
-                <div class="linha-de-emblema__col-de-republica body__child--flex-xy-center">
-                    <span class="main__emblema-info">República de Moçambique</span>
-                    <span class="main__emblema-info">Ministério da Sáude</span>
-                </div>
-            </div>
             <div class=ficha>
                 <header class=ficha__header>
+                    <div class="ficha__linha-de-emblema body__child--flex-y-center">
+                        <figure class="ficha__moldura-de-emblema">
+                            <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
+                        </figure>
+                        <div class="linha-de-emblema__col-de-republica body__child--flex-xy-center">
+                            <span class="ficha__emblema-info">República de Moçambique</span>
+                            <span class="ficha__emblema-info">Ministério da Sáude</span>
+                        </div>
+                    </div>
                     <h1 class="ficha__titulo">
                         <label for=nome-da-us class="ficha__titulo__label">Resumo Mensal da US - Consultas <sup class="ficha__titulo__sup">(1)</sup></label>
                         <input id=nome-da-us placeholder="Nome da Unidade Sanitária" class="ficha__titulo__input-us --border-b" list="us">
@@ -137,7 +140,7 @@
                         <span class="ficha__num-de-col body__child--flex-xy-center --border-r">19</span>
                     </div>
                     <div class=ficha__linha-de-faixas-etarias>
-                        <span class="body__child--flex-xy-center --border-t --border-r --border-l --position-sticky-on-screen-s">Faixas Etárias</span>
+                        <span class="body__child--flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Faixas Etárias</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">0 - 11 meses</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">1 - 4 anos</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">5 - 14 anos</span>
@@ -150,7 +153,7 @@
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">TOTAL</span>
                     </div>
                     <div class=ficha__linha-de-sexo>
-                        <span class="body__child--flex-xy-center --border-t --border-r --border-l --position-sticky-on-screen-s">Sexo</span>
+                        <span class="body__child--flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Sexo</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">F</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
                         <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
@@ -252,7 +255,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="ficha__col-de-indicadores --border-r --border-l --position-sticky-on-screen-s">
+                    <div class="ficha__col-de-indicadores --border-r --border-l child-with-pos-sticky-on-screen-s">
                         <span class="ficha__indicador body__child--flex-y-center --border-b">1ªˢ Consultas</span>
                         <span class="ficha__indicador body__child--flex-y-center --border-b">Consultas de Seguimento</span>
                         <span class="ficha__indicador body__child--flex-y-center --border-b --fw-700">
@@ -1387,10 +1390,10 @@
                         <input type=number min=0 class="--border-r --border-b l53-c19" readonly>
                     </div>
                 </div>
-                <footer class=ficha__footer>
-                    <div class="ficha__linha-de-assinatura --position-sticky-on-screen-s">
-                        <label for=nome-do-ps>Nome legível do responsável pelo preenchimento:</label>
-                        <input id=nome-do-ps class="ficha__campo-de-assinatura --border-b --fw-700">
+                <footer class="ficha__footer">
+                    <div class="ficha__linha-de-assinatura">
+                        <label for=assinatura>Nome legível do responsável pelo preenchimento:</label>
+                        <input id=assinatura class="ficha__campo-de-assinatura --border-b --fw-700">
                     </div>
                     <div class=ficha__linha-de-categoria-e-data>
                         <div class=ficha__col-de-categoria>
@@ -1403,38 +1406,57 @@
                         </div>
                         <datalist id=categorias>
                             <option value="Médico de Clínica Geral"></option>
+                            <option value="Médica de Clínica Geral"></option>
                             <option value="Técnico de Medicina Geral"></option>
+                            <option value="Técnica de Medicina Geral"></option>
                             <option value="Enfermeira de SMI"></option>
                             <option value="Agente de Medicina"></option>
                             <option value="MÉDICO DE CLÍNICA GERAL"></option>
+                            <option value="MÉDICA DE CLÍNICA GERAL"></option>
                             <option value="TÉCNICO DE MEDICINA GERAL"></option>
+                            <option value="TÉCNICA DE MEDICINA GERAL"></option>
                             <option value="ENFERMEIRA DE SMI"></option>
                             <option value="AGENTE DE MEDICINA"></option>
-                            <option value="Técnico do Laboratório"></option>
                         </datalist>
                     </div>
                 </footer>
             </div>
-            <div class="main__container-de-campo-de-nota">
+            <div class="main__container-de-campo-de-nota layout-row">
                 <textarea class="ficha__campo-de-nota" placeholder="Comentários sobre o resumo... Este campo só será impresso se tiver algum conteúdo." placeholder="" rows=3></textarea>
             </div>
 
             <div class="reference-container">
                 <div class="layout-row reference-row">
-                    <span>Indicador:</span> <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center --fw-700"></output>
-                    <span>Faixa etária:</span> <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700"></output>
-                    <span>Sexo:</span> <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700"></output>
+                    <span class="reference-row__label" aria-placeholder="indicador">Indicador:</span> 
+                    <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center">Doenças Infecciosas/Parasitárias</output>
+
+                    <span class="reference-row__label">Faixa etária:</span> 
+                    <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700">0 - 11  meses</output>
+
+                    <span class="reference-row__label">Sexo:</span> 
+                    <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700">M</output>
                 </div>
             </div>
         </main>
         
         <section class="dialog-boxes">
-            <div class="dialog-box dialog-box-alerta-de-aqd --border">
-                <p>
+            <div class="dialog-box-default dialog-box-alerta-sobre-aqd">
+                <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de Consultas</h3>
+                <p class="dialog-box-default__p">
                     A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.
                 </p>
-                <div class="dialog-box__btn-container">
-                    <button class=dialog-box__btn>Entendi</button>
+                <div class="dialog-box-default__btn-container">
+                    <button class=dialog-box-default__btn>Entendi</button>
+                </div>
+            </div>
+
+            <div class="dialog-box-default dialog-box-default-de-retornos-js">
+                <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de Consultas</h3>
+                <p class="dialog-box-default__p js-returns-output body__child--flex-y-center">
+                    
+                </p>
+                <div class="dialog-box-default__btn-container">
+                    <button class=dialog-box-default__btn>Fechar</button>
                 </div>
             </div>
 
@@ -1442,8 +1464,8 @@
                 <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Número da linha">
                 <button class=dialog-box-ir-para__btn title=Fechar>×</button>
             </div>
-            <div class="dialog-box-esvaziar-ficha  --open">
-                <h3 class="dialog-box-esvaziar-ficha__title --fw-700">Esvaziar ficha</h3>
+            <div class="dialog-box-esvaziar-ficha">
+                <h3 class="dialog-box-esvaziar-ficha__titulo --fw-700">Esvaziar ficha</h3>
                 <p>Tem certeza de que pretende esvaziar a ficha?
                 <div class=dialog-box-esvaziar-ficha__svg-container>
                     <svg style=width:40px;height:40px>
@@ -1456,25 +1478,30 @@
                     </svg>
                     <p class="dialog-box-esvaziar-ficha__last-p">Esta acção não pode ser desfeita.
                 </div>
-                <h4 class="dialog-box-esvaziar-ficha__title --fw-700">Dados adicionais</h4>
+                <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Dados adicionais</h4>
                 <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
                     <li>
-                        <input type=checkbox id=nome-da-us checked data-for=us>
-                        <label for=nome-da-us>Nome da US</label>
+                        <input type=checkbox id=checkbox-us checked data-for=nome-da-us>
+                        <label for=checkbox-us>Nome da US</label>
                     <li>
-                        <input type=checkbox id=month checked data-for=mes>
-                        <label for=month>Mês</label>
+                        <input type=checkbox id=checkbox-mes checked data-for=mes>
+                        <label for=checkbox-mes>Mês</label>
                     <li>
-                        <input type=checkbox id=nome-do-compilador checked data-for=compilador>
-                        <label for=nome-do-compilador>
+                        <input type=checkbox id=checkbox-assinatura checked data-for=assinatura>
+                        <label for=checkbox-assinatura>
                             Nome do Responsável pelo preenchimento
                         </label>
                     <li>
-                        <input type=checkbox id=data-de-elaboracao checked data-for=data>
-                        <label for=data-de-elaboracao>Data de elaboração</label>
+                        <input type=checkbox id=checkbox-categoria checked data-fo="categoria">
+                        <label for=checkbox-categoria>
+                            Categoria
+                        </label>
                     <li>
-                        <input type=checkbox id=nota-do-resumo checked data-for=nota>
-                        <label for=nota-do-resumo>Comentários</label>
+                        <input type=checkbox id=checkbox-data-de-elaboracao checked data-for=data-de-elaboracao>
+                        <label for=checkbox-data-de-elaboracao>Data de elaboração</label>
+                    <li>
+                        <input type=checkbox id=checkbox-comentarios checked data-for=nota>
+                        <label for=checkbox-comentarios>Comentários</label>
                 </ul>
                 <div class=dialog-box-esvaziar-ficha__btns-container>
                     <button class="dialog-box-esvaziar-ficha__btn dialog-box-esvaziar-ficha__btn-cancelar">Cancelar</button>
@@ -1482,21 +1509,14 @@
                 </div>
             </div>
             
-            <div class="dialog-box dialog-box-response-to-user-action --border">
-                <p class="response-to-user-action">
-                    Os totais estão interditos para assegurar que não sejam modificados.
-                </p>
-                <div class="dialog-box__btn-container">
-                    <button class=dialog-box__btn>Fechar</button>
-                </div>
-            </div>
+
         </section>
 
         <section class="sessao-de-artigos">
-            <article class="artigo artigo__sobre">
+            <article class="artigo artigo-sobre">
                 <h2 class="artigo__titulo artigo__titulo-nivel-1">Visão geral sobre o totalizador</h2>
                 <figure>
-                    <img alt="Totalizador de Resumo Mensal de Consultas" src=imagens/totalizador-de-resumo-mensal-de-consultas.png class="artigo-sobre__img">
+                    <img alt="Totalizador de Resumo Mensal de Consultas" src=imagens/totalizador-de-resumo-mensal-de-consultas.png class="artigo__img artigo-sobre__img">
                 </figure>
                 
                 <p>
@@ -1548,7 +1568,7 @@
             </article>
 
             <article class="artigo artigo-ajuda">
-                <h2 class="artigo__titulo artigo__titulo-nivel-1 artigo__titulo-nivel-1--borda-grossa">Ajuda e Procedimentos</h2>
+                <h2 class="artigo__titulo artigo__titulo-nivel-1 artigo__titulo-nivel-1--borda-grossa"><span class="artigo-ajuda__titulo--hide-on-desktop">Totalizador de Resumo Mensal de Consultas &raquo; </span>Ajuda e Procedimentos</h2>
 
                 <details>
                     <summary>Realçar totais</summary>
@@ -1564,8 +1584,10 @@
                     
                     <p>Também permite esvaziar campos adicionais (Província, Distrito, US, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando, deste modo, que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
 
-                    <figure>
-                        <img src="imagens/esvaziamento-da-ficha.png" alt="Caixa de diálogo de esvaziamento da ficha"/>
+                    <figure class="details__moldura details-esvaziar-ficha__moldura">
+                        <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo de esvaziamento da ficha" class="artigo__img"/>
+
+                        <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo de esvaziamento da ficha. Neste caso, o campo de <b>Nome da US</b> é único que seria preservado (por ter sua checkbox desmarcada). Todos os outros cujas "checkboxes" estão marcadas, teriam seus campos esvaziados.</figcaption>
                     </figure>
 
                 </details>
@@ -1579,7 +1601,7 @@
                             Na janela que abrirá, no campo de <mark>Impressora</mark> ou <mark>Destino</mark>
                             selecione a opção <mark>Salvar&nbsp;como&nbsp;PDF</mark>.
                         <li >
-                            Por fim, clique em <mark>Salvar</mark> e escolha o destino no seu computador.
+                            Por fim, clique em <mark>Salvar</mark> e escolha um destino no seu computador.
                     </ol>
 
                     <h3 class="artigo__titulo artigo__titulo-nivel-2 details__titulo-nivel-2">No celular / tablet:</h3>
@@ -1592,7 +1614,7 @@
                         </li>
 
                         <figure class="details__moldura">
-                            <img src="imagens/salvar-ficha-como-pdf-1.png" alt="Como salvar a ficha em PDF no celular" />
+                            <img src="imagens/salvar-ficha-como-pdf-1.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
                         </figure>
                            
                         <li>
@@ -1600,21 +1622,21 @@
                         </li>
 
                         <figure class="details__moldura">
-                            <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" />
+                            <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
                         </figure>
 
                         <li>Por fim, clique no simbolo de disquete e escolha um destino no seu telemóvel para salvar o resumo.</li>
 
                         <figure class="details__moldura">
-                            <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" />
+                            <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img"/>
                         </figure>
                     </ol>
                 </details>
                 <details>
                     <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
-                    <p>As células do totalizador têm um diâmetro para conter, visivelmente, 7 algarismos no máximo, isto é, apenas mostram valores até, no máximo, <span class="number-format">9999999</span>. Quando a célula recebe um número com mais de 7 algarismos, dá um alerta ao usuário ficando vermelha e, eventualmente, mostrando uma mensagem de texto com informação sobre a omissão dos algarismos e o real motivo.</p>
+                    <p>As células do totalizador têm um tamanho para conter, visivelmente, 7 algarismos no máximo, isto é, apenas mostram valores até, no máximo, <span class="number-format">9999999</span>. Quando a célula recebe um número com mais de 7 algarismos, dá um alerta ao usuário ficando vermelha e, eventualmente, mostrando uma mensagem de texto com informação sobre a omissão dos algarismos e o real motivo.</p>
 
-                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados, de algum indicador, acima de <span class="number-format">9999999</span> (de qualquer que seja a natureza do indicador).</p>
+                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados, de algum indicador de qualquer que seja a sua natureza, acima de <span class="number-format">9999999</span>.</p>
                 </details>
                 <button class="artigo__btn-fechar" title="Fechar">&times;</button>
             </article>
@@ -1651,13 +1673,13 @@
                     </ul>
                 </nav>
                 <p class="footer__info footer__info-created-by">
-                    Criado com 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a>
+                    Criado com atenção e 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a>
                     | © 2024 - Totalizador de Resumo Mensal de Consultas
                 </p>
                 <a href=#html__body class=footer__link-back-to-top>Voltar ao topo</a>
             </div>
-            <p class="footer__info footer__info-available-since"></p>
+            <p class="footer__info footer__info-available-since">Disponível desde 22/06/2022. Última actualização: Abril/2024.</p>
         </footer>
-        <div class="desfoque on"></div>
+        <div class="desfoque"></div>
     </body>
 </html>

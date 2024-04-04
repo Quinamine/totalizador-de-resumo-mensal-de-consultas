@@ -1,43 +1,9 @@
 ﻿
-
-
-.main {
+.ficha {
     max-width: var(--layout-width);
     min-width: var(--layout-width);
     margin: 43px auto 10px;
     position: relative;
-}
-
-@media print {
-    div.main {
-        visibility: visible
-    }
-}
-
-.main__linha-de-emblema {
-    position: absolute;
-    top: -36px;
-    z-index: 4000;
-}
-
-.main__moldura-de-emblema {
-    margin: 0;
-    width: 65px;
-    height: 65px
-}
-
-.main__emblema {
-    height: 100%
-}
-
-.linha-de-emblema__col-de-republica {
-    flex-direction: column;
-    line-height: 1.5;
-    padding-left: 6px;
-}
-
-.main__emblema-info {
-    text-transform: uppercase
 }
 
 .ficha__header {
@@ -52,6 +18,33 @@
         position: initial;
         top: 0;
     }
+}
+
+.ficha__linha-de-emblema {
+    position: absolute;
+    top: -36px;
+    left: -114px;
+    z-index: 4000;
+}
+
+.ficha__moldura-de-emblema {
+    margin: 0;
+    width: 65px;
+    height: 65px
+}
+
+.ficha__emblema {
+    height: 100%
+}
+
+.linha-de-emblema__col-de-republica {
+    flex-direction: column;
+    line-height: 1.5;
+    padding-left: 6px;
+}
+
+.ficha__emblema-info {
+    text-transform: uppercase
 }
 
 .ficha__titulo {
@@ -234,8 +227,8 @@
 }
 
 
-@media screen and (max-width: var(--layout-width)) {
-    .--position-sticky-on-screen-s {
+@media screen and (max-width: 1304px ) {
+    .child-with-pos-sticky-on-screen-s {
         position:-webkit-sticky;
         position: sticky;
         left: -15px;
