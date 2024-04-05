@@ -459,12 +459,13 @@
         display: none;
     }
 }
+
 /* Manipulacao com JS */
-.readonlycell--highlight {
-    background-color: gray;
+.--realcar-totais {
+    background-color: var(--gray--c);
 }
 
-.cell-with-content-hidden--highlight         {
+.input-with-content-hidden--highlight         {
     background-color: var(--cor-de-risco);
     color: var(--yt)
 }

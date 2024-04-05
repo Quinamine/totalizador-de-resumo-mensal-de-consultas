@@ -16,12 +16,8 @@
     <link href=estetica/reset.css rel=stylesheet>
     <link href=estetica/layout.css rel=stylesheet>
     <link href=estetica/ficha.css rel=stylesheet>
-    <link href=estetica/aside.css rel=stylesheet>
-    <script src=fisiologia/menu.js></script>
-    <script src=fisiologia/inputvalidation.js></script>
-    <script src=fisiologia/totalizador-rmc.js></script>
-    <script src=fisiologia/referencia.js></script>
-    <script src=fisiologia/webstorage.js></script>
+    <script src="fisiologia/menu.js"></script>
+    <script src="fisiologia/main.js"></script>
     <script src="https://www.googletagmanager.com/gtag/js?id=G-0WQ21LVG42" async></script>
     <script>
         function gtag() {
@@ -43,8 +39,8 @@
                 <nav class="header__nav body__child--flex-y-center">
                     <ul class="header__nav__ul body__child--flex-y-center">
                         <li class="header__nav__li header__nav__li-realcartotais">
-                            <input type=checkbox id="checkbox" class="header__child-checkbox header__item--cursor-type">
-                            <label for="checkbox" class="header__child-label body__child--flex-y-center header__item--cursor-type">
+                            <input type=checkbox id="checkbox-realcar-totais" class="header__child-checkbox header__item--cursor-type">
+                            <label for="checkbox-realcar-totais" class="header__child-label body__child--flex-y-center header__item--cursor-type">
                                 Realçar&nbsp;totais
                             </label>
                         <li class="header__nav__li">
@@ -1428,13 +1424,13 @@
             <div class="reference-container">
                 <div class="layout-row reference-row">
                     <span class="reference-row__label" aria-placeholder="indicador">Indicador:</span> 
-                    <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center">Doenças Infecciosas/Parasitárias</output>
+                    <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center"></output>
 
                     <span class="reference-row__label">Faixa etária:</span> 
-                    <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700">0 - 11  meses</output>
+                    <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700"></output>
 
                     <span class="reference-row__label">Sexo:</span> 
-                    <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700">M</output>
+                    <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
@@ -1452,7 +1448,7 @@
 
             <div class="dialog-box-default dialog-box-default-de-retornos-js">
                 <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de Consultas</h3>
-                <p class="dialog-box-default__p js-returns-output body__child--flex-y-center">
+                <p class="dialog-box-default__p dialog-box__retornos-js-output body__child--flex-y-center">
                     
                 </p>
                 <div class="dialog-box-default__btn-container">
