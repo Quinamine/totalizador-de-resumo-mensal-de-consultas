@@ -39,8 +39,8 @@
                 <nav class="header__nav body__child--flex-y-center">
                     <ul class="header__nav__ul body__child--flex-y-center">
                         <li class="header__nav__li header__nav__li-realcartotais">
-                            <input type=checkbox id="checkbox-realcar-totais" class="header__child-checkbox header__item--cursor-type">
-                            <label for="checkbox-realcar-totais" class="header__child-label body__child--flex-y-center header__item--cursor-type">
+                            <input type=checkbox id="checkbox-realcar-totais" class="header__child-checkbox header__child--cursor">
+                            <label for="checkbox-realcar-totais" class="header__child-label body__child--flex-y-center header__child--cursor">
                                 Realçar&nbsp;totais
                             </label>
                         <li class="header__nav__li">
@@ -49,8 +49,8 @@
                             <button class="header__nav__btn header__nav__btn-esvaziar-ficha">Esvaziar ficha</button>
                         <li class="header__nav__li">
                             <button class="header__nav__btn header__nav__btn-imprimir">
-                                <span class="--hide-on-mobile">Imprimir</span>
-                                <span class="--hide-on-desktop">Salvar&nbsp;como&nbsp;PDF</span>
+                                <span class="--hide-on-mobile header__child--cursor">Imprimir</span>
+                                <span class="--hide-on-desktop header__child--cursor">Salvar&nbsp;como&nbsp;PDF</span>
                             </button>
                         <li class="header__nav__li header__li--hide-on-mobile">
                             <button class="header__nav__btn header__nav__btn-sobre">Sobre</button>
@@ -78,7 +78,7 @@
                     </div>
                     <h1 class="ficha__titulo">
                         <label for=nome-da-us class="ficha__titulo__label">Resumo Mensal da US - Consultas <sup class="ficha__titulo__sup">(1)</sup></label>
-                        <input id=nome-da-us placeholder="Nome da Unidade Sanitária" class="ficha__titulo__input-us --border-b" list="us">
+                        <input id=nome-da-us placeholder="Nome da Unidade Sanitária" class="ficha__titulo__input-us input-adicional --border-b" list="us">
                         <datalist id=us>
                             <option value="HR DE MOCIMBOA DA PRAIA"></option>
                             <option value="Centro de Saúde de Nanduadua"></option>
@@ -99,7 +99,7 @@
                     <div class=ficha__linha-com-numeros-das-colunas>
                         <div class=ficha__col-de-mes>
                             <label for=mes>Mês:</label>
-                            <input id=mes class="ficha__campo-para-mes --border-b" list="meses">
+                            <input id=mes class="ficha__campo-para-mes input-adicional --border-b" list="meses">
                             <datalist id=meses>
                                 <option value="Janeiro"></option>
                                 <option value="Fevereiro"></option>
@@ -1389,16 +1389,16 @@
                 <footer class="ficha__footer">
                     <div class="ficha__linha-de-assinatura">
                         <label for=assinatura>Nome legível do responsável pelo preenchimento:</label>
-                        <input id=assinatura class="ficha__campo-de-assinatura --border-b --fw-700">
+                        <input id=assinatura class="ficha__campo-de-assinatura input-adicional --border-b --fw-700">
                     </div>
                     <div class=ficha__linha-de-categoria-e-data>
                         <div class=ficha__col-de-categoria>
                             <label for=categoria>Categoria:</label>
-                            <input id=categoria list=categorias class="ficha__campo-de-categoria --border-b --fw-700">
+                            <input id=categoria list=categorias class="ficha__campo-de-categoria input-adicional --border-b --fw-700">
                         </div>
                         <div class=ficha__col-de-data>
                             <label for=data-de-elaboracao>Data:</label>
-                            <input type=date id=data-de-elaboracao class="--border-b --fw-700">
+                            <input type=date id=data-de-elaboracao class="input-adicional --border-b --fw-700">
                         </div>
                         <datalist id=categorias>
                             <option value="Médico de Clínica Geral"></option>
@@ -1418,7 +1418,7 @@
                 </footer>
             </div>
             <div class="main__container-de-campo-de-nota layout-row">
-                <textarea class="ficha__campo-de-nota" placeholder="Comentários sobre o resumo... Este campo só será impresso se tiver algum conteúdo." placeholder="" rows=3></textarea>
+                <textarea class="ficha__campo-de-nota input-adicional" id="comentarios" placeholder="Comentários sobre o resumo... Este campo só será impresso se tiver algum conteúdo." placeholder="" rows=3></textarea>
             </div>
 
             <div class="reference-container">
@@ -1452,12 +1452,12 @@
                     
                 </p>
                 <div class="dialog-box-default__btn-container">
-                    <button class=dialog-box-default__btn>Fechar</button>
+                    <button class=dialog-box-default__btn>Fechar <span class="btn-close-time"></span></button>
                 </div>
             </div>
 
             <div class="dialog-box-ir-para body__child--flex-y-center">
-                <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Número da linha">
+                <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Ir para a linha (número da linha)">
                 <button class=dialog-box-ir-para__btn title=Fechar>×</button>
             </div>
             <div class="dialog-box-esvaziar-ficha">
@@ -1477,26 +1477,26 @@
                 <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Dados adicionais</h4>
                 <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
                     <li>
-                        <input type=checkbox id=checkbox-us checked data-for=nome-da-us>
+                        <input type=checkbox checked id="checkbox-us" data-inputadicionalid=nome-da-us>
                         <label for=checkbox-us>Nome da US</label>
                     <li>
-                        <input type=checkbox id=checkbox-mes checked data-for=mes>
+                        <input type=checkbox id=checkbox-mes checked data-inputadicionalid=mes>
                         <label for=checkbox-mes>Mês</label>
                     <li>
-                        <input type=checkbox id=checkbox-assinatura checked data-for=assinatura>
+                        <input type=checkbox id=checkbox-assinatura checked data-inputadicionalid=assinatura>
                         <label for=checkbox-assinatura>
                             Nome do Responsável pelo preenchimento
                         </label>
                     <li>
-                        <input type=checkbox id=checkbox-categoria checked data-fo="categoria">
+                        <input type=checkbox id=checkbox-categoria checked data-inputadicionalid=categoria>
                         <label for=checkbox-categoria>
                             Categoria
                         </label>
                     <li>
-                        <input type=checkbox id=checkbox-data-de-elaboracao checked data-for=data-de-elaboracao>
+                        <input type=checkbox id=checkbox-data-de-elaboracao checked data-inputadicionalid=data-de-elaboracao>
                         <label for=checkbox-data-de-elaboracao>Data de elaboração</label>
                     <li>
-                        <input type=checkbox id=checkbox-comentarios checked data-for=nota>
+                        <input type=checkbox id=checkbox-comentarios checked data-inputadicionalid=comentarios>
                         <label for=checkbox-comentarios>Comentários</label>
                 </ul>
                 <div class=dialog-box-esvaziar-ficha__btns-container>
@@ -1560,7 +1560,7 @@
                     <li>Disponibilidade remota (é necessário um telemóvel ou computador com acesso à internet para ser acessado);</li>
                     <li>Pode necessitar de custos monetários (mínimos) para sua impressão.</li>
                 </ul>
-                <button class="artigo__btn-fechar" title="Fechar">&times;</button>
+                <button class="artigo__btn-fechar artigo-sobre__btn-fechar" title="Fechar">&times;</button>
             </article>
 
             <article class="artigo artigo-ajuda">
@@ -1634,7 +1634,7 @@
 
                     <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que, actualmente, nenhuma Unidade Sanitária tem um número mensal de dados, de algum indicador de qualquer que seja a sua natureza, acima de <span class="number-format">9999999</span>.</p>
                 </details>
-                <button class="artigo__btn-fechar" title="Fechar">&times;</button>
+                <button class="artigo__btn-fechar artigo-ajuda__btn-fechar" title="Fechar">&times;</button>
             </article>
         </section>
         <footer class="footer">

@@ -151,7 +151,7 @@
     font-size: 16px;
 }
 
-.ficha__num-de-linha--highlight {
+.ficha__num-de-linha.--highlight {
     background-color: var(--orange);
     color: var(--yt)
 }
