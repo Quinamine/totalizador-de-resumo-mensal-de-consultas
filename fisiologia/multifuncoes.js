@@ -88,6 +88,14 @@ function formatarNumeros() {
     }
 }
 
+function animarJanelaAberta(event) {
+    const janela = document.querySelector(".dialog-box-esvaziar-ficha");
+    if(janela.matches(".--open")) {
+        event === "mousedown" ? 
+        janela.classList.add("--mexer") : 
+        janela.classList.remove("--mexer");
+    }
+}
 
 let btnAutoCloseLoop;
 window.addEventListener("load", () => {
@@ -109,4 +117,10 @@ window.addEventListener("load", () => {
     // Actualizar o ano 
     actualizarAno()
     formatarNumeros();
+
+    // Animar Janela Aberta
+    const desfoque = document.querySelector(".desfoque");
+    desfoque.addEventListener("mousedown", event => animarJanelaAberta(event.type));
+    desfoque.addEventListener("mouseup", event => animarJanelaAberta(event.type));
+
 });

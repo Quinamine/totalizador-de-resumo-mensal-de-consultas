@@ -832,6 +832,15 @@ details mark {
     display: block;
 }
 
+@keyframes mexer {
+    from {transform: scale(1);}
+    to {transform: scale(1.03);}
+}
+
+.dialog-box-esvaziar-ficha.--mexer {
+    animation: mexer 80ms ease-in-out backwards;
+}
+
 .dialog-box-esvaziar-ficha__svg-container {
     display: flex;
     flex-direction: column;

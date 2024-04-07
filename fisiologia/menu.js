@@ -153,7 +153,6 @@ const menu = {
     }
 }
 
-
 function eventos() {
     // REALCAR TOTAIS
     const checkboxRealcarTotais = document.getElementById("checkbox-realcar-totais");
