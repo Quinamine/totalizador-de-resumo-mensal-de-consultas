@@ -1,1 +1,56 @@
-"use strict";const referencia={retornarNumDeLinha(e){let t=e.parentElement.children,r;for(let n=0;n<t.length;n++)t[n]===e&&(r=n);let o=document.querySelector("output.ref-de-linha");o.textContent=r+1},retornarSexoEIdade(e){let t=e.parentElement,r=t.parentElement,n=r.querySelectorAll("div.inputs-container"),o;for(let a=0;a<n.length;a++)n[a]===t&&(o=a);let l=["M","F"],i=document.querySelector("output.ref-de-sexo"),c=document.querySelector("output.ref-de-faixa-etaria");(o+1)%2==0?i.textContent=l[0]:i.textContent=l[1],o<2?o=0:o<4?o=1:o<6?o=2:o<10?o=3:o<12?o=4:o<14&&(o=5),c.innerHTML=["0 - 11 meses","1 - 4 anos","5 - 14 anos","15 - 24 anos","25 - 59 anos","&ge; 60 anos"][o]},resetarReferencia(){let e=document.querySelectorAll("div.coluna-de-referencia output");for(let t of e)t.textContent=""}};window.addEventListener("load",()=>{inputCels.forEach(e=>{e.matches("[readonly]")||(e.addEventListener("focusin",()=>{referencia.retornarNumDeLinha(e),referencia.retornarSexoEIdade(e)}),e.addEventListener("focusout",()=>{referencia.resetarReferencia()}))})}),window.addEventListener("scroll",()=>{let e=document.querySelector("div.linha-de-referencia"),t=document.querySelector(".bounding-reference");t.getBoundingClientRect().bottom<0?e.classList.add("off"):e.classList.remove("off")});
+"use strict"
+
+const referencia = {
+    retornarIndicador(input) {
+        const inputParent__childreen = input.parentElement.children;
+        const indicadores = document.querySelectorAll(".ficha__indicador");
+        const indicadorOutput = document.querySelector(".reference-row__output-indicador");
+
+
+        let inputIndex;
+        for (let i in inputParent__childreen) {
+            if(input === inputParent__childreen[i]) inputIndex = i;
+        }
+        
+        let indicador = indicadores[inputIndex].textContent;
+        indicadorOutput.value = indicador;
+        if(indicadores[inputIndex].dataset.prefixo) {
+            let prefixo = indicadores[inputIndex].dataset.prefixo;
+            indicadorOutput.value = `${prefixo} ${indicador}`;
+        }
+    },
+
+    retornarFaixaEtaria(input) {
+        const faixaEtariaOutput = document.querySelector(".reference-row__output-idade");
+
+        let faixaEtaria = input.parentElement.dataset.faixaetaria;
+        faixaEtariaOutput.value = faixaEtaria;
+    },
+
+    retornarSexo(input) {
+        const faixaEtariaOutput = document.querySelector(".reference-row__output-sexo");
+
+        let sexo = input.parentElement.dataset.sexo;
+        faixaEtariaOutput.value = sexo;
+    },
+
+    retornarVazio() {
+        const outputs = document.querySelectorAll(".reference-row__output");
+        for (const o of outputs) o.value = "";
+    }
+}
+
+function events() {
+    const gridInputs = document.querySelectorAll("[data-totalgeraleixox]");
+    gridInputs.forEach( gi => {
+        gi.addEventListener("focus", () => {
+            referencia.retornarIndicador(gi);
+            referencia.retornarFaixaEtaria(gi);
+            referencia.retornarSexo(gi);
+        });
+    });
+
+    gridInputs.forEach( gi => gi.addEventListener("focusout", referencia.retornarVazio));
+}
+
+window.onload = events;

@@ -50,7 +50,8 @@
 .ficha__titulo {
     margin-left: 238px;
     font-size: 24px;
-    line-height: 1.5
+    line-height: 1.5;
+    min-height: 38px;
 }
 
 .ficha__titulo__label {
@@ -191,6 +192,7 @@
 .ficha__col-de-inputs {
     display: grid;
     grid-template-columns: 50px;
+    grid-template-rows: repeat(53, 24px);
 }
 
 .ficha__footer {

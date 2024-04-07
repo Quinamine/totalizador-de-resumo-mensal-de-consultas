@@ -1,18 +1,14 @@
 "use strict"
-
-var keyPrefix = "trmc";
-var pCs = keyPrefix;
-
 const menu = {
     realcarTotaisSe(condicao) {
         const totais = document.querySelectorAll("[readonly]");
         for (const t of totais) {
             if(condicao) {
                 t.classList.add("--realcar-totais");
-                localStorage.setItem(`${pCs}-realcarTotais`, "true");
+                localStorage.setItem(`${keyPrefix}-realcarTotais`, "true");
             } else {
                 t.classList.remove("--realcar-totais");
-                localStorage.removeItem(`${pCs}-realcarTotais`);
+                localStorage.removeItem(`${keyPrefix}-realcarTotais`);
             }
         }
     },
@@ -36,10 +32,8 @@ const menu = {
 
             goToLn(numLinha) {
                 if(numLinha < 1 || numLinha > 53) {
-                    const noFoundMsg = "Nenhuma linha correspondente. Certifique-se de que o número digitado esteja no intervalo de 1 à 53."
-                    const retornoJSoutput = document.querySelector(".dialog-box__retornos-js-output");
-                    retornoJSoutput.textContent = noFoundMsg;
-                    retornoJSoutput.parentElement.classList.add("--open");
+                    const lnNoFound = "Nenhuma linha correspondente encontrada. Certifique-se de que o número digitado esteja no intervalo de 1 à 53."
+                    alertarSobre(lnNoFound);
                     this.removeLnHighlight();
 
                 } else {
@@ -75,26 +69,44 @@ const menu = {
         return {  
             dialogBox: document.querySelector(".dialog-box-esvaziar-ficha"),
             abrirDialogBox() { 
+                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
+
+                let inputFilled = 0;
+                for(const input of gridInputs) {
+                    input.value.length > 0 && inputFilled++;
+                }
+
+                if(inputFilled === 0) {
+                    const noInputFilledMsg = "A ficha encontra-se vazia actualmente."
+                    alertarSobre(noInputFilledMsg);
+                    return false;
+                } 
+
                 menu.esvaziarFicha().dialogBox.classList.add("--open");
+                desfoqueDoFundo("desfocar");
             },
 
             fecharDialogBox() {
                 menu.esvaziarFicha().dialogBox.classList.remove("--open");
+                desfoqueDoFundo("focar");
+                removerDestaqueDeRedCells();
             },
 
             confirmar() {
-                const gridInputs  = document.querySelectorAll("[data-subtotaleixox], [readonly]");
+                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
                 const dadosAdicionais__checkboxes = document.querySelectorAll("[data-inputadicionalid]");
        
-
-                for (const gi of gridInputs) {
-                    gi.value = "";
+                for (let i = 0; i < gridInputs.length; i++) {
+                    gridInputs[i].value = "";
+                    localStorage.removeItem(`${keyPrefix}-input${i}`);
                 }
 
                 for (const cb of dadosAdicionais__checkboxes) {                    
                     if(cb.checked) {
                         let id = cb.dataset.inputadicionalid;
-                        document.getElementById(`${id}`).value = "";
+                        let inputAdicional = document.getElementById(`${id}`);
+                        inputAdicional.value = "";
+                        localStorage.removeItem(`${keyPrefix}-${inputAdicional.id}`);
                     }
                 }
                 menu.esvaziarFicha().fecharDialogBox();
@@ -111,19 +123,33 @@ const menu = {
     abrirArtigo(artigo) {
         const artigoSobre = document.querySelector(".artigo-sobre");
         const artigoAjuda = document.querySelector(".artigo-ajuda");
+        const body = document.querySelector(".body");
 
         artigo === "sobre" ? 
         artigoSobre.classList.add("--open") : 
         artigoAjuda.classList.add("--open");
+
+        body.classList.add("body--overflow-h");
+        desfoqueDoFundo("desfocar");
     },
 
     fecharArtigo(artigo) {
         const artigoSobre = document.querySelector(".artigo-sobre");
         const artigoAjuda = document.querySelector(".artigo-ajuda");
+        const body = document.querySelector(".body");
 
-        artigo === "sobre" ? 
-        artigoSobre.classList.remove("--open") : 
-        artigoAjuda.classList.remove("--open");
+        artigo === "sobre" && artigoSobre.classList.remove("--open");
+
+        if(artigo === "ajuda") {
+            const details = document.getElementsByTagName("details");
+            for (const d of details) {
+                d.removeAttribute("open");
+            }
+            artigoAjuda.classList.remove("--open");
+        }
+
+        body.classList.remove("body--overflow-h");
+        desfoqueDoFundo("focar");
     }
 }
 
@@ -135,7 +161,7 @@ function eventos() {
     cRt.addEventListener("change", () => cRt.checked ? menu.realcarTotaisSe(1) : menu.realcarTotaisSe(0));
 
     // Realcar totais no load do windows 
-    if(localStorage.getItem(`${pCs}-realcarTotais`)) {
+    if(localStorage.getItem(`${keyPrefix}-realcarTotais`)) {
         checkboxRealcarTotais.setAttribute("checked", "checked");
         menu.realcarTotaisSe(1);
     }
@@ -160,6 +186,7 @@ function eventos() {
         btn.addEventListener("click", () => {
             let btnParent = btn.parentElement;
             btnParent.parentElement.classList.remove("--open");
+            clearInterval(btnAutoCloseLoop);
         });
     });
 
@@ -190,6 +217,25 @@ function eventos() {
     const btnFecharAjuda = document.querySelector(".artigo-ajuda__btn-fechar")
     btnFecharAjuda.addEventListener("click", () => menu.fecharArtigo("ajuda"));
 
+    // PARTILHAR 
+    const data = {
+        title: "Totalizador de Resumo Mensal de Consultas",
+        text: "O Totalizador de Resumo Mensal de Consultas é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html"
+    }
+
+    const btnPartilhar = document.querySelector(".header__nav__btn-partilhar");
+    btnPartilhar.addEventListener("click", () => {
+        try {
+            navigator.share(data).then(()=>console.log("Totalizador partilhado com sucesso."))
+            .catch(e=> console.log(`Não foi possivel partilhar o totalizador devido ao erro: ${e}.`))
+        } catch (e) {
+            console.log("O seu navegador não tem suporte ao método 'navigator.share()'.")
+        }
+    })
+
 };
 
 window.addEventListener("load", eventos);
+
+

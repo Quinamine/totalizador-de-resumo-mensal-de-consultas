@@ -65,9 +65,7 @@ input[readonly] {
 }
 
 input[type=number] {
-    font-weight: initial;
     appearance: textfield;
-    padding: 0;
     text-align: center;
     padding: 1px;
 }
