@@ -94,7 +94,7 @@
     margin: 0 auto;
     color: var(--cor-de-risco);
     font-size: 22px;
-    border: thin dotted var(--gray--d);
+    border-bottom: thin dotted var(--gray--d);
 }
 
 .ficha__linha-com-numeros-das-colunas,
@@ -235,5 +235,12 @@
         position: sticky;
         left: -15px;
         background-color: var(--yt)
+    }
+}
+
+@media print {
+    .--page-break,
+    .ficha__col-de-inputs input:nth-child(31) {
+        page-break-after: always;
     }
 }

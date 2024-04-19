@@ -32,10 +32,12 @@
 
 @media print {
     :root {
+        --cor-primaria: var(--fullblack);
         --cor-de-borda: var(--fullblack);
         --cor-de-texto: var(--fullblack);
+        --gray--5: var(--fullblack);
         --gray--a: var(--yt);
-        --gray--d: var(--yt)
+        --gray--d: var(--yt);
     }
 }
 
@@ -971,6 +973,7 @@ details mark {
 
 @media print {
     @page {
-        margin: .5cm;
+        margin: .5cm .5cm .62cm .5cm;
+        size: A4 landscape;
     }
 }
