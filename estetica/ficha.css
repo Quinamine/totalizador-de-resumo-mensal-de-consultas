@@ -20,7 +20,7 @@
     }
 }
 
-.ficha__linha-de-emblema {
+.ficha__container-de-emblema {
     position: absolute;
     top: -36px;
     left: -114px;
@@ -37,14 +37,11 @@
     height: 100%
 }
 
-.linha-de-emblema__col-de-republica {
+.ficha__box-descricao-de-emblema {
     flex-direction: column;
     line-height: 1.5;
     padding-left: 6px;
-}
-
-.ficha__emblema-info {
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .ficha__titulo {

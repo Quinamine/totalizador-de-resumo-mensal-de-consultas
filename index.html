@@ -5,12 +5,12 @@
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <title>Totalizador de Resumo Mensal de Consultas</title>
     <meta content="index, follow" name=robots>
-    <meta content="serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique." name=description>
+    <meta content="Serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique." name=description>
     <meta content="Totalizador de Resumo Mensal de Consultas, Totalizador de Relatório Mensal de Consultas, Ficha de Resumo Mensal de Consultas Externas." name=keywords>
     <meta content="Adérito Félix Quinamine" name=author>
     <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html property=og:url>
     <meta content="Totalizador de Resumo Mensal de Consultas" property=og:title>
-    <meta content="serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique." property=og:description>
+    <meta content="Serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique." property=og:description>
     <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/imagens/totalizador-de-resumo-mensal-de-consultas.png property=og:image>
     <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
     <link href=estetica/reset.css rel=stylesheet>
@@ -38,7 +38,7 @@
                     Totalizador de Resumo <span class="logo-word--hide-on-screen-s">Mensal</span>
                     de Consultas
                 </a>
-                <nav class="header__nav --display-flex-y-center">
+                <div role="navigation" class="header__nav --display-flex-y-center">
                     <ul class="header__nav__ul --display-flex-y-center">
                         <li class="header__nav__li header__nav__li-realcartotais">
                             <input type=checkbox id="checkbox-realcar-totais" class="header__checkbox header__child--cursor">
@@ -63,19 +63,19 @@
                         <li class="header__nav__li header__li--hide-on-desktop">
                             <button class="header__nav__btn header__nav__btn-partilhar">Partilhar...</button>
                     </ul>
-                </nav>
+                </div>
             </div>
         </header>
         <main class="main">
             <div class=ficha>
                 <header class=ficha__header>
-                    <div class="ficha__linha-de-emblema --display-flex-y-center">
+                    <div class="ficha__container-de-emblema --display-flex-y-center">
                         <figure class="ficha__moldura-de-emblema">
                             <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
                         </figure>
-                        <div class="linha-de-emblema__col-de-republica --display-flex-xy-center">
-                            <span class="ficha__emblema-info">República de Moçambique</span>
-                            <span class="ficha__emblema-info">Ministério da Sáude</span>
+                        <div class="ficha__box-descricao-de-emblema --display-flex-xy-center">
+                            <span>República de Moçambique</span>
+                            <span>Ministério da Sáude</span>
                         </div>
                     </div>
                     <h1 class="ficha__titulo">
@@ -1542,7 +1542,7 @@
                 </details>
                 <details>
                     <summary >Ir para a linha...</summary>
-                    <p>Abre um campo no qual pode digitar um número de linha entre 1 à 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
+                    <p>Abre um campo no qual pode digitar um número de linha no intervalo de 1 à 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
                 </details>
                 <details>
                     <summary>Esvaziar ficha</summary>
