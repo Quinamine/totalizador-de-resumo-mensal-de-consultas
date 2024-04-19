@@ -80,6 +80,15 @@ function actualizarAno() {
     currentYearOutput.textContent = anoActual;
 }
 
+function sugerirMes() {
+    const mesDatalist = document.getElementById("datalist-meses");
+    const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    const tempo = new Date();
+    let mesIndex = tempo.getMonth();
+
+    mesDatalist.innerHTML = `<option value="${meses[mesIndex]}"></option>`;
+}
+
 function formatarNumeros() {
     const numeros = document.querySelectorAll(".number-format");
 
@@ -115,7 +124,8 @@ window.addEventListener("load", () => {
     dialogBoxAQD__btn.addEventListener("click", aqd.salvarCiencia);
 
     // Actualizar o ano 
-    actualizarAno()
+    actualizarAno();
+    sugerirMes();
     formatarNumeros();
 
     // Animar Janela Aberta

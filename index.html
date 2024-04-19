@@ -1,5 +1,5 @@
 <!doctypehtml>
-<html dir=ltr lang=pt-MZ>
+<html dir=ltr lang=pt-MZ id="root">
     <meta charset=UTF-8>
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
     <meta content="width=device-width,initial-scale=1" name=viewport>
@@ -11,7 +11,7 @@
     <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html property=og:url>
     <meta content="Totalizador de Resumo Mensal de Consultas" property=og:title>
     <meta content="serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais, com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique." property=og:description>
-    <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/totalizador-de-resumo-mensal-de-consultas.png property=og:image>
+    <meta content=https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/imagens/totalizador-de-resumo-mensal-de-consultas.png property=og:image>
     <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
     <link href=estetica/reset.css rel=stylesheet>
     <link href=estetica/layout.css rel=stylesheet>
@@ -33,16 +33,16 @@
 
     <body id="html__body" class="body" ontouchstart="">
         <header class="header">
-            <div class="layout-row header__row body__child--flex-y-center">
+            <div class="layout-row header__row --display-flex-y-center">
                 <a href=index.html class=header__logo>
-                    Totalizador de Resumo <span class="header__logo-word--hide-on-screen-s">Mensal</span>
+                    Totalizador de Resumo <span class="logo-word--hide-on-screen-s">Mensal</span>
                     de Consultas
                 </a>
-                <nav class="header__nav body__child--flex-y-center">
-                    <ul class="header__nav__ul body__child--flex-y-center">
+                <nav class="header__nav --display-flex-y-center">
+                    <ul class="header__nav__ul --display-flex-y-center">
                         <li class="header__nav__li header__nav__li-realcartotais">
-                            <input type=checkbox id="checkbox-realcar-totais" class="header__child-checkbox header__child--cursor">
-                            <label for="checkbox-realcar-totais" class="header__child-label body__child--flex-y-center header__child--cursor">
+                            <input type=checkbox id="checkbox-realcar-totais" class="header__checkbox header__child--cursor">
+                            <label for="checkbox-realcar-totais" class="header__label --display-flex-y-center header__child--cursor">
                                 Realçar&nbsp;totais
                             </label>
                         <li class="header__nav__li">
@@ -69,28 +69,18 @@
         <main class="main">
             <div class=ficha>
                 <header class=ficha__header>
-                    <div class="ficha__linha-de-emblema body__child--flex-y-center">
+                    <div class="ficha__linha-de-emblema --display-flex-y-center">
                         <figure class="ficha__moldura-de-emblema">
                             <img alt="Emblema da República de Moçambique" src=imagens/emblema.png>
                         </figure>
-                        <div class="linha-de-emblema__col-de-republica body__child--flex-xy-center">
+                        <div class="linha-de-emblema__col-de-republica --display-flex-xy-center">
                             <span class="ficha__emblema-info">República de Moçambique</span>
                             <span class="ficha__emblema-info">Ministério da Sáude</span>
                         </div>
                     </div>
                     <h1 class="ficha__titulo">
                         <label for=nome-da-us class="ficha__titulo__label">Resumo Mensal da US - Consultas <sup class="ficha__titulo__sup">(1)</sup></label>
-                        <input id=nome-da-us placeholder="Nome da Unidade Sanitária" class="ficha__titulo__input-us input-adicional --border-b" list="us">
-                        <datalist id=us>
-                            <option value="H.R. DE MOCIMBOA DA PRAIA"></option>
-                            <option value="Centro de Saúde de Nanduadua"></option>
-                            <option value="Centro de Saúde de Diaca"></option>
-                            <option value="Centro de Saúde de Quelimane"></option>
-                            <option value="Centro de Saúde de Milamba"></option>
-                            <option value="Centro de Saúde de Mangoma"></option>
-                            <option value="Centro de Saúde de Mbau"></option>
-                            <option value="Centro de Saúde de Marrere"></option>
-                        </datalist>
+                        <input id=nome-da-us placeholder="Nome da Unidade Sanitária" class="ficha__titulo__input-us input-adicional --border-b">
                     </h1>
 
                     <div class="ficha__container-de-modelo-e-codigo">
@@ -101,244 +91,232 @@
                     <div class=ficha__linha-com-numeros-das-colunas>
                         <div class=ficha__col-de-mes>
                             <label for=mes>Mês:</label>
-                            <input id=mes class="ficha__campo-para-mes input-adicional --border-b" list="meses">
-                            <datalist id=meses>
-                                <option value="Janeiro"></option>
-                                <option value="Fevereiro"></option>
-                                <option value="Março"></option>
-                                <option value="Abril"></option>
-                                <option value="Maio"></option>
-                                <option value="Junho"></option>
-                                <option value="Julho"></option>
-                                <option value="Agosto"></option>
-                                <option value="Setembro"></option>
-                                <option value="Outubro"></option>
-                                <option value="Novembro"></option>
-                                <option value="Dezembro"></option>
+                            <input id=mes list="datalist-meses" class="ficha__campo-para-mes input-adicional --border-b">
+                            <datalist id=datalist-meses>
                             </datalist>
                         </div>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r --margin-l-negative">1</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">2</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">3</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">4</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">5</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">6</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">7</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">8</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">9</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">10</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">11</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">12</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">13</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">14</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">15</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">16</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">17</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">18</span>
-                        <span class="ficha__num-de-col body__child--flex-xy-center --border-r">19</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r --margin-l-negative">1</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">2</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">3</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">4</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">5</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">6</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">7</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">8</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">9</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">10</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">11</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">12</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">13</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">14</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">15</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">16</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">17</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">18</span>
+                        <span class="ficha__num-de-col --display-flex-xy-center --border-r">19</span>
                     </div>
                     <div class=ficha__linha-de-faixas-etarias>
-                        <span class="body__child--flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Faixas Etárias</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">0 - 11 meses</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">1 - 4 anos</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">5 - 14 anos</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">SUBTOTAL</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">15 - 24 anos</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">25 - 59 anos</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 ">≥ 60 anos</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">SUBTOTAL</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">TOTAL</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">TOTAL</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Faixas Etárias</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">0 - 11 meses</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 ">1 - 4 anos</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 ">5 - 14 anos</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 ">SUBTOTAL</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 ">15 - 24 anos</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">25 - 59 anos</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 ">≥ 60 anos</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">SUBTOTAL</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">TOTAL</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">TOTAL</span>
                     </div>
                     <div class=ficha__linha-de-sexo>
-                        <span class="body__child--flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Sexo</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">F</span>
-                        <span class="body__child--flex-xy-center --border-t --border-r --fw-700">M</span>
-                        <span class="body__child--flex-xy-center --border-r --fw-700">GERAL</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --border-l child-with-pos-sticky-on-screen-s">Sexo</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700 --margin-l-negative">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">F</span>
+                        <span class="--display-flex-xy-center --border-t --border-r --fw-700">M</span>
+                        <span class="--display-flex-xy-center --border-r --fw-700">GERAL</span>
                     </div>
                 </header>
                 <div class="ficha__body">
                     <div class="ficha__col-com-numeros-das-linhas">
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">1</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">2</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">3</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">4</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">5</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">6</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">7</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">8</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">9</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">10</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">11</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">12</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">13</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">14</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">15</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">16</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">17</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">18</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">19</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">20</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">21</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">22</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">23</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">24</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">25</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">26</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">27</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">28</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">29</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">30</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">31</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">32</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">33</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">34</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">35</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">36</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">37</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">38</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">39</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">40</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">41</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">42</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">43</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">44</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">45</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">46</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">47</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">48</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">49</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">50</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">51</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">52</span>
-                        <span class="ficha__num-de-linha body__child--flex-xy-center --border-b">53</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">1</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">2</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">3</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">4</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">5</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">6</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">7</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">8</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">9</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">10</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">11</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">12</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">13</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">14</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">15</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">16</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">17</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">18</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">19</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">20</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">21</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">22</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">23</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">24</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">25</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">26</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">27</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">28</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">29</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">30</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">31</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">32</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">33</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">34</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">35</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">36</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">37</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">38</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">39</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">40</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">41</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">42</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">43</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">44</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">45</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">46</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">47</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">48</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">49</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">50</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">51</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">52</span>
+                        <span class="ficha__num-de-linha --display-flex-xy-center --border-b">53</span>
                     </div>
                     <div class=ficha__container-row-groups>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">Total de Consultas</span>
                         </div>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">Referências</span>
                         </div>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">Diagnósticos</span>
                         </div>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">Malária</span>
                         </div>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">
                                 Sarampo<br>(9 - 23 M.)
                             </span>
                         </div>
-                        <div class="body__child--flex-xy-center --border-b">
+                        <div class="--display-flex-xy-center --border-b">
                             <span class="ficha__row-group-title">
                                 Referência <br>/ Trans&hyphen;<br>ferência
                             </span>
                         </div>
                     </div>
                     <div class="ficha__col-de-indicadores --border-r --border-l child-with-pos-sticky-on-screen-s">
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">1ªˢ Consultas</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Consultas de Seguimento</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b --fw-700">
+                        <span class="ficha__indicador --display-flex-y-center --border-b">1ªˢ Consultas</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Consultas de Seguimento</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b --fw-700">
                             TOTAL CONSULTAS
                         </span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referências:">Parteira Tradicional (PT)</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referências:">APE's</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referências:">Praticante de Medicina Tradicional (PMT)</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referências:">Outras US's</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Anemia </span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Deficiência Nutricional</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Malária</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Febre (causa desconhecida)</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Diarreia Aguda</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Disenteria</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Distúrbios Gastrointestinais</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças Infecciosas / Parasitárias</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Infecção Respiratória Aguda</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Asma Bronquial</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Epilepsia</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Hipertensão Arterial</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Diabetes</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Suspeita de Câncro</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Violência Baseada no Gênero</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Outro Tipo de Violência</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Queda</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Traumatismo / Envenenamento</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Queimadura</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Acidente de Viação</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Perturbações Mentais e Alteração do Comportamento</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Tentativa de Suicídio</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Toxicodependência</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças do Olho</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças do Ouvido</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças da Pele</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Problemas Alérgicos</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças do Aparelho Genitourinário</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Doenças do Sistema Osteomuscular</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Mordedura/Picada</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Sarampo (d)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referências:">Parteira Tradicional (PT)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referências:">APE's</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referências:">Praticante de Medicina Tradicional (PMT)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referências:">Outras US's</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Anemia </span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Deficiência Nutricional</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Malária</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Febre (causa desconhecida)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Diarreia Aguda</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Disenteria</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Distúrbios Gastrointestinais</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças Infecciosas / Parasitárias</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Infecção Respiratória Aguda</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Asma Bronquial</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Epilepsia</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Hipertensão Arterial</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Diabetes</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Suspeita de Câncro</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Violência Baseada no Gênero</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Outro Tipo de Violência</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Queda</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Traumatismo / Envenenamento</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Queimadura</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Acidente de Viação</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Perturbações Mentais e Alteração do Comportamento</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Tentativa de Suicídio</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Toxicodependência</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças do Olho</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças do Ouvido</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças da Pele</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Problemas Alérgicos</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças do Aparelho Genitourinário</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Doenças do Sistema Osteomuscular</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Mordedura/Picada</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Sarampo (d)</span>
                         <div class="ficha__grid-de-indicador">
-                            <div class="body__child--flex-xy-center --border-r --border-b">
-                                <span class="body__child--flex-y-center">ITS (d)</span>
+                            <div class="--display-flex-xy-center --border-r --border-b">
+                                <span class="--display-flex-y-center">ITS (d)</span>
                             </div>
                             <div class=ficha__container-de-subindicadores>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="ITS (d):">Casos de ITS</span>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="ITS (d):">Contactos e)</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="ITS (d):">Casos de ITS</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="ITS (d):">Contactos e)</span>
                             </div>
                         </div>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b">Outro Diagnóstico</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b">Outro Diagnóstico</span>
                         <div class="ficha__grid-de-indicador">
-                            <div class="body__child--flex-xy-center --border-r --border-b">
-                                <span class="body__child--flex-y-center">TDR</span>
+                            <div class="--display-flex-xy-center --border-r --border-b">
+                                <span class="--display-flex-y-center">TDR</span>
                             </div>
                             <div class=ficha__container-de-subindicadores>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - TDR:">Doentes Testados</span>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - TDR:">Confirmados</span>
-                            </div>
-                        </div>
-                        <div class="ficha__grid-de-indicador">
-                            <div class="body__child--flex-xy-center --border-r --border-b">
-                                <span class="body__child--flex-y-center">HTZ</span>
-                            </div>
-                            <div class=ficha__container-de-subindicadores>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - HTZ:">Doentes Testados</span>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - HTZ:">Confirmados</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - TDR:">Doentes Testados</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - TDR:">Confirmados</span>
                             </div>
                         </div>
                         <div class="ficha__grid-de-indicador">
-                            <div class="body__child--flex-xy-center --border-r --border-b">
-                                <span class="body__child--flex-y-center">Tratamento</span>
+                            <div class="--display-flex-xy-center --border-r --border-b">
+                                <span class="--display-flex-y-center">HTZ</span>
                             </div>
                             <div class=ficha__container-de-subindicadores>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - Tratamento:">AL</span>
-                                <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Malária - Tratamento:">ASAQ</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - HTZ:">Doentes Testados</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - HTZ:">Confirmados</span>
                             </div>
                         </div>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Sarampo (9 - 23 M.):">Vacinada (Vac.)</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Sarampo (9 - 23 M.):">Não Vacinada (Não Vac.)</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b --fw-700">
+                        <div class="ficha__grid-de-indicador">
+                            <div class="--display-flex-xy-center --border-r --border-b">
+                                <span class="--display-flex-y-center">Tratamento</span>
+                            </div>
+                            <div class=ficha__container-de-subindicadores>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - Tratamento:">AL</span>
+                                <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Malária - Tratamento:">ASAQ</span>
+                            </div>
+                        </div>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Sarampo (9 - 23 M.):">Vacinada (Vac.)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Sarampo (9 - 23 M.):">Não Vacinada (Não Vac.)</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b --fw-700">
                             TOTAL SARAMPO (9 - 23 M.)
                         </span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referência / Transferência:">Outra Consulta</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referência / Transferência:">Internamento</span>
-                        <span class="ficha__indicador body__child--flex-y-center --border-b" data-prefixo="Referência / Transferência:">US</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referência / Transferência:">Outra Consulta</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referência / Transferência:">Internamento</span>
+                        <span class="ficha__indicador --display-flex-y-center --border-b" data-prefixo="Referência / Transferência:">US</span>
                     </div>
                     <div class="ficha__col-de-inputs" data-faixaetaria="0 - 11 meses" data-sexo="F">
                         <input type=number min=0 class="--border-r --border-b" data-subtotaleixox=l1-c1c3c5 data-subtotaleixoxoutput=l1-c7 data-totalgeraleixox=l1-c1-a-c14 data-totalgeraleixoxoutput=l1-c19 data-totalparcialeixox=l1-c1c3c5c9c11c13 data-totalparcialeixoxoutput=l1-c17 data-subtotaleixoy=l1l2-c1c3c5 data-subtotaleixoyoutput=l3-c7 data-totalgeraleixoy=l1l2-c1-a-c14 data-totalgeraleixoyoutput=l3-c19 data-totalparcialeixoy=l1l2-c1c3c5c9c11c13 data-totalparcialeixoyoutput=l3-c17 data-totaleixoy="l1l2-c1" data-totaleixoyoutput="l3-c1">
@@ -1407,32 +1385,25 @@
                             <option value="Médica de Clínica Geral"></option>
                             <option value="Técnico de Medicina Geral"></option>
                             <option value="Técnica de Medicina Geral"></option>
-                            <option value="Enfermeira de SMI"></option>
                             <option value="Agente de Medicina"></option>
-                            <option value="MÉDICO DE CLÍNICA GERAL"></option>
-                            <option value="MÉDICA DE CLÍNICA GERAL"></option>
-                            <option value="TÉCNICO DE MEDICINA GERAL"></option>
-                            <option value="TÉCNICA DE MEDICINA GERAL"></option>
-                            <option value="ENFERMEIRA DE SMI"></option>
-                            <option value="AGENTE DE MEDICINA"></option>
                         </datalist>
                     </div>
                 </footer>
             </div>
             <div class="main__container-de-campo-de-nota layout-row">
-                <textarea class="ficha__campo-de-nota input-adicional" id="comentarios" placeholder="Comentários sobre o resumo... Este campo só será impresso se tiver algum conteúdo." placeholder="" rows=3></textarea>
+                <textarea class="main__campo-de-nota input-adicional" id="comentarios" placeholder="Comentários sobre o resumo... Este campo só será impresso se tiver algum conteúdo." rows=3></textarea>
             </div>
 
             <div class="reference-container">
                 <div class="layout-row reference-row">
-                    <span class="reference-row__label" aria-placeholder="indicador">Indicador:</span> 
-                    <output class="reference-row__output reference-row__output-indicador body__child--flex-xy-center"></output>
+                    <span class="reference-row__label">Indicador:</span> 
+                    <output class="reference-row__output reference-row__output-indicador --display-flex-xy-center"></output>
 
                     <span class="reference-row__label">Faixa etária:</span> 
-                    <output class="reference-row__output reference-row__output-idade body__child--flex-xy-center --fw-700"></output>
+                    <output class="reference-row__output reference-row__output-idade --display-flex-xy-center --fw-700"></output>
 
                     <span class="reference-row__label">Sexo:</span> 
-                    <output class="reference-row__output reference-row__output-sexo body__child--flex-xy-center --fw-700"></output>
+                    <output class="reference-row__output reference-row__output-sexo --display-flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
@@ -1441,7 +1412,7 @@
             <div class="dialog-box-default dialog-box-alerta-sobre-aqd">
                 <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de Consultas</h3>
                 <p class="dialog-box-default__p">
-                    A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.
+                    A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.
                 </p>
                 <div class="dialog-box-default__btn-container">
                     <button class="dialog-box-default__btn dialog-box-aqd__btn">Entendi</button>
@@ -1450,7 +1421,7 @@
 
             <div class="dialog-box-default dialog-box-default--width-s">
                 <h3 class="dialog-box-default__titulo">Totalizador de Resumo Mensal de Consultas</h3>
-                <p class="dialog-box-default__p dialog-box--width-s__console body__child--flex-y-center">
+                <p class="dialog-box-default__p dialog-box--width-s__console --display-flex-y-center">
                     
                 </p>
                 <div class="dialog-box-default__btn-container">
@@ -1458,9 +1429,9 @@
                 </div>
             </div>
 
-            <div class="dialog-box-ir-para body__child--flex-y-center">
+            <div class="dialog-box-ir-para --display-flex-y-center">
                 <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Ir para a linha (número da linha)">
-                <button class=dialog-box-ir-para__btn title=Fechar>×</button>
+                <button class=dialog-box-ir-para__btn-fechar title=Fechar>×</button>
             </div>
             <div class="dialog-box-esvaziar-ficha">
                 <h3 class="dialog-box-esvaziar-ficha__titulo --fw-700">Esvaziar ficha</h3>
@@ -1509,7 +1480,7 @@
         </section>
 
         <section class="sessao-de-artigos">
-            <article class="artigo artigo-sobre">
+            <article class="artigo artigo-sobre" id="sobre">
                 <h2 class="artigo__titulo artigo__titulo-nivel-1">Visão geral sobre o totalizador</h2>
                 <figure>
                     <img alt="Totalizador de Resumo Mensal de Consultas" src=imagens/totalizador-de-resumo-mensal-de-consultas.png class="artigo__img artigo-sobre__img">
@@ -1533,10 +1504,10 @@
                 <ul class="artigo__lista artigo__ul">
                     <li>Um telemóvel ou computador com acesso à internet.</li>
                     <li>Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de consultas externas) da sua Unidade Sanitária.</li>
-                    <li>E por fim, preencher os dados nas células correspondentes quanto ao indicador e variáveis (sexo e faixa etária), e consequentemente os respectivos totais são, correcta e automaticamente, calculados em tempo real.</li>
+                    <li>E por fim, preencher os dados nas células correspondentes quanto ao indicador e variáveis (sexo e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.</li>
                 </ul>
 
-                <p class="artigo__p--destaque">A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, contudo, isso, por si só, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se, exactamente, nos dados que você fornece.</p>
+                <p class="artigo__p--destaque">A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente, não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.</p>
 
                 <h3 class="artigo__titulo artigo__titulo-nivel-2">Qual é o destino dos dados que eu insiro?</h3>
 
@@ -1557,8 +1528,7 @@
                     
                 <ul class="artigo__lista artigo__ul">
                     <li>Não alerta sobre discrepância de dados, portanto, a análise da qualidade e lógica do resumo é inteiramente dependente do usuário;</li>
-                    <li>Disponibilidade remota (é necessário um telemóvel ou computador com acesso à internet para ser acessado);</li>
-                    <li>Pode necessitar de custos monetários (mínimos) para sua impressão.</li>
+                    <li>Disponibilidade remota (é necessário um telemóvel ou computador com acesso à internet para ser acessado).</li>
                 </ul>
                 <button class="artigo__btn-fechar artigo-sobre__btn-fechar" title="Fechar">&times;</button>
             </article>
@@ -1572,13 +1542,13 @@
                 </details>
                 <details>
                     <summary >Ir para a linha...</summary>
-                    <p>Abre um campo, no qual pode digitar um número de linha entre 1 à 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
+                    <p>Abre um campo no qual pode digitar um número de linha entre 1 à 53 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
                 </details>
                 <details>
                     <summary>Esvaziar ficha</summary>
                     <p>Comando para limpar as células da ficha após a confirmação da acção na caixa de diálogo que abre.</p>
                     
-                    <p>Também permite esvaziar campos adicionais (US, Mês, Nome, Categoria, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando, deste modo, que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
+                    <p>Permite também esvaziar campos adicionais (US, Mês, Nome, Categoria, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando, deste modo, que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
 
                     <figure class="details__moldura details-esvaziar-ficha__moldura">
                         <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo de esvaziamento da ficha" class="artigo__img"/>
@@ -1637,6 +1607,7 @@
                 <button class="artigo__btn-fechar artigo-ajuda__btn-fechar" title="Fechar">&times;</button>
             </article>
         </section>
+
         <footer class="footer">
             <div class="layout-row footer__row">
                 <nav class=footer__nav>
@@ -1668,13 +1639,13 @@
                             <a href=https://quinamin.github.io/requisicao-balancete/index.html target=_blank class="footer__nav-link">Requisição/Balancete</a>
                     </ul>
                 </nav>
-                <p class="footer__info footer__info-created-by">
+                <p class="footer__p footer__p-created-by">
                     Criado com atenção e 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a>
                     | © <span class="footer__current-year"></span> - Totalizador de Resumo Mensal de Consultas
                 </p>
-                <a href=#html__body class=footer__link-back-to-top>Voltar ao topo</a>
+                <a href=#root class=footer__link-back-to-top>Voltar ao topo</a>
             </div>
-            <p class="footer__info footer__info-available-since">Disponível desde 22/06/2022. Última actualização: Abril/2024.</p>
+            <p class="footer__p footer__p-available-since">Disponível desde 18/06/2022. Última actualização: Abril/2024.</p>
         </footer>
         <div class="desfoque"></div>
     </body>

@@ -15,7 +15,7 @@
 
 @media print {
     .ficha__header {
-        position: initial;
+        position: relative;
         top: 0;
     }
 }

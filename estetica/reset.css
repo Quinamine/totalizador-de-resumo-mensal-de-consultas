@@ -85,6 +85,11 @@ a:hover {
     cursor: pointer;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 ::selection {
     background-color: var(--cor-primaria);
     color: var(--yt)

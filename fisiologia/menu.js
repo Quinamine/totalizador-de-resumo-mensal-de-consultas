@@ -32,7 +32,7 @@ const menu = {
 
             goToLn(numLinha) {
                 if(numLinha < 1 || numLinha > 53) {
-                    const lnNoFound = "Nenhuma linha correspondente encontrada. Certifique-se de que o número digitado esteja no intervalo de 1 à 53."
+                    const lnNoFound = "Sem correspondência. Certifique-se de que o número digitado esteja no intervalo de 1 à 53."
                     alertarSobre(lnNoFound);
                     this.removeLnHighlight();
 
@@ -115,7 +115,7 @@ const menu = {
     },
 
     imprimirFicha() {
-        const comentarios = document.querySelector(".ficha__campo-de-nota");
+        const comentarios = document.querySelector(".main__campo-de-nota");
         comentarios.value === "" && comentarios.classList.add("--no-print");
         window.print()
     },
@@ -129,7 +129,7 @@ const menu = {
         artigoSobre.classList.add("--open") : 
         artigoAjuda.classList.add("--open");
 
-        body.classList.add("body--overflow-h");
+        body.classList.add("--overflow-h");
         desfoqueDoFundo("desfocar");
     },
 
@@ -148,7 +148,7 @@ const menu = {
             artigoAjuda.classList.remove("--open");
         }
 
-        body.classList.remove("body--overflow-h");
+        body.classList.remove("--overflow-h");
         desfoqueDoFundo("focar");
     }
 }
@@ -169,7 +169,7 @@ function eventos() {
     const btnAbrirIrPara = document.querySelector(".header__nav__btn-ir-para");
     btnAbrirIrPara.addEventListener("click", menu.irParaLinha().abrirDialogBox);
 
-    const btnFecharIrPara = document.querySelector(".dialog-box-ir-para__btn");
+    const btnFecharIrPara = document.querySelector(".dialog-box-ir-para__btn-fechar");
     btnFecharIrPara.addEventListener("click", menu.irParaLinha().fecharDialogBox);
 
     const inputNumLinha = document.querySelector(".dialog-box-ir-para__input-linha");
@@ -210,6 +210,24 @@ function eventos() {
     const btnFecharSobre = document.querySelector(".artigo-sobre__btn-fechar")
     btnFecharSobre.addEventListener("click", () => menu.fecharArtigo("sobre"));
 
+    window.addEventListener("resize", () => {
+        const artigoSobre = document.querySelector(".artigo-sobre");
+
+        const itsMobile = window.innerWidth < 1024;
+        const articleIsOpen = artigoSobre.matches(".--open");
+        const body = document.querySelector(".body");
+
+        if(itsMobile && articleIsOpen) {
+            desfoqueDoFundo("focar");
+            location.href = `index.html#${artigoSobre.id}`;
+            body.classList.remove("--overflow-h");
+            
+        } else if(!itsMobile && articleIsOpen) {
+            desfoqueDoFundo("desfocar");
+            body.classList.add("--overflow-h");
+        }       
+    });
+
     const btnAbrirAjuda = document.querySelector(".header__nav__btn-ajuda");
     btnAbrirAjuda.addEventListener("click", () => menu.abrirArtigo("ajuda"));
 
@@ -236,5 +254,3 @@ function eventos() {
 };
 
 window.addEventListener("load", eventos);
-
-
