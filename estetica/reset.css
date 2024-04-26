@@ -48,7 +48,7 @@ input,textarea {
     border-radius: 0;
     outline: 0;
     color: var(--cor-de-texto);
-    font-family: sans-serif,Arial,Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: var(--input-font-size);
     cursor: text;
 }

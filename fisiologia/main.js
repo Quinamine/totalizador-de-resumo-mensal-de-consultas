@@ -15,60 +15,60 @@ const backup = {
     },
     
     saveExtraInputs() {
-        const extraInputs = document.querySelectorAll(".input-adicional");
-        extraInputs.forEach( input => {
-            input.addEventListener("input", () => localStorage.setItem(`${keyPrefix}-${input.id}`, input.value));
-            input.value = localStorage.getItem(`${keyPrefix}-${input.id}`);
+        const extraInputs = document.querySelectorAll(".input-nao-celular");
+        extraInputs.forEach( extraInput => {
+            extraInput.addEventListener("input", () => localStorage.setItem(`${keyPrefix}-${extraInput.id}`, extraInput.value));
+            extraInput.value = localStorage.getItem(`${keyPrefix}-${extraInput.id}`);
         });
     }
 }
 
 const totalizador = {
-    filtrarCelulas(input) {
-        input.classList.add(`${input.dataset.subtotaleixox}`);
-        input.classList.add(`${input.dataset.totalparcialeixox}`);
-        input.classList.add(`${input.dataset.totalgeraleixox}`);
+    filtrarCelulas(inputTarget) {
+        inputTarget.classList.add(`${inputTarget.dataset.subtotaleixox}`);
+        inputTarget.classList.add(`${inputTarget.dataset.totalparcialeixox}`);
+        inputTarget.classList.add(`${inputTarget.dataset.totalgeraleixox}`);
 
         // Subtotal eixo x
-        const subtotalEixox = document.querySelectorAll(`.${input.dataset.subtotaleixox}`);
-        const subtotalEixoxoutput = document.querySelector(`.${input.dataset.subtotaleixoxoutput}`);
+        const subtotalEixox = document.querySelectorAll(`.${inputTarget.dataset.subtotaleixox}`);
+        const subtotalEixoxoutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoxoutput}`);
         subtotalEixoxoutput.value = this.somar(subtotalEixox);
     
         // Total parcial
-        const totalParcialEixox = document.querySelectorAll(`.${input.dataset.totalparcialeixox}`);
-        const totalParcialEixoxoutput = document.querySelector(`.${input.dataset.totalparcialeixoxoutput}`);
+        const totalParcialEixox = document.querySelectorAll(`.${inputTarget.dataset.totalparcialeixox}`);
+        const totalParcialEixoxoutput = document.querySelector(`.${inputTarget.dataset.totalparcialeixoxoutput}`);
         totalParcialEixoxoutput.value = this.somar(totalParcialEixox);
     
         // Total Geral 
-        const totalGeralEixox = document.querySelectorAll(`.${input.dataset.totalgeraleixox}`);
-        const totalGeralEixoxoutput = document.querySelector(`.${input.dataset.totalgeraleixoxoutput}`);
+        const totalGeralEixox = document.querySelectorAll(`.${inputTarget.dataset.totalgeraleixox}`);
+        const totalGeralEixoxoutput = document.querySelector(`.${inputTarget.dataset.totalgeraleixoxoutput}`);
         totalGeralEixoxoutput.value = this.somar(totalGeralEixox);
     
-        if(input.dataset.subtotaleixoy) {
-            input.classList.add(`${input.dataset.subtotaleixoy}`);
-            const subtotalEixoy = document.querySelectorAll(`.${input.dataset.subtotaleixoy}`);
-            const subtotalEixoyOutput = document.querySelector(`.${input.dataset.subtotaleixoyoutput}`);
+        if(inputTarget.dataset.subtotaleixoy) {
+            inputTarget.classList.add(`${inputTarget.dataset.subtotaleixoy}`);
+            const subtotalEixoy = document.querySelectorAll(`.${inputTarget.dataset.subtotaleixoy}`);
+            const subtotalEixoyOutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoyoutput}`);
             subtotalEixoyOutput.value = this.somar(subtotalEixoy);
         }
     
-        if(input.dataset.totalparcialeixoy) {
-            input.classList.add(`${input.dataset.totalparcialeixoy}`);
-            const totalParcialEixoy = document.querySelectorAll(`.${input.dataset.totalparcialeixoy}`);
-            const totalParcialEixoyOutput = document.querySelector(`.${input.dataset.totalparcialeixoyoutput}`);
+        if(inputTarget.dataset.totalparcialeixoy) {
+            inputTarget.classList.add(`${inputTarget.dataset.totalparcialeixoy}`);
+            const totalParcialEixoy = document.querySelectorAll(`.${inputTarget.dataset.totalparcialeixoy}`);
+            const totalParcialEixoyOutput = document.querySelector(`.${inputTarget.dataset.totalparcialeixoyoutput}`);
             totalParcialEixoyOutput.value = this.somar(totalParcialEixoy);
         }
     
-        if(input.dataset.totalgeraleixoy) {
-            input.classList.add(`${input.dataset.totalgeraleixoy}`);
-            const totalGeralEixoy = document.querySelectorAll(`.${input.dataset.totalgeraleixoy}`);
-            const totalGeralEixoyOutput = document.querySelector(`.${input.dataset.totalgeraleixoyoutput}`);
+        if(inputTarget.dataset.totalgeraleixoy) {
+            inputTarget.classList.add(`${inputTarget.dataset.totalgeraleixoy}`);
+            const totalGeralEixoy = document.querySelectorAll(`.${inputTarget.dataset.totalgeraleixoy}`);
+            const totalGeralEixoyOutput = document.querySelector(`.${inputTarget.dataset.totalgeraleixoyoutput}`);
             totalGeralEixoyOutput.value = this.somar(totalGeralEixoy);
         }
     
-        if(input.dataset.totaleixoy) {
-            input.classList.add(`${input.dataset.totaleixoy}`);
-            const totalEixoy = document.querySelectorAll(`.${input.dataset.totaleixoy}`);
-            const totalEixoyOutput = document.querySelector(`.${input.dataset.totaleixoyoutput}`);
+        if(inputTarget.dataset.totaleixoy) {
+            inputTarget.classList.add(`${inputTarget.dataset.totaleixoy}`);
+            const totalEixoy = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`);
+            const totalEixoyOutput = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
             totalEixoyOutput.value = this.somar(totalEixoy);
         }
     },
