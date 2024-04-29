@@ -335,12 +335,6 @@ input[data-totalgeraleixox]:focus,
     position: relative;
 }
 
-@media screen and (max-width: 1023px) {
-    .footer {
-        padding-top: 20px;
-    }
- }
-
 @media print {
     .footer {
         display: none;
@@ -447,12 +441,18 @@ input[data-totalgeraleixox]:focus,
 
 @media screen and (max-width: 630px) {
     .reference-row {
-        grid-template-columns: 1fr 75px 20px;
+        grid-template-columns: 1fr 85px 35px;
         grid-column-gap: 3px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .reference-row__output {
         margin: 0px;
+    }
+
+    .reference-row__output--indicador {
+        padding-left: 15px;
     }
     
     .reference-row__label {

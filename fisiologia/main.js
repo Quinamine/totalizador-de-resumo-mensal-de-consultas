@@ -24,7 +24,7 @@ const backup = {
 }
 
 const totalizador = {
-    filtrarCelulas(inputTarget) {
+    filtrarEtotalizarCelulas(inputTarget) {
         inputTarget.classList.add(`${inputTarget.dataset.subtotaleixox}`);
         inputTarget.classList.add(`${inputTarget.dataset.totalparcialeixox}`);
         inputTarget.classList.add(`${inputTarget.dataset.totalgeraleixox}`);
@@ -86,8 +86,8 @@ const totalizador = {
 function escutarEventos() {
     const gridInputs = document.querySelectorAll("[data-totalgeraleixox]");
     gridInputs.forEach( gi => {
-        gi.addEventListener("input", () => totalizador.filtrarCelulas(gi));
-        gi.value !== "" && totalizador.filtrarCelulas(gi);
+        gi.addEventListener("input", () => totalizador.filtrarEtotalizarCelulas(gi));
+        gi.value !== "" && totalizador.filtrarEtotalizarCelulas(gi);
     });
 }
 

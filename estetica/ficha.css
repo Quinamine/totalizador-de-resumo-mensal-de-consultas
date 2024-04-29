@@ -1,7 +1,6 @@
 ﻿
 .ficha {
-    max-width: var(--layout-width);
-    min-width: var(--layout-width);
+    width: var(--layout-width);
     margin: 43px auto 10px;
     position: relative;
 }
@@ -150,7 +149,6 @@
 
 .ficha__num-de-linha.--highlight {
     background-color: var(--orange);
-    color: var(--yt)
 }
 
 .ficha__container-row-groups {
@@ -226,8 +224,7 @@
 
 
 @media screen and (max-width: 1304px ) {
-    .child-with-pos-sticky-on-screen-s {
-        position:-webkit-sticky;
+    .ficha__child--pos-sticky {
         position: sticky;
         left: -15px;
         background-color: var(--yt)
