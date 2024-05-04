@@ -69,7 +69,7 @@ const menu = {
         return {  
             dialogBox: document.querySelector(".dialog-box-esvaziar-ficha"),
             abrirDialogBox() { 
-                const gridInputs  = document.querySelectorAll("[totaleixox], [readonly]");
+                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
 
                 let inputFilled = 0;
                 for(const input of gridInputs) {
@@ -93,7 +93,7 @@ const menu = {
             },
 
             confirmar() {
-                const gridInputs  = document.querySelectorAll("[totaleixox], [readonly]");
+                const gridInputs  = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
                 const dadosAdicionais__checkboxes = document.querySelectorAll("[data-inputadicionalid]");
        
                 for (let i = 0; i < gridInputs.length; i++) {
@@ -116,7 +116,7 @@ const menu = {
 
     imprimirFicha() {
         const comentarios = document.querySelector(".main__campo-de-nota");
-        comentarios.value === "" && comentarios.classList.add("--no-print");
+        comentarios.value === "" && comentarios.parentElement.classList.add("--no-print");
         window.print()
     },
 

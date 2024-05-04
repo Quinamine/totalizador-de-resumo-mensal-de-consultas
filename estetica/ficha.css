@@ -127,6 +127,15 @@
     text-align: center
 }
 
+.ficha__linha-de-sexo__primeira-celula {
+    width: 114px;
+    height: 24px;
+    position: absolute;
+    left: -114px;
+    background: linear-gradient(45deg, var(--gray--4), transparent);
+    border-left-color: var(--gray--4)
+}
+
 /* Body-da-ficha */
 .ficha__body {
     display: grid;
@@ -149,6 +158,7 @@
 
 .ficha__num-de-linha.--highlight {
     background-color: var(--orange);
+    color: var(--cor-de-texto);
 }
 
 .ficha__container-row-groups {
