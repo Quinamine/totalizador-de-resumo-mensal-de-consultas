@@ -5,6 +5,12 @@
     position: relative;
 }
 
+@media print {
+    .ficha {
+        margin-top: 10;
+    }
+}
+
 .ficha__header {
     margin-left: calc(24px + 90px);
     position: sticky;
@@ -80,7 +86,6 @@
 .ficha__modelo {
     display: block;
     text-align: right;
-    color: var(--gray--5);
     font-size: 14px;
 }
 
@@ -132,7 +137,7 @@
     height: 24px;
     position: absolute;
     left: -114px;
-    background: linear-gradient(45deg, var(--gray--4), transparent);
+    background: linear-gradient(45deg, var(--gray--4), var(--gray--c));
     border-left-color: var(--gray--4)
 }
 
@@ -246,4 +251,13 @@
     .ficha__col-de-inputs input:nth-child(31) {
         page-break-after: always;
     }
+
+    .--page-break + *,
+    .ficha__col-de-inputs input:nth-child(32) {
+        border-top: var(--border-style);
+    }
+}
+
+.--margin-left-menos-1 {
+    margin-left: -1px;
 }

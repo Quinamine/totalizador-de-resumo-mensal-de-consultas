@@ -1,3 +1,5 @@
+"use strict"
+
 var keyPrefix = "trmc";
 
 function desfoqueDoFundo(accao) {
@@ -42,7 +44,7 @@ function destacarCelulasSaturadas() {
     
     if(celulasSaturadas > 0) {
         setTimeout(() => {
-            motivoDeSaturacao = document.querySelector(".artigo__details-motivo-de-red-cells");
+            const motivoDeSaturacao =  document.querySelector(".artigo__details-motivo-de-red-cells");
 
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
@@ -72,7 +74,7 @@ const aqd = {
 
 function actualizarAno() {
     const tempo = new Date();
-    anoActual = tempo.getFullYear();
+    let anoActual = tempo.getFullYear();
 
     if(anoActual < 2022) anoActual = 2022;
 
@@ -80,7 +82,7 @@ function actualizarAno() {
     currentYearOutput.textContent = anoActual;
 }
 
-function sugerMesActual() {
+function sugerirMesActual() {
     const mesDatalist = document.getElementById("datalist-meses");
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     const tempo = new Date();
@@ -125,7 +127,7 @@ window.addEventListener("load", () => {
 
     // Actualizar o ano 
     actualizarAno();
-    sugerMesActual();
+    sugerirMesActual();
     formatarNumeros();
 
     // Animar Janela Aberta

@@ -31,18 +31,18 @@ const totalizador = {
 
         // Subtotal eixo x
         const subtotalEixox = document.querySelectorAll(`.${inputTarget.dataset.subtotaleixox}`);
-        const subtotalEixoxoutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoxoutput}`);
-        subtotalEixoxoutput.value = this.somar(subtotalEixox);
+        const subtotalEixoxOutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoxoutput}`);
+        subtotalEixoxOutput.value = this.somar(subtotalEixox);
     
         // Total parcial
         const totalParcialEixox = document.querySelectorAll(`.${inputTarget.dataset.totalparcialeixox}`);
-        const totalParcialEixoxoutput = document.querySelector(`.${inputTarget.dataset.totalparcialeixoxoutput}`);
-        totalParcialEixoxoutput.value = this.somar(totalParcialEixox);
+        const totalParcialEixoxOutput = document.querySelector(`.${inputTarget.dataset.totalparcialeixoxoutput}`);
+        totalParcialEixoxOutput.value = this.somar(totalParcialEixox);
     
         // Total Geral 
         const totalGeralEixox = document.querySelectorAll(`.${inputTarget.dataset.totalgeraleixox}`);
-        const totalGeralEixoxoutput = document.querySelector(`.${inputTarget.dataset.totalgeraleixoxoutput}`);
-        totalGeralEixoxoutput.value = this.somar(totalGeralEixox);
+        const totalGeralEixoxOutput = document.querySelector(`.${inputTarget.dataset.totalgeraleixoxoutput}`);
+        totalGeralEixoxOutput.value = this.somar(totalGeralEixox);
     
         if(inputTarget.dataset.subtotaleixoy) {
             inputTarget.classList.add(`${inputTarget.dataset.subtotaleixoy}`);
