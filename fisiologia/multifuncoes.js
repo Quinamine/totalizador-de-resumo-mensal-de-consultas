@@ -30,7 +30,7 @@ function alertarSobre(msg) {
     dialogBoxDefault.classList.add("--open");
 }
 
-function destacarCelulasSaturadas() {
+function destacarCelulasComConteudoOmisso() {
     const celulas = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
 
     let celulasSaturadas = 0;
@@ -72,7 +72,7 @@ const aqd = {
     }
 }
 
-function actualizarAno() {
+function actualizarAnoDeCopyright() {
     const tempo = new Date();
     let anoActual = tempo.getFullYear();
 
@@ -117,8 +117,8 @@ window.addEventListener("load", () => {
     }));
 
     const inputsCelulares = document.querySelectorAll("[data-totalgeraleixox]");
-    inputsCelulares.forEach (inputCelular => inputCelular.addEventListener("input", destacarCelulasSaturadas));
-    destacarCelulasSaturadas();
+    inputsCelulares.forEach (inputCelular => inputCelular.addEventListener("input", destacarCelulasComConteudoOmisso));
+    destacarCelulasComConteudoOmisso();
 
     
     aqd.mostrarAviso();
@@ -126,7 +126,7 @@ window.addEventListener("load", () => {
     dialogBoxAQD__btn.addEventListener("click", aqd.salvarCiencia);
 
     // Actualizar o ano 
-    actualizarAno();
+    actualizarAnoDeCopyright();
     sugerirMesActual();
     formatarNumeros();
 
