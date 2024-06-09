@@ -72,7 +72,7 @@
     margin-bottom: 4px;
 }
 
-.ficha__container-de-modelo-e-codigo {
+.ficha__container-de-modelo-e-numero {
     position: absolute;
     right: 0;
     top: -20px;
@@ -89,13 +89,17 @@
     font-size: 14px;
 }
 
-.ficha__campo-de-codigo {
+.ficha__campo-de-numero {
     display: block;
     width: 170px;
     margin: 0 auto;
     color: var(--cor-de-risco);
     font-size: 22px;
     border-bottom: thin dotted var(--gray--d);
+}
+
+.ficha__campo-de-numero::-webkit-calendar-picker-indicator {
+    display: none !important;
 }
 
 .ficha__linha-com-numeros-das-colunas,
