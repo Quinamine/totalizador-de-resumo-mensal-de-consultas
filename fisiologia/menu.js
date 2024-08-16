@@ -236,7 +236,7 @@ function eventos() {
     // PARTILHAR 
     const data = {
         title: "Totalizador de Resumo Mensal de Consultas",
-        text: "O Totalizador de Resumo Mensal de Consultas é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas, por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        text: "Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de consultas externas. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
         url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html"
     }
 
