@@ -4,74 +4,62 @@
     margin: 43px auto 10px;
     position: relative;
 }
-
 @media print {
     .ficha {
         margin-top: 10;
     }
 }
-
 .ficha__header {
     margin-left: calc(24px + 90px);
     position: sticky;
     top: -36px;
     background-color: var(--yt);
 }
-
 @media print {
     .ficha__header {
         position: relative;
         top: 0;
     }
 }
-
 .ficha__container-de-emblema {
     position: absolute;
     top: -36px;
     left: -114px;
     z-index: 333;
 }
-
 .ficha__moldura-de-emblema {
     margin: 0;
     width: 65px;
     height: 65px
 }
-
 .ficha__emblema {
     height: 100%
 }
-
 .ficha__box-descricao-de-emblema {
     flex-direction: column;
     line-height: 1.5;
     padding-left: 6px;
     text-transform: uppercase;
 }
-
 .ficha__titulo {
     margin-left: 238px;
     font-size: 24px;
     line-height: 1.5;
     min-height: 38px;
 }
-
 .ficha__titulo__label {
     font-weight: 700;
     color: var(--cor-de-texto);
 }
-
 .ficha__titulo__sup {
     font-size: 15px;
 }
-
 .ficha__titulo__input-us {
     width: 330px;
     font-size: 20px;
     font-weight: initial;
     margin-bottom: 4px;
 }
-
 .ficha__container-de-modelo-e-numero {
     position: absolute;
     right: 0;
@@ -82,13 +70,11 @@
     justify-content: space-between;
     max-width: 190px;
 }
-
 .ficha__modelo {
     display: block;
     text-align: right;
     font-size: 14px;
 }
-
 .ficha__campo-de-numero {
     display: block;
     width: 170px;
@@ -97,11 +83,9 @@
     font-size: 22px;
     border-bottom: thin dotted var(--gray--d);
 }
-
 .ficha__campo-de-numero::-webkit-calendar-picker-indicator {
     display: none !important;
 }
-
 .ficha__linha-com-numeros-das-colunas,
 .ficha__linha-de-sexo {
     display: grid;
@@ -109,33 +93,27 @@
     grid-template-rows: 24px;
     text-align: center;
 }
-
 .ficha__linha-com-numeros-das-colunas {
     grid-template-rows: 18px
 }
-
 .ficha__col-de-mes {
     text-align: left;
 }
-
 .ficha__campo-para-mes {
     width: 84%;
 }
-
 .ficha__num-de-col {
     background-color: var(--cor-primaria);
     color: var(--gray--d);
     border-color: var(--gray--a);
     font-weight: 700;
 }
-
 .ficha__linha-de-faixas-etarias {
     display: grid;
     grid-template-columns: 240px repeat(9,100px) 50px;
     grid-template-rows: 24px;
     text-align: center
 }
-
 .ficha__linha-de-sexo__primeira-celula {
     width: 114px;
     height: 24px;
@@ -144,19 +122,16 @@
     background: linear-gradient(45deg, var(--gray--4), var(--gray--c));
     border-left-color: var(--gray--4)
 }
-
 /* Body-da-ficha */
 .ficha__body {
     display: grid;
     grid-template-columns: 24px 90px 240px repeat(19,50px);
     border-top: 12px solid var(--cor-primaria);
 }
-
 .ficha__col-com-numeros-das-linhas {
     display: grid;
     grid-template-rows: repeat(53,24px)
 }
-
 .ficha__num-de-linha {
     background-color: var(--cor-primaria);
     color: var(--gray--d);
@@ -164,84 +139,67 @@
     font-weight: 700;
     font-size: 16px;
 }
-
 .ficha__num-de-linha.--highlight {
     background-color: var(--orange);
     color: var(--cor-de-texto);
 }
-
 .ficha__container-row-groups {
     display: grid;
     grid-template-rows: calc(24px*3) calc(24px*4) 1fr calc(24px*6) repeat(2,calc(24px*3))
 }
-
 .ficha__row-group-title {
     text-align: center;
     font-weight: 700;
     letter-spacing: .5px;
     transform: rotate(270deg)
 }
-
 .ficha__col-de-indicadores {
     display: grid;
     grid-template-rows: repeat(38,24px) 48px 24px repeat(3,48px) repeat(6,24px);
 }
-
 .ficha__indicador {
     padding: 0 4px
 }
-
 .ficha__grid-de-indicador {
     display: grid;
     grid-template-columns: 80px 1fr
 }
-
 .ficha__container-de-subindicadores {
     display: grid;
     grid-template-rows: repeat(2,24px);
 }
-
 /* Celulas de entrada */
 .ficha__col-de-inputs {
     display: grid;
     grid-template-columns: 50px;
     grid-template-rows: repeat(53, 24px);
 }
-
 .ficha__footer {
     display: flex;
     flex-direction: column;
     margin: 15px 0 10px
 }
-
-
 .ficha__linha-de-assinatura {
     min-height: 18px;
     margin-bottom: 15px
 }
-
 .ficha__campo-de-assinatura {
     width: 323px
 }
-
 @-moz-document url-prefix() {
     .ficha__campo-de-assinatura {
         width: 315px
     }
 }
-
 .ficha__linha-de-categoria-e-data {
     display: flex;
     justify-content: space-between;
     min-height: 22.38px;
     max-width: 598px;
 }
-
 .ficha__campo-de-categoria {
     width: 276px
 }
-
-
 @media screen and (max-width: 1304px ) {
     .ficha__child--pos-sticky {
         position: sticky;
@@ -249,19 +207,16 @@
         background-color: var(--yt)
     }
 }
-
 @media print {
     .--page-break,
     .ficha__col-de-inputs input:nth-child(31) {
         page-break-after: always;
     }
-
     .--page-break + *,
     .ficha__col-de-inputs input:nth-child(32) {
         border-top: var(--border-style);
     }
 }
-
 .--margin-left-menos-1 {
     margin-left: -1px;
 }

@@ -9,7 +9,7 @@ O **Totalizador de Resumo Mensal de Consultas** é um serviço online gratuito q
 
 * Auxiliar os Profissionais de Saúde na totalização do resumo mensal de consultas externas com exatidão e prontidão;
 
-* Minimizar possíveis erros de totalização (por exemplo, somar inconscientemente células não correspondentes ou registar o total da linha A, na linha B);
+* Minimizar possíveis erros de totalização (por exemplo, somar involuntariamente células não correspondentes ou registar o total da linha A, na linha B);
 
 * Expandir o acesso à ficha de resumo mensal de consultas externas.
 
