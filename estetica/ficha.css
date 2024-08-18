@@ -174,6 +174,20 @@
     grid-template-columns: 50px;
     grid-template-rows: repeat(53, 24px);
 }
+[data-totalgeraleixox]:focus,
+.input-nao-celular:focus {
+    border-bottom: 2px solid var(--blue);
+    background-color: var(--greenyellow);
+}
+@media screen {
+    .input--realcar-totais {
+        background-color: var(--gray--c);
+    }
+}
+.input--bg-color-danger {
+    background-color: var(--cor-de-risco);
+    color: var(--yt)
+}
 .ficha__footer {
     display: flex;
     flex-direction: column;
@@ -200,13 +214,6 @@
 .ficha__campo-de-categoria {
     width: 276px
 }
-@media screen and (max-width: 1304px ) {
-    .ficha__child--pos-sticky {
-        position: sticky;
-        left: -15px;
-        background-color: var(--yt)
-    }
-}
 @media print {
     .--page-break,
     .ficha__col-de-inputs input:nth-child(31) {
@@ -214,9 +221,15 @@
     }
     .--page-break + *,
     .ficha__col-de-inputs input:nth-child(32) {
-        border-top: var(--border-style);
+        border-top: 1px solid var(--cor-de-borda);
     }
 }
+/* Estilos Reutilizaveis */
 .--margin-left-menos-1 {
     margin-left: -1px;
+}
+.--position-sticky {
+    position: sticky;
+    left: -15px;
+    background-color: var(--yt)
 }
