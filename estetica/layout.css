@@ -21,16 +21,16 @@
     --gray--light: #f0f0f0;
     --blue: #0060EE;
     --blue--light: #2573b5;
+    --blue--highlight: lightblue;
     --purple: rgb(116, 116, 235);
     --orange: #faa032;
-    --greenyellow:greenyellow;
+    --cor-de-realce-de-totais: #ffff71;
+    --greenyellow: #adff2f;
     --brown: brown;
     --reference-bgc: var(--black--alpha-8);
-    /* Tamanhos */
     --layout-width: 1304px;
     --input-font-size: 12px;
 }
-
 @media print {
     :root {
         --cor-primaria: var(--fullblack);
@@ -66,6 +66,11 @@
     margin: 0 auto;
     padding: 0 15px;
 }
+@media screen and (min-width: 1304px) {
+    .layout-row {
+        padding: 0;
+    }
+}
 .layout-row--no-padding {
     padding: 0;
 }
@@ -95,11 +100,11 @@
         padding: 0;
     }
 }
-.logo__snippet--hide-on-screen-til-360 {
+.logo__snippet--hide-on-screen-til-359px {
     display: none;
 }
 @media screen and (min-width: 360px) {
-    .logo__snippet--hide-on-screen-til-360 {
+    .logo__snippet--hide-on-screen-til-359 {
         display: initial;
     }
 }
@@ -146,10 +151,10 @@
 .header__menu__checkbox {
     width: 12px;
     height: 11px;
-    margin: 1px 4px 3px 0;
+    margin: 1px 0 3px;
 }
 .header__menu__label {
-    padding: 7.5px 12px 7.5px 0;
+    padding: 7.5px 12px 7.5px 4px;
     font-size: 12px;
     min-height: 44px;
 }
@@ -162,7 +167,7 @@
     min-height: 44px;
 }
 /* MAIN */
-@media screen {
+@media screen and (max-width: 1303px) {
     #main {
         max-width: 100%;
         overflow: auto;
@@ -181,7 +186,7 @@
 .main__campo-de-comentarios {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    min-width: 880px;
+    width: 880px;
     padding: 5px;
     border: 1px solid var(--cor-de-borda);
     font-size: 13px;

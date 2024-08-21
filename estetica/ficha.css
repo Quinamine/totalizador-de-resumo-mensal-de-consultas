@@ -139,9 +139,11 @@
     font-weight: 700;
     font-size: 16px;
 }
-.ficha__num-de-linha.--highlight {
-    background-color: var(--orange);
-    color: var(--cor-de-texto);
+@media screen {
+    .ficha__num-de-linha.--highlight {
+        background-color: var(--orange);
+        color: var(--cor-de-texto);
+    }
 }
 .ficha__container-row-groups {
     display: grid;
@@ -178,10 +180,11 @@
 .input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
     background-color: var(--greenyellow);
+    color: var(--cor-de-texto);
 }
 @media screen {
     .input--realcar-totais {
-        background-color: var(--gray--c);
+        background-color: var(--cor-de-realce-de-totais);
     }
 }
 .input--bg-color-danger {
@@ -228,8 +231,10 @@
 .--margin-left-menos-1 {
     margin-left: -1px;
 }
-.--position-sticky {
-    position: sticky;
-    left: -15px;
-    background-color: var(--yt)
+@media screen {
+    .--position-sticky {
+        position: sticky;
+        left: -15px;
+        background-color: var(--yt)
+    }
 }
