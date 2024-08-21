@@ -122,7 +122,6 @@
     background: linear-gradient(45deg, var(--gray--4), var(--gray--c));
     border-left-color: var(--gray--4)
 }
-/* Body-da-ficha */
 .ficha__body {
     display: grid;
     grid-template-columns: 24px 90px 240px repeat(19,50px);
@@ -170,7 +169,6 @@
     display: grid;
     grid-template-rows: repeat(2,24px);
 }
-/* Celulas de entrada */
 .ficha__col-de-inputs {
     display: grid;
     grid-template-columns: 50px;
@@ -227,7 +225,7 @@
         border-top: 1px solid var(--cor-de-borda);
     }
 }
-/* Estilos Reutilizaveis */
+/* Estilos Reutilizáveis */
 .--margin-left-menos-1 {
     margin-left: -1px;
 }
