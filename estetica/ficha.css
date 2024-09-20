@@ -16,6 +16,9 @@
     background-color: var(--yt);
     z-index: 99;
 }
+.body-com-topo-propaganda .ficha__header {
+    top: 0;
+}
 @media print {
     .ficha__header {
         position: relative;
