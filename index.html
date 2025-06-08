@@ -73,10 +73,11 @@
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--ajuda">Ajuda</button>
                         </li>
-                        <li class="header__menu__li header__menu__item--hide-on-desktop">
-                            <button class="header__menu__btn header__menu__btn--partilhar">Partilhar...</button>
-                        </li>
                     </ul>
+                    <div class="tooltip tooltip--menu-ajuda --on">
+                        <div class="tooltip__arrow tooltip__arrow--menu-ajuda"></div>
+                        <p class="tooltip__tip">Acesse este artigo para saber mais sobre as funcionalidades do totalizador<span class="--hide-on-mobile">, inclusive "<b>salvar a ficha como PDF</b>"</span>.</p>
+                    </div>
                 </div>
             </div>
         </header>
@@ -1400,6 +1401,27 @@
                     </div>
                 </footer>
             </div>
+            <button class="main__btn-fixed main__btn-fixed--light main__btn-fixed--share --no-print" title="Partilhar totalizador">
+                <svg style="width: 25px; height: 20px;">
+                    <circle r="2.5" cx="5" cy="50%" fill="transparent" stroke="var(--cor-de-texto)" stroke-width="1"></circle>
+                    <circle r="2.5" cx="20" cy="5" fill="transparent" stroke="var(--cor-de-texto)" stroke-width="1"></circle>
+                    <circle  r="2.5" cx="20" cy="15" fill="transparent" stroke="var(--cor-de-texto)" stroke-width="1"></circle>
+                    <line stroke="var(--cor-de-texto)" stroke-width="1" x1="7.5" x2="17.5" y1="9" y2="5"></line>
+                    <line stroke="var(--cor-de-texto)" stroke-width="1" x1="7.5" x2="17.5" y1="11" y2="15"></line>
+                </svg>
+            </button>
+            <button class="main__btn-fixed main__btn-fixed--emptycell-equals-zero --no-print">
+                <svg style="width: 9px; height: 9px; border: 1px solid var(--gray--d); margin: 0;">
+                    <rect width="9" height="9" fill="var(--yt)" ></rect>
+                </svg>=<svg style="width: 9px; height: 9px; border: 1px solid var(--gray--d); margin: 0;">
+                    <rect width="9" height="9" fill="var(--yt)" ></rect>
+                    <circle r="3" cx="4.5" cy="4.5"  fill="transparent" stroke="var(--cor-de-texto)" stroke-width="1"></circle>
+                </svg>
+            </button>
+            <div class="tooltip tooltip--vazioigualzero --no-print">
+                <div class="tooltip__arrow"></div>
+                <p class="tooltip__tip">Este botão é um atalho, use-o para preencher células vazias com o valor "<b>0</b>".</p>
+            </div>
             <div class="layout-row layout-row--obs layout-row--no-padding">
                 <span class="obs__label --fw-700">Observações:</span>
                 <p contenteditable="true" id="input-obs" class="obs__input"></p>
@@ -1568,6 +1590,13 @@
                     <summary class="details__summary">Algumas células ficaram vermelhas</summary>
                     <p>Uma célula adopta um fundo vermelho como sinal de alerta para indicar que o valor contido nela, excedeu a largura fixa da célula e, por isso, os últimos algarismos estão omissos, ou seja, estão fora da área visível da célula.</p>
                 </details>
+                <details class="artigo__details artigo__details--border-b artigo__details--celulas-vazias-igual-zero">
+                    <summary class="details__summary">Atalho "Célula vazia igual a zero"</summary>
+                    <p>Se for preencher várias células com o valor "<b>0</b>", pode fazê-lo de forma simples e rápida clicando no botão ilustrado abaixo. O atalho funciona para células vazias, portanto, deverá preencher manualmente as células cujos valores dos indicadores são diferentes de zero, e ignorar as que preencherá com "<b>0</b>" através do botão e/ou atalho.</p>
+                    <figure class="details__moldura">
+                        <img src="imagens/atalho-celula-vazia-igual-a-zero.png" alt="Atalho 'Célula vazia igual a zero'" class="artigo__img" />
+                    </figure>
+                </details>
                 <p class="artigo-ajuda__p--contactar-suporte">Se os tópicos acima não cobrem as suas dúvidas, pode ainda solicitar suporte ao desenvolvedor através do endereço electrónico <a href="mailto:quinamine.aderitofelix@gmail.com?subject=Totalizador%20de%20Resumo%20Mensal%20de%20Consultas">quinamine.aderitofelix@gmail.com</a> ou pelo <a href="https://wa.me/258846709901/?text=Olá%2C+Quinamine!+Sobre+o+*totalizador+de+resumo+mensal+de+consultas*%2C+tenho+a+seguinte+dúvida%3A%20">WhatsApp</a>.</p>
                 <button class="artigo__btn-x artigo__btn-x--fechar-ajuda" title="Fechar">&times;</button>
             </article>
@@ -1610,7 +1639,7 @@
                 <p class="footer__p footer__p--created-by">Criado com atenção e <span class="footer__p__heart">❤</span> por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a> | ©&nbsp;<span class="footer__current-year"></span> Totalizador de Resumo Mensal de Consultas</p>
                 <a href=#root class=footer__link--back-to-top>Rolar para o topo</a>
             </div>
-            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2022-06-18">18/06/2022</time>. Última actualização: Maio/2025.</p>
+            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2022-06-18">18/06/2022</time>. Última actualização: Junho/2025.</p>
         </footer>
         <div class="desfoque"></div>
         <script src="fisiologia/festasfelizes.js"></script>

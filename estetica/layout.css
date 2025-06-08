@@ -840,6 +840,114 @@ details[open] .details__summary {
     background-color: var(--black--alpha-5);
     z-index: 888;
 }
+.tooltip {
+    position: fixed;
+    right: 18px;
+    bottom: 100px;
+    background-color: var(--black--alpha-8);
+    box-shadow: 0 0 5px var(--gray);
+    color: var(--yt);
+    font-size: 13px;
+    padding: 15px;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    z-index: 777;
+    width: 250px;
+}
+@media screen and (min-width: 1304px) {
+    .tooltip {
+        right: calc(50vw - (var(--layout-width) + 12px) / 2);
+    }
+}
+.tooltip.--show {
+    visibility: visible;
+    opacity: 1;
+}
+.tooltip--menu-ajuda {
+    position: absolute;
+    bottom: initial;
+    top: 90px;
+}
+.body-com-topo-propaganda .tooltip--menu-ajuda {
+    top: 140px;
+}
+@media screen and (min-width: 578px) and (max-width: 1023px) {
+    .body-com-topo-propaganda .tooltip--menu-ajuda {
+        top: 125px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .tooltip--menu-ajuda {
+        position: absolute;
+        bottom: initial;
+        top: 48px;
+    }
+    .body-com-topo-propaganda .tooltip--menu-ajuda {
+        top: 85px;
+    }
+}
+.tooltip__arrow {
+    position: absolute;
+    right: 18px;
+    bottom: -14px;
+    border-top: 15px solid var(--black--alpha-8);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    z-index: 778;
+}
+.tooltip__arrow--menu-ajuda {
+    bottom: initial;
+    top: -14px;
+    border-top: none;
+    border-bottom: 15px solid var(--black--alpha-8);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+.tooltip__tip {
+    line-height: 1.2;
+}
+.main__btn-fixed {
+    padding: 15px 7.5px;
+    background-color: var(--cor-de-link);
+    color: var(--yt);
+    box-shadow: 0 0 8px var(--gray--5);
+    border-radius: 14px;
+    position: fixed;
+    right: 15px;
+    bottom: 40px;
+    z-index: 777;
+    transition-duration: .25s;
+}
+.main__btn-fixed--light {
+    background-color: var(--gray--d);
+    bottom: 100px;
+    right: 20px;
+    padding: 5px;
+    border-radius: 7.5px;
+    opacity: .8;
+}
+@media screen and (min-width: 1304px) {
+    .main__btn-fixed {
+        right: calc(50vw - (var(--layout-width) + 12px) / 2);
+    }
+    .main__btn-fixed--light {
+        right: calc(50vw - (var(--layout-width) / 2));
+    }
+}
+@media screen and (min-width: 1024px) {
+    .main__btn-fixed:hover {
+        border-radius: 10px;
+    }
+    .main__btn-fixed--light:hover {
+        border-radius: 7.5px;;
+        opacity: 1;
+    }
+}
+.main__btn-fixed:active {
+    opacity: .7;
+}
 /* Classes Reutilizáveis */
 .--cursor-pointer {
     cursor: pointer;

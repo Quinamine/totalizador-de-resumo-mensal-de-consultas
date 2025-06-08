@@ -199,7 +199,7 @@ function eventos() {
         text: "Totaliza automaticamente, com base nos dados inseridos pelo usuário, o resumo mensal de consultas externas. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
         url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html"
     }
-    const btnPartilhar = document.querySelector(".header__menu__btn--partilhar");
+    const btnPartilhar = document.querySelector(".main__btn-fixed--share");
     btnPartilhar.addEventListener("click", () => {
         try {
             navigator.share(data).then(()=>console.log("Totalizador partilhado com sucesso."))
