@@ -33,9 +33,8 @@ const menu = {
                 for(let i = 0; i < nL.length; i++) {
                     if(nL[i].textContent === numLinha) {
                         numLinhaMatches = true;
-                        let newIndex = i;
-                        if(window.innerWidth > 1304) newIndex -= 3;
-                        i > 3 ? nL[newIndex].scrollIntoView() : document.body.scrollIntoView(); 
+                        let newIndex = i - 5;
+                        i > 5 ? nL[newIndex].scrollIntoView() : document.body.scrollIntoView(); 
                         this.highlightLnFound(nL[i]);        
                     }
                 }  
@@ -112,7 +111,7 @@ const menu = {
         const body = document.querySelector("body");
         artigo === "sobre" ? artigoSobre.classList.add("--open") 
         : artigoAjuda.classList.add("--open");
-        body.classList.add("body--overflow-h");
+        body.classList.add("--overflow-h");
         desfoqueDoFundo("desfocar");
     },
     fecharArtigo(artigo) {
@@ -127,7 +126,7 @@ const menu = {
             }
             artigoAjuda.classList.remove("--open");
         }
-        body.classList.remove("body--overflow-h");
+        body.classList.remove("--overflow-h");
         desfoqueDoFundo("focar");
     }
 }
@@ -183,16 +182,19 @@ function eventos() {
         if(itsMobile && articleIsOpen) {
             desfoqueDoFundo("focar");
             location.href = `index.html#${artigoSobre.id}`;
-            body.classList.remove("body--overflow-h");    
+            body.classList.remove("--overflow-h");    
         } else if(!itsMobile && articleIsOpen) {
             desfoqueDoFundo("desfocar");
-            body.classList.add("body--overflow-h");
+            body.classList.add("--overflow-h");
         }       
     });
     const btnAbrirAjuda = document.querySelector(".header__menu__btn--ajuda");
     btnAbrirAjuda.addEventListener("click", () => menu.abrirArtigo("ajuda"));
     const btnFecharAjuda = document.querySelector(".artigo__btn-x--fechar-ajuda")
-    btnFecharAjuda.addEventListener("click", () => menu.fecharArtigo("ajuda"));
+    btnFecharAjuda.addEventListener("click", () => {
+        menu.fecharArtigo("ajuda");
+        removerBordaDoMovitoDeRedCells();
+    });
     // PARTILHAR 
     const data = {
         title: "Totalizador de Resumo Mensal de Consultas",

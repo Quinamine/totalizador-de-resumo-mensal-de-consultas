@@ -15,7 +15,7 @@
     background-color: var(--yt);
     z-index: 99;
 }
-.body-com-topo-propaganda .ficha__header {
+.body-com-topo-info .ficha__header {
     top: 0;
 }
 @media print {
@@ -84,7 +84,7 @@
     margin: 0 auto;
     color: var(--cor-de-risco);
     font-size: 22px;
-    border-bottom: thin dotted var(--gray--d);
+    border-bottom: thin dotted var(--gray-d);
 }
 .ficha__campo-de-numero::-webkit-calendar-picker-indicator {
     display: none !important;
@@ -107,8 +107,8 @@
 }
 .ficha__num-de-col {
     background-color: var(--cor-primaria);
-    color: var(--gray--d);
-    border-color: var(--gray--a);
+    color: var(--gray-d);
+    border-color: var(--gray-a);
     font-weight: 700;
 }
 .ficha__linha-de-faixas-etarias {
@@ -122,8 +122,8 @@
     height: 24px;
     position: absolute;
     left: -114px;
-    background: linear-gradient(45deg, var(--gray--4), var(--gray--c));
-    border-left-color: var(--gray--4)
+    background: linear-gradient(45deg, var(--gray-four), var(--gray-c));
+    border-left-color: var(--gray-four)
 }
 .ficha__body {
     display: grid;
@@ -136,8 +136,8 @@
 }
 .ficha__num-de-linha {
     background-color: var(--cor-primaria);
-    color: var(--gray--d);
-    border-color: var(--gray--a);
+    color: var(--gray-d);
+    border-color: var(--gray-a);
     font-weight: 700;
     font-size: 16px;
 }

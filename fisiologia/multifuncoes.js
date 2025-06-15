@@ -36,9 +36,10 @@ function destacarCelulasComConteudoOmisso() {
     }
     if(celulasSaturadas > 0) {
         setTimeout(() => {
-            const motivoDeSaturacao =  document.querySelector(".artigo__details--motivo-de-celulas-vermelhas");
+            const motivoDeSaturacao = document.querySelector(".artigo__details--motivo-de-celulas-vermelhas");
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
+            motivoDeSaturacao.classList.add("--borda-de-destaque");
             motivoDeSaturacao.scrollIntoView();
         }, 2500);
     }  
@@ -46,6 +47,10 @@ function destacarCelulasComConteudoOmisso() {
 function removerDestaqueDeRedCells() {
     const celulas = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
     for (const c of celulas) c.classList.remove("input--bg-color-danger");
+}
+function removerBordaDoMovitoDeRedCells() {
+    const motivoDeRedCells =  document.querySelector(".artigo__details--motivo-de-celulas-vermelhas");
+    motivoDeRedCells.classList.remove("--borda-de-destaque");
 }
 const aqd = {
     mostrarAviso() {
@@ -79,11 +84,11 @@ function animarCaixaDeDialogo(event) {
         : dialogBox.classList.remove("--mexer");
     }
 }
-function fecharTopoPropaganda(topoPropaganda) {
+function fecharTopoInfo(topoInfo) {
     const body = document.querySelector("#body");
-    topoPropaganda.classList.add("topo-propaganda--off");
-    if(!topoPropaganda.matches(".topo-propaganda--festas-felizes")) {
-        body.classList.remove("body-com-topo-propaganda");
+    topoInfo.classList.add("topo-info--off");
+    if(!topoInfo.matches(".topo-info--festas-felizes")) {
+        body.classList.remove("body-com-topo-info");
     }
 }
 function omitirLinkDesteServicoNoRodape(){
@@ -104,7 +109,7 @@ const Tooltip = {
     }
 }
 function preencherCelulasVaziasComZero(){
-    const celulas = document.querySelectorAll("[data-totalgeraleixox], [readonly]");
+    const celulas = document.querySelectorAll(".ficha__col-de-inputs input");
     const btnAtalhoVazioIgualZero = document.querySelector(".main__btn-fixed--emptycell-equals-zero");
     btnAtalhoVazioIgualZero.addEventListener("click", () => {
         let celulasVazias = 0;
@@ -145,10 +150,10 @@ window.addEventListener("load", () => {
     const desfoque = document.querySelector(".desfoque");
     desfoque.addEventListener("mousedown", event => animarCaixaDeDialogo(event.type));
     desfoque.addEventListener("mouseup", event => animarCaixaDeDialogo(event.type));
-    // Fechar Topo Propaganda 
-    const btnXDetopoProgaganda = document.querySelectorAll(".topo-propaganda__btn");
+    // Fecha Topo Info
+    const btnXDetopoProgaganda = document.querySelectorAll(".topo-info__btn");
     btnXDetopoProgaganda.forEach(btn => {
-        btn.addEventListener("click", () => fecharTopoPropaganda(btn.parentElement.parentElement));
+        btn.addEventListener("click", () => fecharTopoInfo(btn.parentElement.parentElement));
     });
     // Focar campo de observacoes
     const inputObs = document.querySelector(".obs__input");
