@@ -1098,7 +1098,7 @@ details[open] .details__summary {
         margin-top: 5px;
     }
     .ficha__url-pub__link {
-        color: var(--cor-de-link);
+        color: var(--blue);
     }
 }
 .topo-info {
