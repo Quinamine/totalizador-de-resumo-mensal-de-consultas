@@ -11,7 +11,7 @@ function alertarSobre(msg) {
     const dialogBoxDefault__console = dialogBoxDefault.querySelector(".dialog-box-default__p--js-console");
     dialogBoxDefault__console.textContent = msg;
     clearInterval(btnAutoCloseLoop);
-    let time = 15;
+    let time = 10;
     const btn__outputTime = document.querySelector(".dialog-box-default__output-autoclose-loop");
     btn__outputTime.textContent = `(${time--}s)`;
     btnAutoCloseLoop = setInterval(() => {
