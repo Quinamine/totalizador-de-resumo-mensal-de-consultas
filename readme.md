@@ -2,7 +2,7 @@
 
 ![Trecho do Totalizador do Resumo Mensal de Consultas](imagens/totalizador-de-resumo-mensal-de-consultas.png)
 
-O **Totalizador de Resumo Mensal de Consultas** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas por meio do cálculo automático dos totais com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+O **Totalizador de Resumo Mensal de Consultas** é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de consultas externas por meio do cálculo automático dos totais com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da ficha de resumo mensal de consultas externas actualmente vigente no Serviço Nacional de Saúde em Moçambique.
 
 
 ## Objectivos
