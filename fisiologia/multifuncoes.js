@@ -131,7 +131,24 @@ function preencherCelulasVaziasComZero(){
         }
     }
 }
-let btnAutoCloseLoop;
+
+function redirecionarParaTES() {
+    let tempoRedirecionamento = 10000;
+    let segundos = tempoRedirecionamento / 1000;
+
+    const timer = setInterval(() => {
+        redirectioTime.innerText = `${segundos--}`;
+        if(segundos < 1) {
+            clearInterval(timer);
+        }
+
+    }, 1000);
+
+    setTimeout(() => {
+        window.location.href = 'https://quinamine.github.io/totalizador-estatistica-saude/?page=consultas'
+    }, tempoRedirecionamento)
+}
+let btnAutoCloseLoop, redirectioTime;
 window.addEventListener("load", () => {
     const readonlyInputs = document.querySelectorAll("[readonly]");
     readonlyInputs.forEach ( inputTarget => inputTarget.addEventListener("click", () => {
@@ -196,4 +213,8 @@ window.addEventListener("load", () => {
     preencherCelulasVaziasComZero();
     const btnConfirmarEsvaziarFicha = document.querySelector(".dialog-box-esvaziar-ficha__btn--confirmar");
     btnConfirmarEsvaziarFicha.addEventListener("click", () => localStorage.removeItem(`${keyPrefix}-vazio=zero`));
+
+    // Redirecionar
+    redirectioTime = document.querySelector('.tempo-de-redirecionamento');
+    redirecionarParaTES();
 });
